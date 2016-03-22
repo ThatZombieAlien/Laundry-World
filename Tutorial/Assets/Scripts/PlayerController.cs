@@ -12,24 +12,12 @@ public class PlayerController : MonoBehaviour
     private bool playerMoving;
     public Vector2 lastMove;
 
-    private static bool playerExists;
-
 
     // Use this for initialization
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-        if (!playerExists)
-        {
-            playerExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
 
     }
 
@@ -67,7 +55,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
         anim.SetBool("PlayerMoving", playerMoving);
-        //anim.SetFloat("LastMoveX", lastMove.x);
-        //anim.SetFloat("LastMoveY", lastMove.y);
+        anim.SetFloat("LastMoveX", lastMove.x);
+        anim.SetFloat("LastMoveY", lastMove.y);
     }
 }
