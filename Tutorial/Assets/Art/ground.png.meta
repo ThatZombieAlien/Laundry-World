@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 223b1a5a47f2c4c42bb8cf211b2068b5
-timeCreated: 1458298472
+guid: 8a0f664158a174e428ef8d45700d761d
+timeCreated: 1458642991
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -29,7 +29,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 32
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
