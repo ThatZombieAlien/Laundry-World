@@ -6,18 +6,19 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rigidBody;
     Animator anim;
+    public AudioSource walkSound;
 
     public float moveSpeed;
     private float currentMoveSpeed;
     public float diagonalSpeedModifier;
-    // Use this for initialization
+   
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal") * currentMoveSpeed, Input.GetAxisRaw("Vertical") * currentMoveSpeed);
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            walkSound.Play();
             anim.SetBool("isWalking", false);
         }
 
