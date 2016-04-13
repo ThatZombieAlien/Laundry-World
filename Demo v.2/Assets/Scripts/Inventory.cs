@@ -5,11 +5,10 @@ using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject inventoryPanel;
-    public GameObject slotPanel;
-    public GameObject textPanel;
-    public GameObject textText;
-    public GameObject backpack;
+    GameObject inventoryPanel;
+    GameObject slotPanel;
+    GameObject textPanel;
+    GameObject textText;
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
@@ -25,7 +24,6 @@ public class Inventory : MonoBehaviour
         slotAmount = 9;
         inventoryPanel = GameObject.Find("Inventory Panel");
         slotPanel = inventoryPanel.transform.FindChild("Slot Panel").gameObject;
-        backpack = GameObject.Find("Backpack");
         textPanel = GameObject.Find("Title Panel");
         textText = textPanel.transform.FindChild("Title").gameObject;
 
@@ -45,13 +43,20 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryPanel.SetActive(true);
+            slotPanel.SetActive(true);
+            textPanel.SetActive(true);
+            textText.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            inventoryPanel.SetActive(false);
-            slotPanel.SetActive(false);
-            textPanel.SetActive(false);
-            textText.SetActive(false);
-            backpack.SetActive(true);
+            inventoryPanel.SetActive(true);
+            slotPanel.SetActive(true);
+            textPanel.SetActive(true);
+            textText.SetActive(true);
         }
     }
 
@@ -154,5 +159,5 @@ public class Inventory : MonoBehaviour
                 return i;
         }
         return -1;
-    }
+    } 
 }
