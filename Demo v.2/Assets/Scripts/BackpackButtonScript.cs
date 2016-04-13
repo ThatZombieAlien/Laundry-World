@@ -4,6 +4,7 @@ using System.Collections;
 public class BackpackButtonScript : MonoBehaviour
 {
     Inventory inventory;
+    public AudioSource openInventorySound;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class BackpackButtonScript : MonoBehaviour
 
     public void OnBackPackClick()
     {
+        openInventorySound.Play();
         inventory.inventoryPanel.SetActive(true);
         inventory.slotPanel.SetActive(true);
         inventory.textPanel.SetActive(true);

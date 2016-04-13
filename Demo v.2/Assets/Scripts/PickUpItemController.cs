@@ -4,6 +4,7 @@ using System.Collections;
 public class PickUpItemController : MonoBehaviour
 {
     Inventory inventory;
+    public AudioSource pickUpSound;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class PickUpItemController : MonoBehaviour
         {
             int itemID = other.transform.gameObject.GetComponent<PickUpItem>().itemID;
             bool addedItem = inventory.AddItem(itemID);
+            pickUpSound.Play();
 
             if (addedItem)
             {

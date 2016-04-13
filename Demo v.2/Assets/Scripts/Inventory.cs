@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+    public AudioSource closeInventorySound;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
@@ -47,6 +48,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            closeInventorySound.Play();
             inventoryPanel.SetActive(false);
             slotPanel.SetActive(false);
             textPanel.SetActive(false);
