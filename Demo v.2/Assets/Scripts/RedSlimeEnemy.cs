@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RedSlimeEnemy : MonoBehaviour 
+public class RedSlimeEnemy : MonoBehaviour
 {
-    /// <summary>
-    /// variabler för för för rörelse
-    /// </summary>
     public float moveSpeed;
 
     private Rigidbody2D myRigidBody;
@@ -25,7 +22,6 @@ public class RedSlimeEnemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        ///start metod instansierar en body till enemy och statements för mellan rörelserna
         myRigidBody = GetComponent<Rigidbody2D>();
 
         ///timeBetweenMoveCounter = timeBetweenMove;
@@ -39,7 +35,6 @@ public class RedSlimeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /// hur snabbt enemy rör sig samt vilket håll
         if (moving)
         {
             timeBetweenMoveCounter -= Time.deltaTime;
