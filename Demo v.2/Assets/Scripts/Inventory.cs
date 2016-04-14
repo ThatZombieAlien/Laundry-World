@@ -77,7 +77,6 @@ public class Inventory : MonoBehaviour
 
         else
         {
-
             for (int i = 0; i < items.Count; i++)
             {
                 if (items[i].ID == -1)
@@ -118,7 +117,6 @@ public class Inventory : MonoBehaviour
                     items[pos] = new Item();
                     Transform t = slots[pos].transform.GetChild(0);
                     Destroy(t.gameObject);
-
                 }
                 else
                 {

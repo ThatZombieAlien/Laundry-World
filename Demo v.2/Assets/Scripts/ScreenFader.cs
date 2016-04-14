@@ -33,4 +33,7 @@ public class ScreenFader : MonoBehaviour {
     {
         isFading = false;
     }
+    // klassen där händelsen då faden ska ske kallar på de olika metodernq (se warp-klassen)
+    // Animationerna har ett 'AnimationComplete' stadie, som sker då animationen är klar vilket 
+    //gör så att koden hoppar ur metoden och slutar fadea.
 }

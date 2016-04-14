@@ -9,23 +9,19 @@ public class UIManager : MonoBehaviour
     public PlayerHealthManager playerHealth;
     private static bool UIExists;
 
-	// Use this for initialization
 	void Start ()
     {
         if (!UIExists)
         {
             UIExists = true;
             DontDestroyOnLoad(transform.gameObject);
-
         }
         else
         {
             Destroy(gameObject);
         }
-
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
         healthBar.maxValue = playerHealth.playerMaxHealth;

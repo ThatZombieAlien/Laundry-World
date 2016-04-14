@@ -8,13 +8,6 @@ public class FloatingNumbers : MonoBehaviour
     public int damageNumber;
     public Text displayNumber;
 
-	// Use this for initialization
-	void Start ()
-    {
-	 
-	}
-	
-	// Update is called once per frame
 	void Update ()
     {
         displayNumber.text = "" + damageNumber;

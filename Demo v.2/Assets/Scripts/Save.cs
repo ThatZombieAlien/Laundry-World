@@ -17,7 +17,6 @@ public class Save : MonoBehaviour
         float y = PlayerPrefs.GetFloat("PlayerY");
 
         transform.position = new Vector3(x, y);
-    }
-	
-	}
+    }	
+}
 

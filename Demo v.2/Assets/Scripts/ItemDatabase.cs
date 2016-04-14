@@ -34,8 +34,7 @@ public class ItemDatabase : MonoBehaviour
             database.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["value"],
                 (bool)itemData[i]["stackable"], itemData[i]["slug"].ToString()));
         }
-    }
-   
+    } 
 }
 
 public class Item

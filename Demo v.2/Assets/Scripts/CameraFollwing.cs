@@ -15,8 +15,7 @@ public class CameraFollwing : MonoBehaviour {
     {
         cam = GetComponent<Camera>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
     {
         cam.orthographicSize = (Screen.height / zoomOut) / 4f;  
@@ -33,6 +32,5 @@ public class CameraFollwing : MonoBehaviour {
                 Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
                 Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
         }
-
 	}
 }

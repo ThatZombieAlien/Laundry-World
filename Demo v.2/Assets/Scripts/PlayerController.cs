@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
 
     private static bool playerExists;
 
-
-
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -29,7 +27,6 @@ public class PlayerController : MonoBehaviour
         {
             playerExists = true;
             DontDestroyOnLoad(transform.gameObject);
-
         }
         else
         {
@@ -39,7 +36,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         if (!attacking)
         {
             Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal") * currentMoveSpeed, Input.GetAxisRaw("Vertical") * currentMoveSpeed);
@@ -48,7 +44,6 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isWalking", true);
                 anim.SetFloat("inputX", movementVector.x);
                 anim.SetFloat("inputY", movementVector.y);
-
             }
             else
             {
@@ -86,8 +81,5 @@ public class PlayerController : MonoBehaviour
             attacking = false;
             anim.SetBool("Attack", false);
         }
-        
-
     }
-
 }

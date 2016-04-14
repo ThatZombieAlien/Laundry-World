@@ -7,7 +7,6 @@ public class WarpDoor : MonoBehaviour
     public Transform warpTarget;
     public AudioSource doorSound;
 
-
     IEnumerator OnTriggerEnter2D(Collider2D other)
     {
         ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
@@ -23,4 +22,5 @@ public class WarpDoor : MonoBehaviour
 
         yield return StartCoroutine(sf.FadeToClear());
     }
+    // Spela ljud, Fade till svart, flyttar positionen på spelaren och kameran, fade till clear
 }

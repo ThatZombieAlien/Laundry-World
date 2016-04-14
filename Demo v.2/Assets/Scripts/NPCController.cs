@@ -22,7 +22,6 @@ public class NPCController : MonoBehaviour {
         anim = GetComponent<Animator>();
 	}
 	
-
 	void Update () 
     {
         if (isMoving)
@@ -50,6 +49,5 @@ public class NPCController : MonoBehaviour {
                 anim.SetFloat("Y_Direction", moveDirection.y);
             }
         }
-    }
-        
+    }      
 }

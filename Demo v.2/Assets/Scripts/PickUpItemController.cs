@@ -22,8 +22,8 @@ public class PickUpItemController : MonoBehaviour
         //{
         //    inventory.RemoveItem(2);
         //}
-
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PickUpItem"))
