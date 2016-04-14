@@ -30,6 +30,7 @@ public class RedSlimeEnemy : MonoBehaviour
 
         timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
         timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeBetweenMove * 1.25f);
+        anim = GetComponent<Animator>();
     }
     
     void Update()
