@@ -1,37 +1,9 @@
 Base path: V:/NiceApps/Unity 3D 5.20/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-4112
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-1848
 Cmd: getPlatforms
 Cmd: preprocess
   insize=2488 outsize=848 ok=1
 Cmd: preprocess
   insize=1964 outsize=743 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1520 outsize=1266 kw=DUMMY pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1520 outsize=770 kw=DUMMY pd= ok=1
 Cmd: preprocess
   insize=2448 outsize=808 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1939 outsize=1266 kw=DUMMY pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1939 outsize=1258 kw=DUMMY pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1520 outsize=1696 kw=PIXELSNAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1520 outsize=770 kw=PIXELSNAP_ON pd= ok=1
-Cmd: preprocess
-  insize=2488 outsize=848 ok=1
-Cmd: preprocess
-  insize=1964 outsize=743 ok=1
-Cmd: preprocess
-  insize=2448 outsize=808 ok=1
-Cmd: preprocess
-  insize=2488 outsize=848 ok=1
-Cmd: preprocess
-  insize=1964 outsize=743 ok=1
-Cmd: preprocess
-  insize=2448 outsize=808 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1420 outsize=1379 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1420 outsize=1704 kw= pd= ok=1
