@@ -19,15 +19,20 @@ public class PlayerHealthManager : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-
-        regenTimer -= Time.deltaTime;
-        if (regenTimer <= 0 && playerCurrentHealth < playerMaxHealth)
+        if (playerCurrentHealth < playerMaxHealth)
+        {
+            regenTimer -= Time.deltaTime;
+            if (regenTimer <= 0 && playerCurrentHealth < playerMaxHealth)
             {
                 playerCurrentHealth += 5;
                 regenTimer = regenTimerMax;
                 // spelaren får +5 hälsa baserat på en timer, dock endast om hälsan är lägre än max hälsan
             }
-
+        }
+        else
+        {
+            regenTimer = regenTimerMax;
+        }
     }
 
     public void HurtPlayer(int damageToGive)
