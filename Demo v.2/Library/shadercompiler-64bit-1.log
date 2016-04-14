@@ -1,3 +1,9 @@
 Base path: V:/NiceApps/Unity 3D 5.20/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-360
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-4400
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=2488 outsize=848 ok=1
+Cmd: preprocess
+  insize=1964 outsize=743 ok=1
+Cmd: preprocess
+  insize=2448 outsize=808 ok=1
