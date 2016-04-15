@@ -2,8 +2,6 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.EventSystems;
-using System;
 
 public class Inventory : MonoBehaviour
 {
@@ -12,17 +10,14 @@ public class Inventory : MonoBehaviour
     public GameObject textPanel;
     public GameObject textText;
     public GameObject backpack;
-    public GameObject closeInventoryButton;
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
-    //public AudioSource closeInventorySound;
+    public AudioSource closeInventorySound;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
-
-    Item item;
 
     void Start()
     {
@@ -34,9 +29,7 @@ public class Inventory : MonoBehaviour
         backpack = GameObject.Find("Backpack");
         textPanel = GameObject.Find("Title Panel");
         textText = textPanel.transform.FindChild("Title").gameObject;
-        closeInventoryButton = inventoryPanel.transform.FindChild("CloseInventoryButton").gameObject;
 
-        closeInventoryButton.SetActive(false);
         inventoryPanel.SetActive(false);
         slotPanel.SetActive(false);
         textPanel.SetActive(false);
@@ -53,15 +46,15 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    closeInventorySound.Play();
-        //    inventoryPanel.SetActive(false);
-        //    slotPanel.SetActive(false);
-        //    textPanel.SetActive(false);
-        //    textText.SetActive(false);
-        //    backpack.SetActive(true);
-        //}
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            closeInventorySound.Play();
+            inventoryPanel.SetActive(false);
+            slotPanel.SetActive(false);
+            textPanel.SetActive(false);
+            textText.SetActive(false);
+            backpack.SetActive(true);
+        }
     }
 
     public bool AddItem(int id)

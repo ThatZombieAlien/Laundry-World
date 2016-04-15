@@ -1,25 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.EventSystems;
-using System;
 
 public class PickUpItemController : MonoBehaviour
 {
     Inventory inventory;
-    GameObject fullInventoryText;
     public AudioSource pickUpSound;
 
     void Start()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        fullInventoryText = inventory.inventoryPanel.transform.FindChild("InventoryIsFullText").gameObject;
-
-        fullInventoryText.SetActive(false);
     }
 
     void Update()
     {
-        
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    inventory.RemoveItem(4);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    inventory.RemoveItem(2);
+        //}
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -36,7 +38,6 @@ public class PickUpItemController : MonoBehaviour
             }
             else
             {
-                fullInventoryText.SetActive(true);
                 Debug.Log("Inventory is full");
             }
         }
