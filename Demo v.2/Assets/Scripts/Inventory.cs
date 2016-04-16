@@ -10,10 +10,10 @@ public class Inventory : MonoBehaviour
     public GameObject textPanel;
     public GameObject textText;
     public GameObject backpack;
+    public GameObject closeInventoryButton;
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
-    public AudioSource closeInventorySound;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
@@ -27,6 +27,7 @@ public class Inventory : MonoBehaviour
         inventoryPanel = GameObject.Find("Inventory Panel");
         slotPanel = inventoryPanel.transform.FindChild("Slot Panel").gameObject;
         backpack = GameObject.Find("Backpack");
+        closeInventoryButton = inventoryPanel.transform.FindChild("Close Inventory Button").gameObject;
         textPanel = GameObject.Find("Title Panel");
         textText = textPanel.transform.FindChild("Title").gameObject;
 
@@ -46,15 +47,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            closeInventorySound.Play();
-            inventoryPanel.SetActive(false);
-            slotPanel.SetActive(false);
-            textPanel.SetActive(false);
-            textText.SetActive(false);
-            backpack.SetActive(true);
-        }
+
     }
 
     public bool AddItem(int id)
