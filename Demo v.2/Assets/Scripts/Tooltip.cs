@@ -16,6 +16,7 @@ public class Tooltip : MonoBehaviour
 
     void Update()
     {
+        //The tooltip has the position of the mouse
         if(tooltip.activeSelf)
         {
             tooltip.transform.position = Input.mousePosition;

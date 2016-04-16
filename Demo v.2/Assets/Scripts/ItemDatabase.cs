@@ -55,7 +55,9 @@ public class Item
         this.Slug = slug;
         this.Sprite = Resources.Load<Sprite>(slug);
     }
+    
 
+    //Empty slot
     public Item()
     {
         this.ID = -1;

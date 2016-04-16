@@ -20,7 +20,8 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(item != null)
+        //If there is a item to drag in the inventory
+        if (item != null)
         {
             this.transform.SetParent(this.transform.parent.parent);
             this.transform.position = eventData.position - offset;
@@ -30,6 +31,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
+        //If there is a item to drag, we make sure the item's position is equal to the mouse position each frame
         if (item != null)
         {
             this.transform.position = eventData.position - offset;
@@ -45,6 +47,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        //The item's position snaps back to its original position when we stop dragging the item
         if (item != null)
         {
             offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y);

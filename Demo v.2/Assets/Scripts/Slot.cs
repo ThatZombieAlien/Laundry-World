@@ -15,12 +15,16 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         ItemData droppedItem = eventData.pointerDrag.GetComponent<ItemData>();
 
+        //Checks if the slot is empty, and if we can drop an item in the slot
         if(inventory.items[id].ID == -1)
         {
             inventory.items[droppedItem.slot] = new Item();
             inventory.items[id] = droppedItem.item;
             droppedItem.slot = id;
         }
+
+        //Checks if the slot already has an item
+        //If it does, the item will swap positions/slots
         else if(droppedItem.slot != id)
         {
             Transform item = this.transform.GetChild(0);

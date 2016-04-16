@@ -36,6 +36,7 @@ public class Inventory : MonoBehaviour
         textPanel.SetActive(false);
         textText.SetActive(false);
 
+        //Loops through "slotAmount"
         for (int i = 0; i < slotAmount; i++)
         {
             items.Add(new Item());
@@ -45,15 +46,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public bool AddItem(int id)
     {
         Item itemToAdd = database.FetchItemByID(id);
 
+        //Checks if we can stack the item and if the item is already in the inventory
         if (itemToAdd.Stackable && IsItemInInventory(itemToAdd))
         {
             for (int i = 0; i < items.Count; i++)
@@ -68,10 +65,12 @@ public class Inventory : MonoBehaviour
             }
         }
 
+        //If the item is not in the inventory, it will be assigned to an empty slot
         else
         {
             for (int i = 0; i < items.Count; i++)
             {
+                //Checks if the slot is empty
                 if (items[i].ID == -1)
                 {
                     items[i] = itemToAdd;
@@ -83,7 +82,6 @@ public class Inventory : MonoBehaviour
                     itemObject.transform.position = slots[i].transform.position;
                     itemObject.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObject.name = itemToAdd.Title;
-
                     return true;
                 }
             }
@@ -94,58 +92,11 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public void RemoveItem(int id)
-    {
-        Item itemToRemove = database.FetchItemByID(id);
-        int pos = ItemCheck(itemToRemove);
-
-        if (pos != -1)
-        {
-            if (items[pos].Stackable)
-            {
-                ItemData data = slots[pos].transform.GetComponentInChildren<ItemData>();
-                data.amount--;
-                if (data.amount == 0)
-                {
-                    items[pos] = new Item();
-                    Transform t = slots[pos].transform.GetChild(0);
-                    Destroy(t.gameObject);
-                }
-                else
-                {
-                    if (data.amount == 1)
-                        data.transform.GetComponentInChildren<Text>().text = "";
-                    else
-                        data.transform.GetComponentInChildren<Text>().text = data.amount.ToString();
-                }
-                return;
-            }
-            else
-            {
-                items[pos] = new Item();
-                Transform t = slots[pos].transform.GetChild(0);
-                Destroy(t.gameObject);
-                return;
-            }
-        }
-    }
-
-
     bool IsItemInInventory(Item item)
     {
         for (int i = 0; i < items.Count; i++)
             if (items[i].ID == item.ID)
                 return true;
         return false;
-    }
-
-    int ItemCheck(Item item)
-    {
-        for (int i = 0; i < items.Count; i++)
-        {
-            if (items[i].ID == item.ID)
-                return i;
-        }
-        return -1;
     }
 }

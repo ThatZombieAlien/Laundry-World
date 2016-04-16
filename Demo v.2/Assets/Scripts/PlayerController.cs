@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 currentMoveSpeed = moveSpeed;
             }
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 attackTimeCounter = attackTime;
                 attacking = true;
