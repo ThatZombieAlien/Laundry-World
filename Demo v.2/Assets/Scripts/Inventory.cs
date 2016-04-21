@@ -51,7 +51,7 @@ public class Inventory : MonoBehaviour
         Item itemToAdd = database.FetchItemByID(id);
 
         //Checks if we can stack the item and if the item is already in the inventory
-        if (itemToAdd.Stackable && IsItemInInventory(itemToAdd))
+        if (itemToAdd.Stackable && (ItemCheck(itemToAdd) >= 0))
         {
             for (int i = 0; i < items.Count; i++)
             {
@@ -92,11 +92,52 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    bool IsItemInInventory(Item item)
+    public bool RemoveItem(int id)
+    {
+        Item itemToRemove = database.FetchItemByID(id);
+        int pos = ItemCheck(itemToRemove);
+
+        if (pos != -1)
+        {
+            if (items[pos].Stackable)
+            {
+                ItemData data = slots[pos].transform.GetComponentInChildren<ItemData>();
+                data.amount--;
+                if (data.amount == 0)
+                {
+                    items[pos] = new Item();
+                    Transform t = slots[pos].transform.GetChild(0);
+                    Destroy(t.gameObject);
+
+                }
+                else
+                {
+                    if (data.amount == 1)
+                        data.transform.GetComponentInChildren<Text>().text = "";
+                    else
+                        data.transform.GetComponentInChildren<Text>().text = data.amount.ToString();
+                }
+                return true;
+            }
+            else
+            {
+                items[pos] = new Item();
+                Transform t = slots[pos].transform.GetChild(0);
+                Destroy(t.gameObject);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    int ItemCheck(Item item)
     {
         for (int i = 0; i < items.Count; i++)
+        {
             if (items[i].ID == item.ID)
-                return true;
-        return false;
+                return i;
+        }
+        return -1;
     }
 }

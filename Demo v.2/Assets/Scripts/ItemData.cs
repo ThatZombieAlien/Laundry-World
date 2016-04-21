@@ -52,6 +52,28 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y);
         }
+
+
+        //If right-click
+        if (eventData.pointerId == -2)
+        {
+            if (item.Consumable)
+            {
+                switch (item.ID)
+                {
+                    case 0:
+                        //Do something when item.ID == 0
+                        break;
+
+                    case 1:
+                        //Do something when item.ID == 1
+                        break;
+                }
+
+                inventory.RemoveItem(item.ID);
+                tooltip.Deactivate();
+            }
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
