@@ -28,6 +28,11 @@ public class PlayerHealthManager : MonoBehaviour
                 regenTimer = regenTimerMax;
                 // spelaren får +5 hälsa baserat på en timer, dock endast om hälsan är lägre än max hälsan
             }
+
+            if (playerCurrentHealth < 0)
+            {
+                playerCurrentHealth = 0;
+            }
         }
         else
         {
