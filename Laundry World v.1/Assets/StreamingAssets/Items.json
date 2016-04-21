@@ -4,7 +4,8 @@
         "title": "Silver Steel Gloves",
         "value": 120,
         "stackable": false,
-        "slug": "cursorGauntlet_grey"
+        "slug": "cursorGauntlet_grey",
+		"consumable": true
     },
 
     {
@@ -12,7 +13,8 @@
         "title": "Bronze Steel Gloves",
         "value": 150,
         "stackable": true,
-        "slug": "cursorGauntlet_bronze"
+        "slug": "cursorGauntlet_bronze",
+		"consumable": true
     },
 
     {
@@ -20,7 +22,8 @@
         "title": "Grey Gloves",
         "value": 350,
         "stackable": true,
-        "slug": "cursorGauntlet_blue"
+        "slug": "cursorGauntlet_blue",
+		"consumable": true
     },
 
     {
@@ -28,7 +31,8 @@
         "title": "Silver Sword",
         "value": 100,
         "stackable": true,
-        "slug": "cursorSword_silver"
+        "slug": "cursorSword_silver",
+		"consumable": true
     },
 
     {
@@ -36,14 +40,16 @@
         "title": "Bronze Sword",
         "value": 200,
         "stackable": true,
-        "slug": "cursorSword_bronze"
+        "slug": "cursorSword_bronze",
+		"consumable": true
     },
 
     {
         "id": 5,
         "title": "Gold Sword",
         "value": 400,
-        "slug": "cursorSword_gold"
+        "slug": "cursorSword_gold",
+		"consumable": true
     }
 
 ]
