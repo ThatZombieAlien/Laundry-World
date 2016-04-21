@@ -1,0 +1,49 @@
+[
+    {
+        "id": 0,
+        "title": "Silver Steel Gloves",
+        "value": 120,
+        "stackable": false,
+        "slug": "cursorGauntlet_grey"
+    },
+
+    {
+        "id": 1,
+        "title": "Bronze Steel Gloves",
+        "value": 150,
+        "stackable": true,
+        "slug": "cursorGauntlet_bronze"
+    },
+
+    {
+        "id": 2,
+        "title": "Grey Gloves",
+        "value": 350,
+        "stackable": true,
+        "slug": "cursorGauntlet_blue"
+    },
+
+    {
+        "id": 3,
+        "title": "Silver Sword",
+        "value": 100,
+        "stackable": true,
+        "slug": "cursorSword_silver"
+    },
+
+    {
+        "id": 4,
+        "title": "Bronze Sword",
+        "value": 200,
+        "stackable": true,
+        "slug": "cursorSword_bronze"
+    },
+
+    {
+        "id": 5,
+        "title": "Gold Sword",
+        "value": 400,
+        "slug": "cursorSword_gold"
+    }
+
+]
