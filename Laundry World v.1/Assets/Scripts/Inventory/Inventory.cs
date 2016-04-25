@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     ItemDatabase database;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+    public AudioSource openInventorySound;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
@@ -48,10 +49,16 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-        //    RemoveItem(4);
-        //}
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            openInventorySound.Play();
+            inventoryPanel.SetActive(true);
+            slotPanel.SetActive(true);
+            textPanel.SetActive(true);
+            textText.SetActive(true);
+            closeInventoryButton.SetActive(true);
+            backpack.SetActive(false);
+        }
     }
 
     public bool AddItem(int id)
