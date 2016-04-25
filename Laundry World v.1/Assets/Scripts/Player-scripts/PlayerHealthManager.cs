@@ -7,6 +7,7 @@ public class PlayerHealthManager : MonoBehaviour
     public int playerCurrentHealth;
     private float regenTimer;
     public float regenTimerMax;
+    public AudioSource playerDies;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerHealthManager : MonoBehaviour
 
             if (playerCurrentHealth < 0)
             {
+                playerDies.Play();
                 playerCurrentHealth = 0;
             }
         }
