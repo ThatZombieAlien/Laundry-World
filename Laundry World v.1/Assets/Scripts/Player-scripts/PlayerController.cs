@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!canMove)
         {
+            anim.SetBool("isWalking", false);
             return; //ifall spelaren inte ska få lov att röra sig, uppdateras inte det nedan
         }
 

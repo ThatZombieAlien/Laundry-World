@@ -13,6 +13,7 @@ public class NPCController : MonoBehaviour {
     private Vector3 moveDirection;
     Animator anim;
     private float randomDirection;
+    public bool canMove = true;
 
 	void Start () 
     {
@@ -24,7 +25,7 @@ public class NPCController : MonoBehaviour {
 	
 	void Update () 
     {
-        if (isMoving)
+        if (isMoving && canMove)
         {
             timeToMoveCounter -= Time.deltaTime;
             myRigidBody.velocity = moveDirection;
@@ -41,13 +42,22 @@ public class NPCController : MonoBehaviour {
             myRigidBody.velocity = Vector2.zero;
             if (timeBetweenMoveCounter < 0)
             {
-                isMoving = true;
-                anim.SetBool("isWalking", true);
                 timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
                 moveDirection = new Vector3(Random.Range(-1f, 1f) * speed, Random.Range(-1f, 1f) * speed, 0);
-                anim.SetFloat("X_Direction", moveDirection.x);
-                anim.SetFloat("Y_Direction", moveDirection.y);
+                if (canMove)
+                {
+                    isMoving = true;
+                    anim.SetBool("isWalking", true);
+                    anim.SetFloat("X_Direction", moveDirection.x);
+                    anim.SetFloat("Y_Direction", moveDirection.y);
+                }
             }
+        }
+
+        if (!canMove)
+        {
+            isMoving = false;
+            anim.SetBool("isWalking", false);
         }
     }      
 }
