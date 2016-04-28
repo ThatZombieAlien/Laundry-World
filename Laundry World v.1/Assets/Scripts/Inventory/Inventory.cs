@@ -107,11 +107,8 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public bool RemoveItem(int id)
+    private int RemoveAtPos(int pos, Item itemToRemove)
     {
-        Item itemToRemove = database.FetchItemByID(id);
-        int pos = ItemCheck(itemToRemove);
-
         if (pos != -1)
         {
             if (items[pos].Stackable)
@@ -123,7 +120,7 @@ public class Inventory : MonoBehaviour
                     items[pos] = new Item();
                     Transform t = slots[pos].transform.GetChild(0);
                     Destroy(t.gameObject);
-
+                    return 0;
                 }
                 else
                 {
@@ -132,18 +129,32 @@ public class Inventory : MonoBehaviour
                     else
                         data.transform.GetComponentInChildren<Text>().text = data.amount.ToString();
                 }
-                return true;
+                return data.amount;
             }
             else
             {
                 items[pos] = new Item();
                 Transform t = slots[pos].transform.GetChild(0);
                 Destroy(t.gameObject);
-                return true;
+                return 0;
             }
         }
 
-        return false;
+        return -1;
+    }
+
+    public int RemoveItem(int id)
+    {
+        Item itemToRemove = database.FetchItemByID(id);
+        int pos = ItemCheck(itemToRemove);
+        return (RemoveAtPos(pos, itemToRemove));
+    }
+
+    public int RemoveUniqueItem(int uniqueId, int itemId)
+    {
+        Item itemToRemove = database.FetchItemByID(itemId);
+        int pos = UniqueItemCheck(uniqueId);
+        return (RemoveAtPos(pos, itemToRemove));
     }
 
     int ItemCheck(Item item)
@@ -152,6 +163,22 @@ public class Inventory : MonoBehaviour
         {
             if (items[i].ID == item.ID)
                 return i;
+        }
+        return -1;
+    }
+
+    int UniqueItemCheck(int id)
+    {
+        GameObject invSlots = GameObject.Find("Slot Panel");
+        foreach (Transform child in invSlots.transform)
+        {
+            try
+            {
+                if (child.transform.GetChild(0).GetInstanceID() == id)
+                    return child.GetComponent<Slot>().id;
+            }
+            catch
+            { }
         }
         return -1;
     }
