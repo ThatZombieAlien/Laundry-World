@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private float currentMoveSpeed;
     public float diagonalSpeedModifier;
 
-    private bool attacking;
+    public bool attacking;
     public float attackTime;
     private float attackTimeCounter;
 
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove;
     public PlayerHealthManager healthManager;
     public bool isDead = false;
+    public HurtEnemy hurtEnemy;
 
     void Start()
     {
@@ -39,6 +40,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (attacking)
+        {
+            hurtEnemy.isAttacking = true;
+        }
+        else
+        {
+            hurtEnemy.isAttacking = false;
+        }
+
         if (healthManager.playerCurrentHealth == 0)
         {
             anim.SetBool("isWalking", false);
