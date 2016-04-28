@@ -9,13 +9,11 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public int slot;
 
     private Inventory inventory;
-    CharacterPanel characterPanel;
     private Tooltip tooltip;
     private Vector2 offset;
 
     void Start()
     {
-        characterPanel = GameObject.Find("Character Panel").GetComponent<CharacterPanel>();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         tooltip = inventory.GetComponent<Tooltip>();
     }
@@ -57,34 +55,22 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
         if (eventData.pointerId == -2)
         {
-            if (item.Type == "Hand" || item.Type == "MainHand")
+            if (item.Consumable)
             {
-                int uniqueId = GameObject.Find("Slot Panel").transform.GetChild(slot).transform.GetChild(0).GetInstanceID();
+                switch (item.ID)
+                {
+                    case 0:
+                        //Do something when item.ID == 0
+                        break;
+                    case 1:
+                        //Do something when item.ID == 1
+                        break;
+                }
 
-                characterPanel.EquipItem(item, uniqueId);
                 inventory.RemoveItem(item.ID);
                 tooltip.Deactivate();
             }
         }
-
-        //if (eventData.pointerId == -2)
-        //{
-        //    if (item.Consumable)
-        //    {
-        //        switch (item.ID)
-        //        {
-        //            case 0:
-        //                Do something when item.ID == 0
-        //                break;
-        //            case 1:
-        //                Do something when item.ID == 1
-        //                break;
-        //        }
-
-        //        inventory.RemoveItem(item.ID);
-        //        tooltip.Deactivate();
-        //    }
-        //}
     }
 
     public void OnPointerEnter(PointerEventData eventData)
