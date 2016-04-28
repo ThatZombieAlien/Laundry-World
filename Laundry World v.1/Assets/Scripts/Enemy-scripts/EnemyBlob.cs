@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RedSlimeEnemy : MonoBehaviour
+public class EnemyBlob : MonoBehaviour
 {
     public float moveSpeed;
 

@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private static bool playerExists;
     public bool canMove;
+    public PlayerHealthManager healthManager;
+    public bool isDead = false;
 
     void Start()
     {
@@ -37,6 +39,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (healthManager.playerCurrentHealth == 0)
+        {
+            anim.SetBool("isWalking", false);
+            isDead = true;
+            walkSound.Stop();
+        }
+
         if (!canMove)
         {
             anim.SetBool("isWalking", false);
@@ -54,7 +63,10 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                walkSound.Play();
+                if (!isDead)
+                {
+                    walkSound.Play();
+                }
                 anim.SetBool("isWalking", false);
             }
 

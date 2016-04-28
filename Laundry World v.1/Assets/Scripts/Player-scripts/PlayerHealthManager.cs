@@ -30,7 +30,7 @@ public class PlayerHealthManager : MonoBehaviour
                 // spelaren får +5 hälsa baserat på en timer, dock endast om hälsan är lägre än max hälsan
             }
 
-            if (playerCurrentHealth < 0)
+            if (playerCurrentHealth <= 0)
             {
                 playerDies.Play();
                 playerCurrentHealth = 0;
