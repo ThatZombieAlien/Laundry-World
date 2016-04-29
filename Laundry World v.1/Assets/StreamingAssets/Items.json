@@ -1,6 +1,5 @@
 [
     {
-	    "type": "Hand",
         "id": 0,
         "title": "Silver Steel Gloves",
         "value": 120,
@@ -10,7 +9,6 @@
     },
 
     {
-	    "type": "Hand",
         "id": 1,
         "title": "Bronze Steel Gloves",
         "value": 150,
@@ -20,7 +18,6 @@
     },
 
     {
-	    "type": "Hand",
         "id": 2,
         "title": "Grey Gloves",
         "value": 350,
@@ -30,7 +27,6 @@
     },
 
     {
-	    "type": "Hand",
         "id": 3,
         "title": "Silver Sword",
         "value": 100,
@@ -40,7 +36,6 @@
     },
 
     {
-	    "type": "Hand",
         "id": 4,
         "title": "Bronze Sword",
         "value": 200,
@@ -50,7 +45,6 @@
     },
 
     {
-	    "type": "Hand",
         "id": 5,
         "title": "Gold Sword",
         "value": 400,

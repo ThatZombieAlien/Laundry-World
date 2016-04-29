@@ -107,59 +107,43 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    private int RemoveAtPos(int pos, Item itemToRemove)
+    public bool RemoveItem(int id)
     {
-        //Checks if the value that was returned represents a valid position
+        Item itemToRemove = database.FetchItemByID(id);
+        int pos = ItemCheck(itemToRemove);
+
         if (pos != -1)
         {
-            //Checks if the item that we're removing is stackable
             if (items[pos].Stackable)
             {
                 ItemData data = slots[pos].transform.GetComponentInChildren<ItemData>();
                 data.amount--;
-                //Check whether or not the item still has anything left; if not we need to remove it from the item list
                 if (data.amount == 0)
                 {
                     items[pos] = new Item();
                     Transform t = slots[pos].transform.GetChild(0);
                     Destroy(t.gameObject);
-                    return 0;
+
                 }
-                //Checs if the amount of the object that's left is equal to 1; then we can change it to "" so that nothing is displayed
                 else
                 {
                     if (data.amount == 1)
                         data.transform.GetComponentInChildren<Text>().text = "";
                     else
                         data.transform.GetComponentInChildren<Text>().text = data.amount.ToString();
-                    return data.amount;
                 }
+                return true;
             }
-
-            //Removes unstackable items
             else
             {
                 items[pos] = new Item();
                 Transform t = slots[pos].transform.GetChild(0);
                 Destroy(t.gameObject);
-                return 0;
+                return true;
             }
         }
-        return -1;
-    }
 
-    public int RemoveItem(int id)
-    {
-        Item itemToRemove = database.FetchItemByID(id);
-        int pos = ItemCheck(itemToRemove);
-        return (RemoveAtPos(pos, itemToRemove));
-    }
-
-    public int RemoveUniqueItem(int uniqueId, int itemId)
-    {
-        Item itemToRemove = database.FetchItemByID(itemId);
-        int pos = UniqueItemCheck(uniqueId);
-        return (RemoveAtPos(pos, itemToRemove));
+        return false;
     }
 
     int ItemCheck(Item item)
@@ -168,22 +152,6 @@ public class Inventory : MonoBehaviour
         {
             if (items[i].ID == item.ID)
                 return i;
-        }
-        return -1;
-    }
-
-    int UniqueItemCheck(int id)
-    {
-        GameObject invSlots = GameObject.Find("Slot Panel");
-        foreach (Transform child in invSlots.transform)
-        {
-            try
-            {
-                if (child.transform.GetChild(0).GetInstanceID() == id)
-                    return child.GetComponent<Slot>().id;
-            }
-            catch
-            { }
         }
         return -1;
     }
