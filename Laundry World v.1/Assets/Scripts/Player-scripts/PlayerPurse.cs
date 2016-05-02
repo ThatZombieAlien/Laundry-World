@@ -16,6 +16,7 @@ public class PlayerPurse : MonoBehaviour {
 
     void OnGUI()
     {
+        // ritar ut hur mycket pengar spelaren har
         GUILayout.BeginArea(new Rect(Screen.width - 180, Screen.height * 0.05f, 150, 250));
 
         GUILayout.Box("Gold:  " + playerGold);

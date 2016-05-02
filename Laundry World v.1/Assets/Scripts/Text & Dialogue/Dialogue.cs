@@ -17,23 +17,19 @@ public class Dialogue : MonoBehaviour {
 
 	void Start () 
     {
-        //textManager = FindObjectOfType<TextBoxManager>();
-        //eyeMonster = FindObjectOfType<EyeMonsterController>();
-        //player = FindObjectOfType<PlayerMovement>();
-        //player.gameObject.transform.position.x = pos.x;
 	}
 	
 	void Update () 
     {
         if (displayDialogue)
         {
-            textManager.EnableTextBox();
+            //textManager.EnableTextBox();
             player.canMove = false;
             NPC.canMove = false;
         }
         else
         {
-            textManager.DisableTextBox();
+            //textManager.DisableTextBox();
             player.canMove = true;
             NPC.canMove = true;
         }
@@ -42,7 +38,7 @@ public class Dialogue : MonoBehaviour {
 
     void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(Screen.width/2 - 150, Screen.height - 80, 350, 500));
+        GUILayout.BeginArea(new Rect(Screen.width/2 - 150, Screen.height - 100, 350, 500));
 
         if (displayDialogue && !activateQuest && firstLine)
         {

@@ -15,42 +15,37 @@ public class QuestDialogue : MonoBehaviour {
     bool line2 = false;
     bool line1 = true;
     bool line3 = false;
-    bool line4 = false;
     bool finishedDialogue = false;
     public int reward;
     public TextBoxManager textManager;
     public PlayerController player;
     public NPCController npc;
+    private GUIStyle guiStyle = new GUIStyle();
 
-    //public Texture texture1;
-    //public Texture texture2;
 
 
     void Start()
     {
         //textManager = FindObjectOfType<TextBoxManager>();
-        //eyeMonster = FindObjectOfType<EyeMonsterController>();
-        //player = FindObjectOfType<PlayerMovement>();
-        //player.gameObject.transform.position.x = pos.x;
     }
 
     void Update()
     {
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
-            textManager.EnableTextBox();
+            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
         if (!displayDialogue)
         {
-            textManager.DisableTextBox();
+            //textManager.DisableTextBox();
             player.canMove = true;
             npc.canMove = true;
         }
         if (displayDialogue && hasDoneQuest)
         {
-            textManager.EnableTextBox();
+            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
@@ -59,7 +54,9 @@ public class QuestDialogue : MonoBehaviour {
 
     void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 80, 350, 500));
+        GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
+
+        guiStyle.fontSize = 20; // ändra storlek, osv, dock krävs större ändringar därav ej implementerat
 
         if (displayDialogue && !activateQuest && line1)
         {
@@ -76,19 +73,18 @@ public class QuestDialogue : MonoBehaviour {
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
-                textManager.DisableTextBox();
             }
         }
 
-        if (line2)
+        if (line2 && displayDialogue)
         {
+            displayDialogue = true;
             GUILayout.Label(lines[1]);
 
             if (GUILayout.Button(answerButtons[1]))
             {
                 activateQuest = true;
                 displayDialogue = false;
-                textManager.DisableTextBox();
                 line1 = true;
                 line2 = false;
             }
@@ -96,7 +92,6 @@ public class QuestDialogue : MonoBehaviour {
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
-                textManager.DisableTextBox();
                 line2 = false;
             }
         }
@@ -117,7 +112,6 @@ public class QuestDialogue : MonoBehaviour {
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
-                textManager.DisableTextBox();
             }
         }
 
@@ -127,17 +121,14 @@ public class QuestDialogue : MonoBehaviour {
 
             if (GUILayout.Button(answerButtons[0]))
             {
-                displayDialogue = false;
-                textManager.DisableTextBox();
+                displayDialogue = false;;
                 line3 = false;
             }
         }
-
-        
-
+       
         GUILayout.EndArea();
 
-        if (activateQuest)
+        if (activateQuest) // ritar ut meddelande om pågående quest
         {
             //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
             GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.1f, 250, 250)); // "putta ner quests beroende på hur många man har?
@@ -155,18 +146,12 @@ public class QuestDialogue : MonoBehaviour {
         {
             //if (Input.GetKeyDown(KeyCode.E))
             {
-                displayDialogue = true;
-                textManager.EnableTextBox();
-
                 if (!activateQuest && !hasDoneQuest)
                 {
                     line1 = true;
                 }
 
-                if (finishedDialogue)
-                {
-                    line4 = true;
-                }
+                displayDialogue = true;
                 Debug.Log("An object Collided");
             }
         }
@@ -182,6 +167,7 @@ public class QuestDialogue : MonoBehaviour {
 
     void QuestCompleted()
     {
+        // lägger till reward (om questet har det) till spelarens "pengar"
         PlayerPurse.playerGold += reward;
 
     }
