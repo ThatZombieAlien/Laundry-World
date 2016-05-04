@@ -14,6 +14,8 @@ public class Dialogue : MonoBehaviour {
     public PlayerController player;
     public NPCController NPC;
 
+    private GUIStyle guiStyle = new GUIStyle();
+
 
 	void Start () 
     {
@@ -40,9 +42,12 @@ public class Dialogue : MonoBehaviour {
     {
         GUILayout.BeginArea(new Rect(Screen.width/2 - 150, Screen.height - 100, 350, 500));
 
+        guiStyle.fontSize = 16; // ändra storlek
+        guiStyle.normal.textColor = Color.white; // ändra färg
+
         if (displayDialogue && !activateQuest && firstLine)
         {
-            GUILayout.Label(lines[0]);
+            GUILayout.Label(lines[0], guiStyle);
             
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -60,7 +65,7 @@ public class Dialogue : MonoBehaviour {
         if (!activateQuest && nextLine)
         {
             displayDialogue = true;
-            GUILayout.Label(lines[1]);
+            GUILayout.Label(lines[1], guiStyle);
 
             if (GUILayout.Button(answerButtons[1]))
             {
@@ -77,7 +82,7 @@ public class Dialogue : MonoBehaviour {
 
         if (displayDialogue & activateQuest)
         {
-            GUILayout.Label(lines[2]);
+            GUILayout.Label(lines[2], guiStyle);
             
             if (GUILayout.Button(answerButtons[2]))
             {

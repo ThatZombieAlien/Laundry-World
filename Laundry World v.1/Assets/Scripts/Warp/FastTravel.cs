@@ -21,15 +21,19 @@ public class FastTravel : MonoBehaviour {
     // 3 = 
 
     bool displayTravel = false;
+    private GUIStyle guiStyle = new GUIStyle();
 
     void OnGUI()
     {
 
         GUILayout.BeginArea(new Rect(Screen.width / 2, Screen.height/2, 350, 500));
 
+        guiStyle.fontSize = 16; // ändra storlek
+        guiStyle.normal.textColor = Color.white; // ändra färg
+
         if (displayTravel)
         {
-            GUILayout.Label(travel[0]); // Frågar vart man vill åka
+            GUILayout.Label(travel[0], guiStyle); // Frågar vart man vill åka
 
             if (GUILayout.Button(destinations[0])) // Knapp 0 syftar på destination 0
             {

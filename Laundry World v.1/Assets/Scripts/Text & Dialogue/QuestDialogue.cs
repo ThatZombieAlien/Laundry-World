@@ -56,12 +56,13 @@ public class QuestDialogue : MonoBehaviour {
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        guiStyle.fontSize = 20; // ändra storlek, osv, dock krävs större ändringar därav ej implementerat
+        guiStyle.fontSize = 16; // ändra storlek
+        guiStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && !activateQuest && line1)
         {
 
-            GUILayout.Label(lines[0]);
+            GUILayout.Label(lines[0], guiStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -79,7 +80,7 @@ public class QuestDialogue : MonoBehaviour {
         if (line2 && displayDialogue)
         {
             displayDialogue = true;
-            GUILayout.Label(lines[1]);
+            GUILayout.Label(lines[1], guiStyle);
 
             if (GUILayout.Button(answerButtons[1]))
             {
@@ -98,7 +99,7 @@ public class QuestDialogue : MonoBehaviour {
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[2]);
+            GUILayout.Label(lines[2], guiStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -117,7 +118,7 @@ public class QuestDialogue : MonoBehaviour {
 
         if (line3)
         {
-            GUILayout.Label(lines[3]);
+            GUILayout.Label(lines[3], guiStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
