@@ -1,21 +1,21 @@
 [
-    {
+{
 	    "type": "Hand",
         "id": 0,
-        "title": "Silver Steel Gloves",
+        "title": "Garnnystan",
         "value": 120,
         "stackable": false,
-        "slug": "cursorGauntlet_grey",
+        "slug": "Garnnystan",
 		"consumable": true
     },
 
     {
 	    "type": "Hand",
         "id": 1,
-        "title": "Bronze Steel Gloves",
+        "title": "Garnnystan",
         "value": 150,
         "stackable": true,
-        "slug": "cursorGauntlet_bronze",
+        "slug": "Garnnystan2",
 		"consumable": true
     },
 
@@ -25,7 +25,7 @@
         "title": "Grey Gloves",
         "value": 350,
         "stackable": true,
-        "slug": "cursorGauntlet_blue",
+        "slug": "Nål",
 		"consumable": true
     },
 
@@ -35,7 +35,7 @@
         "title": "Silver Sword",
         "value": 100,
         "stackable": true,
-        "slug": "cursorSword_silver",
+        "slug": "Sax",
 		"consumable": true
     },
 
@@ -45,7 +45,7 @@
         "title": "Bronze Sword",
         "value": 200,
         "stackable": true,
-        "slug": "cursorSword_bronze",
+        "slug": "Snäcka",
 		"consumable": true
     },
 
@@ -54,8 +54,58 @@
         "id": 5,
         "title": "Gold Sword",
         "value": 400,
-        "slug": "cursorSword_gold",
+        "slug": "Sprättvapen",
+		"consumable": true
+    },
+
+	{
+	    "type": "Hand",
+        "id": 6,
+        "title": "Bronze Sword",
+        "value": 200,
+        "stackable": true,
+        "slug": "Sprättvapen2",
+		"consumable": true
+    },
+
+	{
+	    "type": "Hand",
+        "id": 7,
+        "title": "Bronze Sword",
+        "value": 200,
+        "stackable": true,
+        "slug": "Strumpa",
+		"consumable": true
+    },
+
+	{
+	    "type": "Hand",
+        "id": 8,
+        "title": "Bronze Sword",
+        "value": 200,
+        "stackable": true,
+        "slug": "Strumpa1",
+		"consumable": true
+    },
+
+	{
+	    "type": "Hand",
+        "id": 9,
+        "title": "Syrulle",
+        "value": 200,
+        "stackable": true,
+        "slug": "Syrulle",
+		"consumable": true
+    },
+
+	{
+	    "type": "Hand",
+        "id": 10,
+        "title": "Bronze Sword",
+        "value": 200,
+        "stackable": true,
+        "slug": "syrulle2",
 		"consumable": true
     }
 
-]
+	]

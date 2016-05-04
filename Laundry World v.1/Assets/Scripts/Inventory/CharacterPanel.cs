@@ -44,9 +44,6 @@ public class CharacterPanel : MonoBehaviour
                             inventory.AddItem(newEquip.ID);
                         }
                     }
-
-                    //child.GetChild(0).GetComponent<Image>().sprite = newEquip.Sprite;
-                    //child.GetChild(0).GetComponent<Image>().color = new Color(255, 255, 255, 1);
                 }
             }
             catch { }
