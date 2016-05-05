@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        //Ser till att UI:en inte dubbleras när karaktären går till nya områden eller när en ny scen laddas
         if (!UIexists)
         {
             UIexists = true;
@@ -35,6 +36,6 @@ public class UIManager : MonoBehaviour
         healthBar.value = playerHealth.playerCurrentHealth;
         hpText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
         levelText.text = "Level: " + playerStats.currentLevel;
-        expText.text = "XP: " + playerStats.currentExp;
+        expText.text = "XP: " + playerStats.currentExperience;
     }
 }

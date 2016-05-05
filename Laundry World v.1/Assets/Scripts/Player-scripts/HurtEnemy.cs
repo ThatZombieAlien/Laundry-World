@@ -4,11 +4,19 @@ using System.Collections;
 public class HurtEnemy : MonoBehaviour
 {
     public int damageToGive;
+    private int currentDamage;
     public GameObject damageBurst;
     public Transform hitPoint;
     public GameObject damageNumber;
     public PlayerController player;
     public bool isAttacking;
+
+    private PlayerStats playerStats;
+
+    void Start()
+    {
+        playerStats = FindObjectOfType<PlayerStats>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,10 +24,12 @@ public class HurtEnemy : MonoBehaviour
         {
             //if (isAttacking)
             //{
-                other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
-                Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
-                var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
-                clone.GetComponent<FloatingNumbers>().damageNumber = damageToGive;
+
+            currentDamage = damageToGive + playerStats.currentAttack;
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
+            Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
+            var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
             //}
         }
     }
