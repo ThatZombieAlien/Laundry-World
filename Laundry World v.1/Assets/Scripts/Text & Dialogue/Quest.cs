@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Quest : MonoBehaviour {
-
+public class Quest : MonoBehaviour
+{
     public QuestDialogue dialogue;
+    //private PlayerStats playerStats;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class Quest : MonoBehaviour {
             if (col.tag == "Player")
             {
                 Destroy(gameObject);
-                dialogue.hasDoneQuest = true; 
+                dialogue.hasDoneQuest = true;
             }
         }
 

@@ -22,11 +22,14 @@ public class QuestDialogue : MonoBehaviour {
     public NPCController npc;
     private GUIStyle guiStyle = new GUIStyle();
 
+    private PlayerStats playerStats;
+
 
 
     void Start()
     {
         //textManager = FindObjectOfType<TextBoxManager>();
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     void Update()
@@ -108,6 +111,8 @@ public class QuestDialogue : MonoBehaviour {
                 line1 = false;
                 activateQuest = false;
                 PlayerPurse.playerGold += reward;
+
+                playerStats.AddExperience(20);
             }
 
             if (GUILayout.Button(answerButtons[3]))
@@ -170,7 +175,6 @@ public class QuestDialogue : MonoBehaviour {
     {
         // lägger till reward (om questet har det) till spelarens "pengar"
         PlayerPurse.playerGold += reward;
-
     }
 }
 

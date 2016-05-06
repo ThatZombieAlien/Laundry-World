@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerPurse : MonoBehaviour {
-
+public class PlayerPurse : MonoBehaviour
+{
     public static int playerGold = 0;
 
-	void Start () {
-	
-	}
-	
+    void Start()
+    {
 
-	void Update () {
-	
-	}
+    }
+
+    void Update()
+    {
+
+    }
 
     void OnGUI()
     {
