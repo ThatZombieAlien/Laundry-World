@@ -1,0 +1,15 @@
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/obj/Debug/Assembly-CSharp.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/UnityEngine.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/UnityEditor.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/LitJson.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Maria/Desktop/Laundry world project/Laundry-World/Laundry World v.1/Temp/bin/Debug/Mono.Cecil.Mdb.dll
