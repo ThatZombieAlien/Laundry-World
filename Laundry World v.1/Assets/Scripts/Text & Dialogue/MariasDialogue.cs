@@ -160,6 +160,20 @@ public class MariasDialogue : MonoBehaviour {
 
 				}
 
+				if (line7) {
+					GUILayout.Label (lines [7], guiStyle);
+
+					if (GUILayout.Button (answerButtons [3])) {
+						line4 = true;
+						line7 = false;
+					}
+					if (GUILayout.Button (answerButtons [8])) 
+					{
+						line8 = true;
+						line7 = false;
+					}
+				}
+
 				if (line8) 
 				{
 					GUILayout.Label (lines [8], guiStyle);
