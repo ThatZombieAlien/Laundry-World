@@ -18,6 +18,7 @@ public class MariasDialogue : MonoBehaviour {
 	bool line6 = false;
 	bool line7 = false;
 	bool line8 = false;
+	bool line9 = false;
 //
 //	bool displayDialogue = false;
 //	bool activateQuest = false;
@@ -62,6 +63,16 @@ public class MariasDialogue : MonoBehaviour {
 			textManager.DisableTextBox ();
 		}
 		if (displayDialogue) {
+
+			if (activateQuest)
+			{
+				GUILayout.Label(lines[9], guiStyle);
+
+				if (GUILayout.Button(answerButtons[8]))
+				{
+					displayDialogue = false;
+				}
+			}
 			if (!activateQuest) {
 				if (line0) {
 					GUILayout.Label (lines [0], guiStyle);
@@ -184,6 +195,7 @@ public class MariasDialogue : MonoBehaviour {
 						//						textManager.DisableTextBox ();
 						displayDialogue = false;
 						exitDialogue = true;
+						activateQuest = true;
 					}
 				}
 
