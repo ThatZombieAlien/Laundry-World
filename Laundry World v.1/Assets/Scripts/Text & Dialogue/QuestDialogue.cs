@@ -137,7 +137,7 @@ public class QuestDialogue : MonoBehaviour {
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
             //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
-            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.1f, 250, 250)); // "putta ner quests beroende på hur många man har?
+            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.15f, 250, 250)); // "putta ner quests beroende på hur många man har?
 
             GUILayout.Box("New Quest: Find the book"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
 
