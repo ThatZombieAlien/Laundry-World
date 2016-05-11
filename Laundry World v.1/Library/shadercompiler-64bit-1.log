@@ -1,15 +1,29 @@
 Base path: V:/NiceApps/Unity 3D 5.20/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-8732
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-8516
 Cmd: getPlatforms
 Cmd: preprocess
-  insize=2488 outsize=848 ok=1
+  insize=2396 outsize=812 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1881 outsize=1266 kw=DUMMY pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1881 outsize=1258 kw=DUMMY pd= ok=1
 Cmd: preprocess
-  insize=1964 outsize=743 ok=1
+  insize=1887 outsize=710 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1475 outsize=1266 kw=DUMMY pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1475 outsize=770 kw=DUMMY pd= ok=1
 Cmd: preprocess
-  insize=2448 outsize=808 ok=1
-Cmd: preprocess
-  insize=2488 outsize=848 ok=1
-Cmd: preprocess
-  insize=1964 outsize=743 ok=1
-Cmd: preprocess
-  insize=2448 outsize=808 ok=1
+  insize=2357 outsize=775 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1881 outsize=1266 kw=DUMMY pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1881 outsize=1258 kw=DUMMY pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1475 outsize=1696 kw=PIXELSNAP_ON pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1475 outsize=770 kw=PIXELSNAP_ON pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1881 outsize=1696 kw=PIXELSNAP_ON pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1881 outsize=1258 kw=PIXELSNAP_ON pd= ok=1
