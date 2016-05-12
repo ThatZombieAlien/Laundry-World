@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Shop : MonoBehaviour
 {
-    
-  
-  
     //public int gold;
     public int stone = 0;
     public int wood = 0;
@@ -13,13 +10,8 @@ public class Shop : MonoBehaviour
     public PlayerPurse Gold;
     public GameObject shopwall;
 
-    Inventory inventory;
-
-
     void Start()
     {
-        inventory = GameObject.Find("Inventory Panel").GetComponent<Inventory>();
-
         PlayerPurse.playerGold = 100;
         shopwall.gameObject.SetActive(false);
     }
@@ -30,23 +22,11 @@ public class Shop : MonoBehaviour
         {
             shopwall.gameObject.SetActive(true);
         }
-
-        
     }
 
     void OnTriggerExit2D( )
     {
-        
-        
-            shopwall.gameObject.SetActive(false);
-        
-    }
-
-
-
-    void Update()
-    {
-     
+        shopwall.gameObject.SetActive(false);
     }
 
     public void Wood()
@@ -83,12 +63,4 @@ public class Shop : MonoBehaviour
             stone -= 8;
         }
     }
-
-
-    
-
-    
-    
-
-	
 }
