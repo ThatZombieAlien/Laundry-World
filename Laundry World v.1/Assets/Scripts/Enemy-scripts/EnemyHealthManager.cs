@@ -21,6 +21,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if (CurrentHealth <= 0)
         {
+            HermitQuest.snakesKilled += 1;
             Destroy (gameObject);
 
             playerStats.AddExperience(expToGive);

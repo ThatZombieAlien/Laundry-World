@@ -22,10 +22,10 @@
     {
 	    "type": "Hand",
         "id": 2,
-        "title": "Grey Gloves",
+        "title": "Laundry Ball",
         "value": 350,
         "stackable": true,
-        "slug": "Nål",
+        "slug": "tvattbolltom",
 		"consumable": true
     },
 
