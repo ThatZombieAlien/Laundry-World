@@ -134,7 +134,7 @@ public class HermitQuestDialogue : MonoBehaviour
 
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
-            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.15f, 250, 250));
+            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
             GUILayout.Box("New Quest: Kill the snakes");
 
