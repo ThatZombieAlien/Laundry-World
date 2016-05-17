@@ -5,13 +5,16 @@ public class Shop : MonoBehaviour
 {
     //public int gold;
     public int stone = 0;
-    public int wood = 0;
+    public int yarn = 0;
 
     public PlayerPurse Gold;
     public GameObject shopwall;
 
+    private Inventory inventory;
+
     void Start()
     {
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         PlayerPurse.playerGold = 100;
         shopwall.gameObject.SetActive(false);
     }
@@ -29,38 +32,46 @@ public class Shop : MonoBehaviour
         shopwall.gameObject.SetActive(false);
     }
 
-    public void Wood()
+    public void Yarn()
     {
         if (PlayerPurse.playerGold >= 10)
         {
             PlayerPurse.playerGold -= 10;
-            wood += 5;
+            yarn += 5;
+
+            inventory.AddItem(1);
         }
     }
 
-    public void Stone()
+    public void Scissor()
     {
         if (PlayerPurse.playerGold >= 15)
         {
             PlayerPurse.playerGold -= 15;
             stone += 8;
+
+            inventory.AddItem(3);
         }
     }
-    public void SellWood()
+    public void SellYarn()
     {
-        if (wood >= 5)
+        if (yarn >= 5)
         {
-            PlayerPurse.playerGold += 5;
-            wood -= 5;
+            PlayerPurse.playerGold += 10;
+            yarn -= 5;
+
+            inventory.RemoveItem(1);
         }
     }
 
-    public void SellStone()
+    public void SellScissor()
     {
         if (stone >= 8)
         {
-            PlayerPurse.playerGold += 8;
+            PlayerPurse.playerGold += 15;
             stone -= 8;
+
+            inventory.RemoveItem(3);
         }
     }
 }
