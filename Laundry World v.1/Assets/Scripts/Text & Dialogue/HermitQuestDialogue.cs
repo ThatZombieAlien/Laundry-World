@@ -111,6 +111,7 @@ public class HermitQuestDialogue : MonoBehaviour
                 inventory.slotPanel.SetActive(true);
                 inventory.textPanel.SetActive(true);
                 inventory.textText.SetActive(true);
+                inventory.closeInventoryButton.SetActive(true);
             }
 
             if (GUILayout.Button(answerButtons[3]))
