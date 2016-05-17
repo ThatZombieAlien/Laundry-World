@@ -59,10 +59,14 @@ public class MariasDialogue : MonoBehaviour {
 
 		guiStyle.fontSize = 16; // ändra storlek
 		guiStyle.normal.textColor = Color.white; // ändra färg
-		if (exitDialogue) {
+
+		if (exitDialogue)
+		{
 			textManager.DisableTextBox ();
 		}
-		if (displayDialogue) {
+
+		if (displayDialogue)
+		{
 
 			if (activateQuest)
 			{
@@ -73,39 +77,48 @@ public class MariasDialogue : MonoBehaviour {
 					displayDialogue = false;
 				}
 			}
-			if (!activateQuest) {
-				if (line0) {
+			if (!activateQuest) 
+			{
+				if (line0) 
+				{
 					GUILayout.Label (lines [0], guiStyle);
 
-					if (GUILayout.Button (answerButtons [0])) {
+					if (GUILayout.Button (answerButtons [0])) 
+					{
 						line1 = true;
 						line0 = false;
 					}
-					if (GUILayout.Button (answerButtons [5])) {
+					if (GUILayout.Button (answerButtons [5])) 
+					{
 						line4 = true;
 						line0 = false;
 					}
 				}
 
-				if (line1) {
+				if (line1) 
+				{
 //			displayDialogue = true;
 					GUILayout.Label (lines [1], guiStyle);
 
-					if (GUILayout.Button (answerButtons [1])) {
+					if (GUILayout.Button (answerButtons [1]))
+					{
 						line2 = true;
 						line1 = false;
 //						activateQuest = true;
 					}
-					if (GUILayout.Button (answerButtons [2])) {
+					if (GUILayout.Button (answerButtons [2]))
+					{
 						line7 = true;
 						line1 = false;
 //						textManager.DisableTextBox ();
 					}
 				}
-				if (line2) {
+				if (line2) 
+				{
 					GUILayout.Label (lines [2], guiStyle);
 
-					if (GUILayout.Button (answerButtons [4])) {
+					if (GUILayout.Button (answerButtons [4]))
+					{
 						line3 = true;
 						line2 = false;
 					}
@@ -174,7 +187,8 @@ public class MariasDialogue : MonoBehaviour {
 				if (line7) {
 					GUILayout.Label (lines [7], guiStyle);
 
-					if (GUILayout.Button (answerButtons [3])) {
+					if (GUILayout.Button (answerButtons [3])) 
+					{
 						line4 = true;
 						line7 = false;
 					}

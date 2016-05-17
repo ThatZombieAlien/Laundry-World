@@ -12,9 +12,15 @@ public class Hermit2Quest : MonoBehaviour {
 	bool displayDialogue = false;
 	public bool activateQuest = false;
 	public bool hasDoneQuest = false;
+
+	bool line0 = true;
+	bool line1 = false;
 	bool line2 = false;
-	bool line1 = true;
 	bool line3 = false;
+	bool line9 = false;
+	bool line10 = false;
+
+
 	bool finishedDialogue = false;
 	public int reward;
 	public TextBoxManager textManager;
@@ -57,48 +63,102 @@ public class Hermit2Quest : MonoBehaviour {
 
 	void OnGUI()
 	{
+
 		GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
 		guiStyle.fontSize = 16; // ändra storlek
 		guiStyle.normal.textColor = Color.white; // ändra färg
 
-		if (displayDialogue && !activateQuest && line1)
+		if (displayDialogue)
+//			&& !activateQuest && line1)
 		{
-
-			GUILayout.Label(lines[0], guiStyle);
-
-			if (GUILayout.Button(answerButtons[0]))
+			if (activateQuest)
 			{
-				line2 = true;
-				displayDialogue = true;
-				line1 = false;
+				GUILayout.Label(lines[12], guiStyle);
+
+				if (GUILayout.Button(answerButtons[7]))
+				{
+					displayDialogue = false;
+				}
 			}
 
-			if (GUILayout.Button(answerButtons[3]))
+			if (!activateQuest)
 			{
-				displayDialogue = false;
-			}
-		}
+				if (line0) 
+				{
+					GUILayout.Label (lines [0], guiStyle);
 
-		if (line2 && displayDialogue)
-		{
-			displayDialogue = true;
+					if (GUILayout.Button (answerButtons [0])) 
+					{
+						line1 = true;
+						line0 = false;
+					}
+					if (GUILayout.Button (answerButtons [7])) 
+					{
+						displayDialogue = false;
+
+					}
+				}
+
+				if (line1)
+				{
 			GUILayout.Label(lines[1], guiStyle);
 
 			if (GUILayout.Button(answerButtons[1]))
 			{
-				activateQuest = true;
-				displayDialogue = false;
-				line1 = true;
-				line2 = false;
+//				activateQuest = true;
+				line1 = false;
+				line2 = true;
 			}
 
 			if (GUILayout.Button(answerButtons[3]))
 			{
-				displayDialogue = false;
-				line2 = false;
+				line1 = false;
+				line9 = true;
+			
+
 			}
 		}
+
+				if (line2)
+				{
+					GUILayout.Label(lines[2], guiStyle);
+
+					if (GUILayout.Button(answerButtons[2]))
+					{
+						//				activateQuest = true;
+						line2 = false;
+						line3 = true;
+					}
+
+					if (GUILayout.Button(answerButtons[4]))
+					{
+						line2 = false;
+						line9 = true;
+
+					}
+				}
+
+				if (line9)
+				{
+					GUILayout.Label(lines[9], guiStyle);
+					GUILayout.Label(lines[10], guiStyle);
+
+
+					if (GUILayout.Button(answerButtons[2]))
+					{
+						//				activateQuest = true;
+						line2 = false;
+						line3 = true;
+					}
+
+					if (GUILayout.Button(answerButtons[4]))
+					{
+						line2 = false;
+						line9 = true;
+
+					}
+				}
 
 		if (activateQuest && hasDoneQuest && displayDialogue)
 		{
@@ -145,7 +205,8 @@ public class Hermit2Quest : MonoBehaviour {
 		}
 
 	}
-
+	}
+	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.name == "Player")
