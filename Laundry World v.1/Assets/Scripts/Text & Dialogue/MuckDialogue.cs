@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class MuckDialogue : MonoBehaviour {
+    private Blur blur;
 
 	public string[] lines;
 	public string[] answerButtons;
@@ -48,7 +49,8 @@ public class MuckDialogue : MonoBehaviour {
 
 	void Start () 
 	{
-	}
+        blur = FindObjectOfType<Blur>();
+    }
 
 	void Update () 
 	{
@@ -141,7 +143,9 @@ public class MuckDialogue : MonoBehaviour {
 				{
 					GUILayout.Label (lines [5], guiStyle);
 
-					if (GUILayout.Button (answerButtons [3])) 
+                    StartCoroutine(EndBlur());
+
+                    if (GUILayout.Button (answerButtons [3])) 
 					{
 						line6 = true;
 						line5 = false;
@@ -385,4 +389,10 @@ public class MuckDialogue : MonoBehaviour {
 			displayDialogue = false;
 		}
 	}
+
+    public IEnumerator EndBlur()
+    {
+        yield return new WaitForSeconds(1.0f);
+        blur.RemoveBlur();
+    }
 }
