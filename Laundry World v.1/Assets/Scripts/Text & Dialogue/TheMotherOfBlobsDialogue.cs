@@ -6,7 +6,6 @@ public class TheMotherOfBlobsDialogue : MonoBehaviour {
 public string[] lines;
     public string[] answerButtons;
 
-    public bool destoryOnFinish;
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
@@ -59,7 +58,6 @@ public string[] lines;
         {
 
         }
-        // text text
        
         GUILayout.EndArea();
 

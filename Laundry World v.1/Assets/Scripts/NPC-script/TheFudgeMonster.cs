@@ -8,6 +8,7 @@ public class TheFudgeMonster : MonoBehaviour {
 
     public int expToGive;
     private PlayerStats playerStats;
+    public TheMotherOfBlobsDialogue nicosQuest;
 
     public static bool friends = false;
 
@@ -25,8 +26,9 @@ public class TheFudgeMonster : MonoBehaviour {
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
             playerStats.AddExperience(expToGive);
+            nicosQuest.hasDoneQuest = true;
+            Destroy(gameObject);
         }
 	}
 
