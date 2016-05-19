@@ -4,6 +4,9 @@ using System.Collections;
 public class FastTravel : MonoBehaviour {
 
     public PlayerController player;
+    public bool target0;
+    public bool target1;
+    public bool target2;
     Transform warpTarget;
     public Transform warpTarget0;
     public Transform warpTarget1;
@@ -25,7 +28,6 @@ public class FastTravel : MonoBehaviour {
 
     void OnGUI()
     {
-
         GUILayout.BeginArea(new Rect(Screen.width / 2, Screen.height/2, 350, 500));
 
         guiStyle.fontSize = 16; // ändra storlek
@@ -35,35 +37,58 @@ public class FastTravel : MonoBehaviour {
         {
             GUILayout.Label(travel[0], guiStyle); // Frågar vart man vill åka
 
-            if (GUILayout.Button(destinations[0])) // Knapp 0 syftar på destination 0
+            if (FastTravelPointFound.target0Found && !target0)
             {
-                ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
-                StartCoroutine(sf.FadeToBlack());
-                displayTravel = false;
-                player.gameObject.transform.position = warpTarget0.position; // här väljer man target
-                Camera.main.transform.position = warpTarget0.position;
-                StartCoroutine(sf.FadeToClear());
-
+                if (GUILayout.Button(destinations[0])) // Knapp 0 syftar på destination 0
+                {
+                    ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
+                    StartCoroutine(sf.FadeToBlack());
+                    displayTravel = false;
+                    player.gameObject.transform.position = warpTarget0.position; // här väljer man target
+                    Camera.main.transform.position = warpTarget0.position;
+                    StartCoroutine(sf.FadeToClear());
+                }
             }
 
-            if (GUILayout.Button(destinations[1]))
+            if (FastTravelPointFound.target1Found && !target1)
             {
-                ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
-                StartCoroutine(sf.FadeToBlack());
-                displayTravel = false;
-                player.gameObject.transform.position = warpTarget1.position;
-                Camera.main.transform.position = warpTarget1.position;
-                StartCoroutine(sf.FadeToClear());
+                if (GUILayout.Button(destinations[1]))
+                {
+                    ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
+                    StartCoroutine(sf.FadeToBlack());
+                    displayTravel = false;
+                    player.gameObject.transform.position = warpTarget1.position;
+                    Camera.main.transform.position = warpTarget1.position;
+                    StartCoroutine(sf.FadeToClear());
+                }
             }
 
-            if (GUILayout.Button(destinations[2]))
+            if (FastTravelPointFound.target2Found && !target2)
             {
-                ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
-                StartCoroutine(sf.FadeToBlack());
-                displayTravel = false;
-                player.gameObject.transform.position = warpTarget2.position;
-                Camera.main.transform.position = warpTarget2.position;
-                StartCoroutine(sf.FadeToClear());
+                if (GUILayout.Button(destinations[2]))
+                {
+                    ScreenFader sf = GameObject.FindGameObjectWithTag("Fader").GetComponent<ScreenFader>();
+                    StartCoroutine(sf.FadeToBlack());
+                    displayTravel = false;
+                    player.gameObject.transform.position = warpTarget2.position;
+                    Camera.main.transform.position = warpTarget2.position;
+                    StartCoroutine(sf.FadeToClear());
+                }
+            }
+
+            if (target0 && !FastTravelPointFound.target1Found && !FastTravelPointFound.target2Found)
+            {
+                GUILayout.Box("You haven't found any Fast Travel-points yet!");
+            }
+
+            if (target1 && !FastTravelPointFound.target0Found && !FastTravelPointFound.target2Found)
+            {
+                GUILayout.Box("You haven't found any Fast Travel-points yet!");
+            }
+
+            if (target2 && !FastTravelPointFound.target1Found && !FastTravelPointFound.target0Found)
+            {
+                GUILayout.Box("You haven't found any Fast Travel-points yet!");
             }
         }
 
@@ -73,6 +98,20 @@ public class FastTravel : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (target0)
+        {
+            FastTravelPointFound.target0Found = true;
+        }
+
+        if (target1)
+        {
+            FastTravelPointFound.target1Found = true;
+        }
+
+        if (target2)
+        {
+            FastTravelPointFound.target2Found = true;
+        }
         if (other.gameObject.name == "Player")
         {
             displayTravel = true;
