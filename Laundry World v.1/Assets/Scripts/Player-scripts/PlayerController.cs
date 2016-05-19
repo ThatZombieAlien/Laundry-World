@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
                 currentMoveSpeed = moveSpeed;
             }
 
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 attackTimeCounter = attackTime;
                 attacking = true;

@@ -117,173 +117,173 @@ public class Hermit2Quest : MonoBehaviour
 
                 }
             }
+        }
 
-            if (line1)
+        if (line1)
+        {
+            GUILayout.Label(lines[1], guiStyle);
+
+            if (GUILayout.Button(answerButtons[1]))
             {
-                GUILayout.Label(lines[1], guiStyle);
-
-                if (GUILayout.Button(answerButtons[1]))
-                {
-                    line1 = false;
-                    line2 = true;
-                }
-
-                if (GUILayout.Button(answerButtons[3]))
-                {
-                    line1 = false;
-                    line9 = true;
-
-
-                }
+                line1 = false;
+                line2 = true;
             }
 
-            if (line2)
+            if (GUILayout.Button(answerButtons[3]))
             {
-                GUILayout.Label(lines[2], guiStyle);
+                line1 = false;
+                line9 = true;
 
-                if (GUILayout.Button(answerButtons[2]))
-                {
-                    line2 = false;
-                    line3 = true;
-                }
-
-                if (GUILayout.Button(answerButtons[4]))
-                {
-                    line2 = false;
-                    line5 = true;
-
-                }
-            }
-            if (line3)
-            {
-                GUILayout.Label(lines[3], guiStyle);
-
-                if (GUILayout.Button(answerButtons[4]))
-                {
-                    line5 = true;
-                    line3 = false;
-                }
-
-                //                    if (GUILayout.Button(answerButtons[7]))
-                //                    {
-                //                        line3 = false;
-                //                        displayDialogue = false;
-                ////                        talkedAboutHouse = true;   //sätta på den gör att man inta kan prata igen efter avbruten dialog
-                //
-                //                    }
-            }
-
-            if (line9)
-            {
-                GUILayout.Label(lines[9], guiStyle);
-                GUILayout.Label(lines[10], guiStyle);
-
-
-                if (GUILayout.Button(answerButtons[2]))
-                {
-                    line9 = false;
-                    line3 = true;
-                }
-
-                if (GUILayout.Button(answerButtons[4]))
-                {
-                    line5 = true;
-                    line9 = false;
-
-                }
-            }
-
-
-            if (line5)
-            {
-                GUILayout.Label(lines[5], guiStyle);
-                GUILayout.Label(lines[6], guiStyle);
-
-
-                if (GUILayout.Button(answerButtons[5]))
-                {
-                    line5 = false;
-                    line7 = true;
-                }
 
             }
+        }
 
+        if (line2)
+        {
+            GUILayout.Label(lines[2], guiStyle);
 
-            if (line7)
+            if (GUILayout.Button(answerButtons[2]))
             {
-                GUILayout.Label(lines[7], guiStyle);
-
-                if (GUILayout.Button(answerButtons[6]))
-                {
-                    activateQuest = true;
-                    line7 = false;
-                    line8 = true;
-                }
-
+                line2 = false;
+                line3 = true;
             }
 
-            if (line8)
+            if (GUILayout.Button(answerButtons[4]))
             {
-                GUILayout.Label(lines[8], guiStyle);
-
-                if (GUILayout.Button(answerButtons[7]))
-                {
-                    line8 = false;
-
-                    displayDialogue = false;
-                }
+                line2 = false;
+                line5 = true;
 
             }
+        }
+        if (line3)
+        {
+            GUILayout.Label(lines[3], guiStyle);
 
-
-
-            if (activateQuest && hasDoneQuest && displayDialogue)
+            if (GUILayout.Button(answerButtons[4]))
             {
-                GUILayout.Label(lines[13], guiStyle);
-
-                if (GUILayout.Button(answerButtons[2]))
-                {
-                    displayDialogue = false;
-                    //                line13 = true;
-                    line13 = false;
-                    activateQuest = false;
-                    PlayerPurse.playerGold += reward;
-
-                    playerStats.AddExperience(20);
-                }
-
-                if (GUILayout.Button(answerButtons[3]))
-                {
-                    displayDialogue = false;
-                }
+                line5 = true;
+                line3 = false;
             }
 
-            //        if (line3)
-            //        {
-            //            GUILayout.Label(lines[3], guiStyle);
+            //                    if (GUILayout.Button(answerButtons[7]))
+            //                    {
+            //                        line3 = false;
+            //                        displayDialogue = false;
+            ////                        talkedAboutHouse = true;   //sätta på den gör att man inta kan prata igen efter avbruten dialog
             //
-            //            if (GUILayout.Button(answerButtons[0]))
-            //            {
-            //                displayDialogue = false;;
-            //                line3 = false;
-            //            }
-            //        }
+            //                    }
+        }
 
-            GUILayout.EndArea();
+        if (line9)
+        {
+            GUILayout.Label(lines[9], guiStyle);
+            GUILayout.Label(lines[10], guiStyle);
 
-            if (activateQuest) // ritar ut meddelande om pågående quest
+
+            if (GUILayout.Button(answerButtons[2]))
             {
-
-                //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
-                GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
-
-                GUILayout.Box("New Quest: Find building material"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
-
-                GUILayout.EndArea();
+                line9 = false;
+                line3 = true;
             }
 
+            if (GUILayout.Button(answerButtons[4]))
+            {
+                line5 = true;
+                line9 = false;
+
+            }
+        }
+
+
+        if (line5)
+        {
+            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[6], guiStyle);
+
+
+            if (GUILayout.Button(answerButtons[5]))
+            {
+                line5 = false;
+                line7 = true;
+            }
 
         }
+
+
+        if (line7)
+        {
+            GUILayout.Label(lines[7], guiStyle);
+
+            if (GUILayout.Button(answerButtons[6]))
+            {
+                activateQuest = true;
+                line7 = false;
+                line8 = true;
+            }
+
+        }
+
+        if (line8)
+        {
+            GUILayout.Label(lines[8], guiStyle);
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                line8 = false;
+
+                displayDialogue = false;
+            }
+
+        }
+
+
+
+        if (activateQuest && hasDoneQuest && displayDialogue)
+        {
+            GUILayout.Label(lines[13], guiStyle);
+
+            if (GUILayout.Button(answerButtons[2]))
+            {
+                displayDialogue = false;
+                //                line13 = true;
+                line13 = false;
+                activateQuest = false;
+                PlayerPurse.playerGold += reward;
+
+                playerStats.AddExperience(20);
+            }
+
+            if (GUILayout.Button(answerButtons[3]))
+            {
+                displayDialogue = false;
+            }
+        }
+
+        //        if (line3)
+        //        {
+        //            GUILayout.Label(lines[3], guiStyle);
+        //
+        //            if (GUILayout.Button(answerButtons[0]))
+        //            {
+        //                displayDialogue = false;;
+        //                line3 = false;
+        //            }
+        //        }
+
+        GUILayout.EndArea();
+
+        if (activateQuest) // ritar ut meddelande om pågående quest
+        {
+
+            //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
+            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
+
+            GUILayout.Box("New Quest: Find building material"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
+
+            GUILayout.EndArea();
+        }
+
+
     }
 
 
