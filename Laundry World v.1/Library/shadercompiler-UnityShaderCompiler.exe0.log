@@ -4,10 +4,6 @@ Cmd: preprocess
   insize=2488 outsize=848 ok=1
 Cmd: preprocess
   insize=1230 outsize=267 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1268 outsize=901 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1268 outsize=669 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED ok=1
 Cmd: preprocess
   insize=1964 outsize=743 ok=1
 Cmd: preprocess
