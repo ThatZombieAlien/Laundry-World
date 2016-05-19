@@ -78,6 +78,11 @@ public class MuckDialogue : MonoBehaviour {
 		if (exitDialogue) {
 			textManager.DisableTextBox ();
 		}
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            StartCoroutine(EndBlur());
+        }
 		if (displayDialogue)
 		{
 			if (activateQuest)
@@ -322,6 +327,7 @@ public class MuckDialogue : MonoBehaviour {
 						line19 = true;
 
 						line18 = false;
+                        Destroy(gameObject); // sätt på sista svaret
 					}
 
 				}
