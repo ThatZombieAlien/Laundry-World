@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SnakeHealthManager : MonoBehaviour
+public class EnemyBlobHealthManager : MonoBehaviour 
 {
     public int MaxHealth;
     public int CurrentHealth;
@@ -10,11 +10,11 @@ public class SnakeHealthManager : MonoBehaviour
 
     public int expToGive;
 
-    private HermitQuest hermitQuest;
+    private TheThreatQuest theThreatQuest;
 
     void Start()
     {
-        hermitQuest = FindObjectOfType<HermitQuest>();
+        theThreatQuest = FindObjectOfType<TheThreatQuest>();
         playerStats = FindObjectOfType<PlayerStats>();
 
         CurrentHealth = MaxHealth;
@@ -24,16 +24,17 @@ public class SnakeHealthManager : MonoBehaviour
     {
         if (CurrentHealth <= 0)
         {
-            HermitQuest.snakesKilled += 1;
+            TheThreatQuest.blobsKilled += 1;
             Destroy(gameObject);
+            print(TheThreatQuest.blobsKilled);
 
             playerStats.AddExperience(expToGive);
         }
 
-        if (HermitQuest.snakesKilled == 3)
+        if (TheThreatQuest.blobsKilled == 3)
         {
-            print("quest snakes completed");
-            hermitQuest.dialogue.hasDoneQuest = true;
+            print("quest blobs completed");
+            theThreatQuest.dialogue.hasDoneQuest = true;
         }
     }
 
