@@ -12,6 +12,10 @@ public string[] lines;
     bool line2 = false;
     bool line1 = true;
     bool line3 = false;
+    bool line4 = false;
+    bool line5 = false;
+    bool line6 = false;
+    bool line7 = false;
     bool finishedDialogue = false;
     public int reward;
     public PlayerController player;
@@ -54,11 +58,120 @@ public string[] lines;
         guiStyle.fontSize = 16; // ändra storlek
         guiStyle.normal.textColor = Color.white; // ändra färg
 
-        if (displayDialogue)
+        if (displayDialogue && line1)
         {
+            GUILayout.Label(lines[0] + "\n" + lines[1], guiStyle); 
+
+            if (GUILayout.Button(answerButtons[0]))
+            {
+                displayDialogue = false;
+            }
+            // om man har gjort the Threat
+            if (GUILayout.Button(answerButtons[1]))
+            {
+                line2 = true;
+                line1 = false;
+            }
 
         }
-       
+
+        if (line2)
+        {
+            GUILayout.Label(lines[2] + "\n" + lines[3], guiStyle);
+
+            if (GUILayout.Button(answerButtons[2]))
+            {
+                line3 = true;
+                line2 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[3]))
+            {
+                line4 = true;
+                line2 = false;
+            }
+        }
+
+        if (line3)
+        {
+            GUILayout.Label(lines[5], guiStyle);
+            
+            if(GUILayout.Button(answerButtons[4]))
+            {
+                line5 = true;
+                line3 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                displayDialogue = false;
+                line3 = false;
+            }
+        }
+
+        if (line4)
+        {
+            GUILayout.Label(lines[4] + "\n" + lines[5], guiStyle);
+
+            if (GUILayout.Button(answerButtons[4]))
+            {
+                line5 = true;
+                line4 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                displayDialogue = false;
+                line4 = false;
+            }
+        }
+
+        if (line5)
+        {
+            GUILayout.Label(lines[6], guiStyle);
+           
+            if (GUILayout.Button(answerButtons[5]))
+            {
+                line6 = true;
+                line5 = false;
+            }
+        }
+
+        if (line6)
+        {
+            GUILayout.Label(lines[7] + "\n" + lines[8], guiStyle);
+
+            if (GUILayout.Button(answerButtons[6]))
+            {
+                line6 = false;
+                line7 = true;
+            }
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                line6 = false;
+                displayDialogue = false;
+            }
+        }
+
+        if (line7)
+        {
+            GUILayout.Label(lines[9] + "\n" + lines[10], guiStyle);
+
+            if (GUILayout.Button(answerButtons[8]))
+            {
+                line7 = false;
+                displayDialogue = false;
+                activateQuest = true;
+            }
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                line7 = false;
+                displayDialogue = false;
+            }
+        }
+
         GUILayout.EndArea();
 
         if (activateQuest) // ritar ut meddelande om pågående quest
