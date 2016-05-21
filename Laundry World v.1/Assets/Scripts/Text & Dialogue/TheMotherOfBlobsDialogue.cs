@@ -24,11 +24,18 @@ public string[] lines;
 
     private PlayerStats playerStats;
 
-
+    private TheThreatQuestDialogue theThreatQuestdialogue;
 
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        theThreatQuestdialogue = FindObjectOfType<TheThreatQuestDialogue>();
+
+        //Om man inte har gjort The Threat-questen inaktiveras scriptet
+        if (!theThreatQuestdialogue.hasDoneQuest)
+        {
+            this.enabled = false;
+        }
     }
 
     void Update()
@@ -48,7 +55,6 @@ public string[] lines;
             player.canMove = false;
             npc.canMove = false;
         }
-
     }
 
     void OnGUI()

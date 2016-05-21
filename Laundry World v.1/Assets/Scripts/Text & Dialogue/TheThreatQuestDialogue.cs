@@ -9,9 +9,15 @@ public class TheThreatQuestDialogue : MonoBehaviour
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
+    bool line1 = false;
     bool line2 = false;
-    bool line1 = true;
     bool line3 = false;
+    bool line4 = false;
+    bool line5 = false;
+    bool line6 = false;
+    bool line7 = false;
+    bool line8 = false;
+    bool line9 = false;
     bool finishedDialogue = false;
     public int reward;
     public TextBoxManager textManager;
@@ -20,10 +26,12 @@ public class TheThreatQuestDialogue : MonoBehaviour
     private GUIStyle guiStyle = new GUIStyle();
 
     private PlayerStats playerStats;
+    private TheMotherOfBlobsDialogue questDialogue;
 
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        questDialogue = FindObjectOfType<TheMotherOfBlobsDialogue>();
     }
 
     void Update()
@@ -41,6 +49,10 @@ public class TheThreatQuestDialogue : MonoBehaviour
             player.canMove = false;
         }
 
+        if (hasDoneQuest)
+        {
+            questDialogue.enabled = true;
+        }
     }
 
     void OnGUI()
@@ -50,11 +62,151 @@ public class TheThreatQuestDialogue : MonoBehaviour
         guiStyle.fontSize = 16;
         guiStyle.normal.textColor = Color.white;
 
+        if (displayDialogue && !activateQuest)
+        {
 
+            GUILayout.Label(lines[0], guiStyle);
 
-        // skriv in dialog osv
+            if (GUILayout.Button(answerButtons[0]))
+            {
+                line1 = true;
+                displayDialogue = false;
+            }
 
+            if (GUILayout.Button(answerButtons[1]))
+            {
+                line1 = false;
+                line5 = true;
+                line4 = true;
+                displayDialogue = false;
+            }
+        }
 
+        if (line1 && !displayDialogue)
+        {
+            GUILayout.Label(lines[1], guiStyle);
+
+            if (GUILayout.Button(answerButtons[2]))
+            {
+                line1 = false;
+                line2 = true;
+                displayDialogue = false;
+            }
+
+            if (GUILayout.Button(answerButtons[3]))
+            {
+                line5 = true;
+                line4 = true;
+                line1 = false;
+            }
+        }
+
+        if(line2 && !displayDialogue)
+        {
+            GUILayout.Label(lines[2], guiStyle);
+            
+            if (GUILayout.Button(answerButtons[4]))
+            {
+                line3 = true;
+                line4 = true;
+                line2 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[5]))
+            {
+                line3 = true;
+                line4 = true;
+                line2 = false;
+            }
+        }
+
+        if(line3 && line4 && !displayDialogue)
+        {
+            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[4], guiStyle);
+
+            if (GUILayout.Button(answerButtons[6]))
+            {
+                line7 = true;
+                line8 = true;
+                line4 = false;
+                line3 = false;
+
+            }
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                line6 = true;
+            }
+        }
+
+        if (line4 && line5 && !displayDialogue)
+        {
+            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[4], guiStyle);
+            //line1 = false;
+
+            if (GUILayout.Button(answerButtons[6]))
+            {
+                line7 = true;
+                line8 = true;
+                line4 = false;
+                line5 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                line6 = true;
+                line4 = false;
+                line5 = false;
+            }
+        }
+
+        if(line6)
+        {
+            GUILayout.Label(lines[6], guiStyle);
+
+            if (GUILayout.Button(answerButtons[9]))
+            {
+                line6 = false;
+            }
+        }
+
+        if(line7 && line8)
+        {
+            GUILayout.Label(lines[7], guiStyle);
+            GUILayout.Label(lines[8], guiStyle);
+
+            if (GUILayout.Button(answerButtons[6]))
+            {
+                activateQuest = true;
+                line7 = false;
+                line8 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[8]))
+            {
+                line6 = true;
+                line7 = false;
+                line8 = false;
+            }
+        }
+
+        if (line9 && line4)
+        {
+            GUILayout.Label(lines[9], guiStyle);
+            GUILayout.Label(lines[4], guiStyle);
+
+            if (GUILayout.Button(answerButtons[7]))
+            {
+                activateQuest = true;
+            }
+
+            if (GUILayout.Button(answerButtons[8]))
+            {
+                line6 = true;
+            }
+        }
 
         GUILayout.EndArea();
 
