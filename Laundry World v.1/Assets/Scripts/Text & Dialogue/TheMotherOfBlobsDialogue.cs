@@ -16,7 +16,6 @@ public string[] lines;
     bool line5 = false;
     bool line6 = false;
     bool line7 = false;
-    bool finishedDialogue = false;
     public int reward;
     public PlayerController player;
     public NPCController npc;
@@ -72,7 +71,7 @@ public string[] lines;
             {
                 displayDialogue = false;
             }
-            // om man har gjort the Threat
+
             if (GUILayout.Button(answerButtons[1]))
             {
                 line2 = true;

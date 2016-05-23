@@ -225,7 +225,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "Player" && !ConfrontingNicoDialogue.activateDialogue)
         {
             if (!activateQuest && !hasDoneQuest)
             {
