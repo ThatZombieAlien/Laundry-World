@@ -9,6 +9,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
+    bool line0 = false;
     bool line1 = false;
     bool line2 = false;
     bool line3 = false;
@@ -62,7 +63,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
         guiStyle.fontSize = 16;
         guiStyle.normal.textColor = Color.white;
 
-        if (displayDialogue && !activateQuest)
+        if (displayDialogue && !activateQuest && line0)
         {
 
             GUILayout.Label(lines[0], guiStyle);
@@ -70,11 +71,12 @@ public class TheThreatQuestDialogue : MonoBehaviour
             if (GUILayout.Button(answerButtons[0]))
             {
                 line1 = true;
-                displayDialogue = false;
+                line0 = false;
             }
 
             if (GUILayout.Button(answerButtons[1]))
             {
+                line0 = false;
                 line1 = false;
                 line5 = true;
                 line4 = true;
@@ -82,7 +84,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
             }
         }
 
-        if (line1 && !displayDialogue)
+        if (line1)
         {
             GUILayout.Label(lines[1], guiStyle);
 
@@ -101,7 +103,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
             }
         }
 
-        if(line2 && !displayDialogue)
+        if(line2)
         {
             GUILayout.Label(lines[2], guiStyle);
             
@@ -120,7 +122,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
             }
         }
 
-        if(line3 && line4 && !displayDialogue)
+        if(line3 && line4)
         {
             GUILayout.Label(lines[3], guiStyle);
             GUILayout.Label(lines[4], guiStyle);
@@ -140,7 +142,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
             }
         }
 
-        if (line4 && line5 && !displayDialogue)
+        if (line4 && line5)
         {
             GUILayout.Label(lines[5], guiStyle);
             GUILayout.Label(lines[4], guiStyle);
@@ -227,7 +229,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
         {
             if (!activateQuest && !hasDoneQuest)
             {
-                line1 = true;
+                line0 = true;
             }
 
             displayDialogue = true;
