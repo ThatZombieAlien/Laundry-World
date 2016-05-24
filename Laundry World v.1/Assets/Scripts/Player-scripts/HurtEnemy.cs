@@ -11,6 +11,7 @@ public class HurtEnemy : MonoBehaviour
     public PlayerController player;
     public bool isAttacking;
 
+    public TheFudgeMonster fudgeMonster;
     private PlayerStats playerStats;
 
     void Start()
@@ -41,12 +42,15 @@ public class HurtEnemy : MonoBehaviour
          {
              if (!TheFudgeMonster.friends)
              {
-                 currentDamage = damageToGive + playerStats.currentAttack;
+                 if (TheFudgeMonster.canHurt)
+                 {
+                     currentDamage = damageToGive + playerStats.currentAttack;
 
-                 TheFudgeMonster.HurtFM(damageToGive);
-                 Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
-                 var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
-                 clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
+                     fudgeMonster.HurtFM(currentDamage);
+                     Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
+                     var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
+                     clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
+                 }
              }
          }
     }

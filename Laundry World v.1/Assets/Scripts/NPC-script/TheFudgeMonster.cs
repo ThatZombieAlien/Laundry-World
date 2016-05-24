@@ -4,25 +4,28 @@ using System.Collections;
 public class TheFudgeMonster : MonoBehaviour {
 
     public int maxHealth;
-    public static int currentHealth;
+    public int currentHealth;
 
     public int expToGive;
     private PlayerStats playerStats;
     public TheMotherOfBlobsDialogue nicosQuest;
 
     public static bool friends = false;
+    public static bool canHurt = false;
 
-	void Start () 
+    void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
 
         currentHealth = maxHealth;
-	
-	}
-	
+    }
 
-	void Update () 
+    void Update()
     {
+        if (friends)
+        {
+            canHurt = false;
+        }
 
         if (currentHealth <= 0)
         {
@@ -30,9 +33,9 @@ public class TheFudgeMonster : MonoBehaviour {
             nicosQuest.hasDoneQuest = true;
             Destroy(gameObject);
         }
-	}
+    }
 
-    public static void HurtFM(int damageToGive)
+    public void HurtFM(int damageToGive)
     {
         currentHealth -= damageToGive;
     }
