@@ -2,10 +2,10 @@
 {
 	    "type": "Hand",
         "id": 0,
-        "title": "Garnnystan",
+        "title": "Pulver hog",
         "value": 120,
         "stackable": false,
-        "slug": "Garnnystan",
+        "slug": "pulverhog",
 		"consumable": true
     },
 

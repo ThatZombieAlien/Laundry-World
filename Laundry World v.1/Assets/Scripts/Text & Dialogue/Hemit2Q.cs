@@ -4,11 +4,13 @@ using System.Collections;
 public class Hemit2Q : MonoBehaviour
 {
     public Hermit2Quest dialogue;
+    private Inventory inventory;
     //private PlayerStats playerStats;
 
     void Start()
     {
         //dialogue = GameObject.Find("NPC(1)").GetComponent<QuestDialogue>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
 
 
@@ -20,6 +22,7 @@ public class Hemit2Q : MonoBehaviour
             if (col.tag == "Player")
             {
                 Destroy(gameObject);
+                inventory.AddItem(0);
                 dialogue.hasDoneQuest = true;
             }
         }
