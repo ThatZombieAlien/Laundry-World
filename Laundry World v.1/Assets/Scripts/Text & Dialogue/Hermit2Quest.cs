@@ -25,6 +25,7 @@ public class Hermit2Quest : MonoBehaviour
     bool line8 = false;
     bool line9 = false;
     bool line10 = false;
+    bool line12 = false;
     bool line13 = false;
 
 
@@ -240,20 +241,21 @@ public class Hermit2Quest : MonoBehaviour
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[13], guiStyle);
+            GUILayout.Label(lines[12], guiStyle);
 
-            if (GUILayout.Button(answerButtons[2]))
+            if (GUILayout.Button(answerButtons[8]))
             {
-                displayDialogue = false;
-                //                line13 = true;
-                line13 = false;
+                line12 = false;
+                line8 = true;
                 activateQuest = false;
                 PlayerPurse.playerGold += reward;
 
                 playerStats.AddExperience(20);
+                displayDialogue = false;
+
             }
 
-            if (GUILayout.Button(answerButtons[3]))
+            if (GUILayout.Button(answerButtons[7]))
             {
                 displayDialogue = false;
             }
@@ -328,5 +330,6 @@ public class Hermit2Quest : MonoBehaviour
     }
 
 }
+
 
 
