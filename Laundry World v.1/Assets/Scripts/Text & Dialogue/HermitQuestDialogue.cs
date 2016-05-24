@@ -137,7 +137,15 @@ public class HermitQuestDialogue : MonoBehaviour
         {
             GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
-            GUILayout.Box("New Quest: Kill the snakes");
+            if (!hasDoneQuest)
+            {
+                GUILayout.Box("New Quest: Kill the snakes");
+            }
+
+            if (hasDoneQuest)
+            {
+                GUILayout.Box("Quest completed: Kill the snakes");
+            }
 
             GUILayout.EndArea();
         }

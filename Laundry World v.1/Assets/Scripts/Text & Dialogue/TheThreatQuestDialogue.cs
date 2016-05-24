@@ -218,12 +218,12 @@ public class TheThreatQuestDialogue : MonoBehaviour
 
             if (!hasDoneQuest)
             {
-                GUILayout.Box("New Quest: Kill the snakes");
+                GUILayout.Box("New Quest: Kill the blobs");
             }
 
             if (hasDoneQuest)
             {
-                GUILayout.Box("Quest completed: Kill the snakes");
+                GUILayout.Box("Quest completed: Kill the blobs");
             }
 
             GUILayout.EndArea();
