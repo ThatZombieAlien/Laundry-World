@@ -41,9 +41,9 @@ public class Inspection : MonoBehaviour
     //	bool nextLine = false;
     //	bool firstLine = true;
 
-    public TextBoxManager textManager;
-    public PlayerController player;
-    public NPCController NPC;
+    //public TextBoxManager textManager;
+    //public PlayerController player;
+    //public NPCController NPC;
 
     private GUIStyle guiStyle = new GUIStyle();
 
@@ -55,18 +55,18 @@ public class Inspection : MonoBehaviour
 
     void Update()
     {
-        if (displayDialogue)
-        {
-            //textManager.EnableTextBox();
-            player.canMove = false;
-            NPC.canMove = false;
-        }
-        else
-        {
-            //textManager.DisableTextBox();
-            player.canMove = true;
-            NPC.canMove = true;
-        }
+        //if (displayDialogue)
+        //{
+        //    //textManager.EnableTextBox();
+        //    player.canMove = false;
+        //    NPC.canMove = false;
+        //}
+        //else
+        //{
+        //    //textManager.DisableTextBox();
+        //    player.canMove = true;
+        //    NPC.canMove = true;
+        //}
 
     }
 
@@ -78,7 +78,7 @@ public class Inspection : MonoBehaviour
         guiStyle.normal.textColor = Color.white; // ändra färg
         if (exitDialogue)
         {
-            textManager.DisableTextBox();
+            //textManager.DisableTextBox();
         }
 
         //if (Input.GetKeyDown(KeyCode.Return))
