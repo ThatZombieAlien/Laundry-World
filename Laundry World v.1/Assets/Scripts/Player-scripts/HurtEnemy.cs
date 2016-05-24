@@ -28,6 +28,8 @@ public class HurtEnemy : MonoBehaviour
 
             currentDamage = damageToGive + playerStats.currentAttack;
 
+            other.gameObject.GetComponent<SnakeHealthManager>().HurtEnemy(currentDamage);
+            other.gameObject.GetComponent<EnemyBlobHealthManager>().HurtEnemy(currentDamage);
             other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
             Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
             var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
