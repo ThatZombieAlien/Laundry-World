@@ -24,6 +24,8 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
     private PlayerStats playerStats;
 
+    public TheMotherOfBlobsDialogue previousQuest;
+
 
 
     void Start()
@@ -194,7 +196,8 @@ public class ABlanketForMeDialogue : MonoBehaviour {
         {
             //if (Input.GetKeyDown(KeyCode.E))
             {
-                if (!activateQuest && !hasDoneQuest && !finishedDialogue)
+                if (!activateQuest && !hasDoneQuest && !finishedDialogue && previousQuest.activateQuest) 
+                    // kan bara startas om man fått The Mother of Blobs-questet
                 {
                     line1 = true;
                 }
