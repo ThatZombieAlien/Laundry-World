@@ -32,10 +32,10 @@
     {
 	    "type": "Hand",
         "id": 3,
-        "title": "Scissor",
+        "title": "Piece of paper",
         "value": 100,
         "stackable": true,
-        "slug": "Sax",
+        "slug": "",
 		"consumable": true
     },
 

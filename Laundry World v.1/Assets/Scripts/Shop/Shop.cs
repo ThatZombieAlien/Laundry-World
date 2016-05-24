@@ -11,6 +11,8 @@ public class Shop : MonoBehaviour
     public GameObject shopwall;
 
     private Inventory inventory;
+    private ABlanketForMeDialogue dialogue;
+    public static bool hasBought;
 
     void Start()
     {
@@ -27,7 +29,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D( )
+    void OnTriggerExit2D()
     {
         shopwall.gameObject.SetActive(false);
     }
@@ -51,6 +53,7 @@ public class Shop : MonoBehaviour
             stone += 8;
 
             inventory.AddItem(3);
+            hasBought = true;
         }
     }
     public void SellYarn()

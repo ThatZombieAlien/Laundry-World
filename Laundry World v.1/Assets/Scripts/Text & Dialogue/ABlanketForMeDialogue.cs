@@ -184,7 +184,15 @@ public class ABlanketForMeDialogue : MonoBehaviour {
             //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
             GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
 
-            GUILayout.Box("New Quest: A Blanket for Me");
+            if (!hasDoneQuest)
+            {
+                GUILayout.Box("New Quest: A Blanket for Me");
+            }
+
+            if (hasDoneQuest)
+            {
+                GUILayout.Box("Quest completed: A Blanket for Me");
+            }
 
             GUILayout.EndArea();
         }
