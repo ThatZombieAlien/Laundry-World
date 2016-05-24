@@ -9,6 +9,7 @@ public string[] lines;
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
+    bool lastQuestFinished = false;
     bool line2 = false;
     bool line1 = true;
     bool line3 = false;
@@ -63,27 +64,44 @@ public string[] lines;
         guiStyle.fontSize = 16; // ändra storlek
         guiStyle.normal.textColor = Color.white; // ändra färg
 
-        if (displayDialogue && line1)
+        if (displayDialogue && line1 && !lastQuestFinished)
         {
             GUILayout.Label(lines[0] + "\n" + lines[1], guiStyle); 
 
             if (GUILayout.Button(answerButtons[0]))
             {
                 displayDialogue = false;
+                line1 = false;
             }
 
             if (GUILayout.Button(answerButtons[1]))
             {
                 line2 = true;
                 line1 = false;
+                lastQuestFinished = true;
+                // Ge reward
             }
-
         }
 
-        if (line2)
+        if (line1 && lastQuestFinished)
+        {
+            GUILayout.Label(lines[3], guiStyle);
+            if (GUILayout.Button(answerButtons[2]))
+            {
+                line3 = true;
+                line1 = false;
+            }
+
+            if (GUILayout.Button(answerButtons[3]))
+            {
+                line4 = true;
+                line1 = false;
+            }
+        }
+
+        if (line2 && displayDialogue)
         {
             GUILayout.Label(lines[2] + "\n" + lines[3], guiStyle);
-
             if (GUILayout.Button(answerButtons[2]))
             {
                 line3 = true;
@@ -97,7 +115,7 @@ public string[] lines;
             }
         }
 
-        if (line3)
+        if (line3 && displayDialogue)
         {
             GUILayout.Label(lines[5], guiStyle);
             
@@ -212,6 +230,12 @@ public string[] lines;
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            line2 = false;
+            line3 = false;
+            line4 = false;
+            line5 = false;
+            line6 = false;
+            line7 = false;
         }
     }
 
