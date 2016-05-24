@@ -8,6 +8,7 @@ public string[] lines;
 
     bool displayDialogue = false;
     public bool activateQuest = false;
+    public bool canDoQuest = true;
     public bool hasDoneQuest = false;
     bool lastQuestFinished = false;
     bool line2 = false;
@@ -197,7 +198,7 @@ public string[] lines;
 
         GUILayout.EndArea();
 
-        if (activateQuest) // ritar ut meddelande om pågående quest
+        if (activateQuest && canDoQuest) // ritar ut meddelande om pågående quest
         {
             //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
             GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); 

@@ -153,6 +153,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
              if (GUILayout.Button(answerButtons[9]))
              {
                  activateQuest = true;
+                 previousQuest.canDoQuest = false;
                  line7 = false;
              }
         }
