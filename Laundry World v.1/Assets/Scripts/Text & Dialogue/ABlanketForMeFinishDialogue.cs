@@ -18,9 +18,13 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
 
     private GUIStyle guiStyle = new GUIStyle();
 
+    private Inventory inventory;
+
 
     void Start()
     {
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
         if (!previousQuest.hasDoneQuest)
         {
             this.enabled = false;
@@ -88,6 +92,14 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
             {
                 line4 = false;
                 line5 = true;
+
+                inventory.AddItem(4);
+                inventory.openInventorySound.Play();
+                inventory.inventoryPanel.SetActive(true);
+                inventory.slotPanel.SetActive(true);
+                inventory.textPanel.SetActive(true);
+                inventory.textText.SetActive(true);
+                inventory.closeInventoryButton.SetActive(true);
             }
         }
 

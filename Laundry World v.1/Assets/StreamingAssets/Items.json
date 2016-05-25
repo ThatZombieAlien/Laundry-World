@@ -42,10 +42,10 @@
     {
 	    "type": "Hand",
         "id": 4,
-        "title": "Bronze Sword",
+        "title": "Tooth",
         "value": 200,
         "stackable": true,
-        "slug": "Snäcka",
+        "slug": "tooth",
 		"consumable": true
     },
 
