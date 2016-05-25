@@ -3,7 +3,7 @@
 	    "type": "Hand",
         "id": 0,
         "title": "Pulver hog",
-        "value": 10,
+        "value": 120,
         "stackable": false,
         "slug": "pulverhog",
 		"consumable": true
@@ -13,7 +13,7 @@
 	    "type": "Hand",
         "id": 1,
         "title": "Garnnystan",
-        "value": 20,
+        "value": 150,
         "stackable": true,
         "slug": "Garnnystan2",
 		"consumable": true
@@ -23,7 +23,7 @@
 	    "type": "Hand",
         "id": 2,
         "title": "Laundry Ball",
-        "value": 15,
+        "value": 350,
         "stackable": true,
         "slug": "tvattbolltom",
 		"consumable": true
@@ -33,7 +33,7 @@
 	    "type": "Hand",
         "id": 3,
         "title": "Piece of paper",
-        "value": 15,
+        "value": 100,
         "stackable": true,
         "slug": "",
 		"consumable": true
@@ -43,7 +43,7 @@
 	    "type": "Hand",
         "id": 4,
         "title": "Tooth",
-        "value": 25,
+        "value": 200,
         "stackable": true,
         "slug": "tooth",
 		"consumable": true
@@ -52,8 +52,8 @@
     {
 	    "type": "Hand",
         "id": 5,
-        "title": "Ring",
-        "value": 50,
+        "title": "Gold Sword",
+        "value": 400,
         "slug": "Sprättvapen",
 		"consumable": true
     },

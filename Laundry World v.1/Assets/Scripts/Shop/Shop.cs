@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Shop : MonoBehaviour
 {
+    //public int gold;
     public int stone = 0;
     public int yarn = 0;
 
