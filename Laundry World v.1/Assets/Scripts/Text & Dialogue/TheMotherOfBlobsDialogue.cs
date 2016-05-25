@@ -80,6 +80,7 @@ public string[] lines;
                 line2 = true;
                 line1 = false;
                 lastQuestFinished = true;
+                theThreatQuestdialogue.activateQuest = false;
                 // Ge reward
             }
         }
