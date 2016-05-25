@@ -26,11 +26,12 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
     public TheMotherOfBlobsDialogue previousQuest;
 
-
+    private ABlanketForMeFinishDialogue finishDialogue;
 
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        finishDialogue = FindObjectOfType<ABlanketForMeFinishDialogue>();
     }
 
     void Update()
@@ -46,6 +47,11 @@ public class ABlanketForMeDialogue : MonoBehaviour {
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
+        }
+
+        if (finishDialogue.previousQuest.hasDoneQuest)
+        {
+            finishDialogue.enabled = true;
         }
 
     }
