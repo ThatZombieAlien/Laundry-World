@@ -8,7 +8,7 @@ public class BorgmästerQuestDialog : MonoBehaviour {
     public string[] answerButtons;
 
     //public bool destoryOnFinish;
-    bool displayDialogue = false;
+    public bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
     bool line2 = false;
@@ -109,7 +109,6 @@ public class BorgmästerQuestDialog : MonoBehaviour {
             {
                 activateQuest = true;
                 displayDialogue = false;
-                line4 = true;
                 line3 = false;
             }
 
@@ -124,7 +123,7 @@ public class BorgmästerQuestDialog : MonoBehaviour {
         {
             GUILayout.Label(lines[3], guiStyle);
 
-            if (GUILayout.Button(answerButtons[4]))
+            if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
                 line1 = false;
@@ -144,9 +143,9 @@ public class BorgmästerQuestDialog : MonoBehaviour {
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
             //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
-            GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 350, 350)); // "putta ner quests beroende på hur många man har?
+            GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
 
-            GUILayout.Box("New Quest:Find detergent and clean the well"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
+            GUILayout.Box("New Quest: Clean the well"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
 
             GUILayout.EndArea();
         }

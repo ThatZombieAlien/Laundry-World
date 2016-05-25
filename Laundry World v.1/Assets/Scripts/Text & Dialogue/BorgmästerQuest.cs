@@ -23,7 +23,7 @@ public class BorgmästerQuest : MonoBehaviour
 
             if (collider.tag == "Player")
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 dialog.hasDoneQuest = true;
 
             }
