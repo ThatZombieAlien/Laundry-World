@@ -54,6 +54,11 @@ public class ABlanketForMeDialogue : MonoBehaviour {
             finishDialogue.enabled = true;
         }
 
+        if (activateQuest)
+        {
+            player.has1Quest = true;
+        }
+
     }
 
     void OnGUI()

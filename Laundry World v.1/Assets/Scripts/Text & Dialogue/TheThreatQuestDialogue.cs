@@ -55,6 +55,11 @@ public class TheThreatQuestDialogue : MonoBehaviour
         {
             questDialogue.enabled = true;
         }
+
+        if (activateQuest)
+        {
+            player.has1Quest = true;
+        }
     }
 
     void OnGUI()

@@ -20,14 +20,10 @@ public class OneLineDialogue : MonoBehaviour {
     {
         if (displayDialogue)
         {
-            //textManager.EnableTextBox();
-            //player.canMove = false;
             NPC.canMove = false;
         }
         else
         {
-            //textManager.DisableTextBox();
-            //player.canMove = true;
             NPC.canMove = true;
         }
 	

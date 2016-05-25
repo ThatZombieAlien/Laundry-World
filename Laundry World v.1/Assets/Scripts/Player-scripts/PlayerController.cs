@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool attacking;
     public float attackTime;
     private float attackTimeCounter;
+    public bool has1Quest = false;
 
     private static bool playerExists;
     public bool canMove;

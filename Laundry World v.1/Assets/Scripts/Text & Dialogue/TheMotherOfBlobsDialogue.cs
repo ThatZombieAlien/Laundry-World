@@ -56,6 +56,11 @@ public string[] lines;
             player.canMove = false;
             npc.canMove = false;
         }
+
+        if (activateQuest)
+        {
+            player.has1Quest = true;
+        }
     }
 
     void OnGUI()

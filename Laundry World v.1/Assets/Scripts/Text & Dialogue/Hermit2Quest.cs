@@ -276,25 +276,39 @@ public class Hermit2Quest : MonoBehaviour
 
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
-
-            //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
-            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
-           
-            if (!hasDoneQuest)
+            if (player.has1Quest)
             {
-                GUILayout.Box("New Quest: Find building material"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
-            }
+                GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.25f, 250, 250));
 
-            if (hasDoneQuest)
-            {
-                GUILayout.Box("Quest Completed: Find building material");
+                if (!hasDoneQuest)
+                {
+                    GUILayout.Box("New Quest: Find building material");
+                }
+
+                if (hasDoneQuest)
+                {
+                    GUILayout.Box("Quest Completed: Find building material");
+                }
+                GUILayout.EndArea();
             }
-            GUILayout.EndArea();
+            else
+            {
+                GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
+
+                if (!hasDoneQuest)
+                {
+                    GUILayout.Box("New Quest: Find building material");
+                }
+
+                if (hasDoneQuest)
+                {
+                    GUILayout.Box("Quest Completed: Find building material");
+                }
+
+                GUILayout.EndArea();
+            }
         }
-
-
     }
-
 
 
     void OnTriggerEnter2D(Collider2D other)

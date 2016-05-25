@@ -135,21 +135,39 @@ public class HermitQuestDialogue : MonoBehaviour
 
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
-            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
-
-            if (!hasDoneQuest)
+            if (player.has1Quest)
             {
-                GUILayout.Box("New Quest: Kill the snakes");
-            }
+                GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
-            if (hasDoneQuest)
+                if (!hasDoneQuest)
+                {
+                    GUILayout.Box("New Quest: Kill the snakes");
+                }
+
+                if (hasDoneQuest)
+                {
+                    GUILayout.Box("Quest completed: Kill the snakes");
+                }
+
+                GUILayout.EndArea();
+            }
+            else
             {
-                GUILayout.Box("Quest completed: Kill the snakes");
-            }
+                GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
-            GUILayout.EndArea();
+                if (!hasDoneQuest)
+                {
+                    GUILayout.Box("New Quest: Kill the snakes");
+                }
+
+                if (hasDoneQuest)
+                {
+                    GUILayout.Box("Quest completed: Kill the snakes");
+                }
+
+                GUILayout.EndArea();
+            }
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

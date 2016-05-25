@@ -29,7 +29,6 @@ public class BorgmästerQuestDialog : MonoBehaviour {
 
     void Start()
     {
-        //textManager = FindObjectOfType<TextBoxManager>();
         playerStats = FindObjectOfType<PlayerStats>();
     }
 
@@ -37,19 +36,16 @@ public class BorgmästerQuestDialog : MonoBehaviour {
     {
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
         if (!displayDialogue)
         {
-            //textManager.DisableTextBox();
             player.canMove = true;
             npc.canMove = true;
         }
         if (displayDialogue && hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
@@ -142,12 +138,38 @@ public class BorgmästerQuestDialog : MonoBehaviour {
 
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
-            //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
-            GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
+            if (player.has1Quest)
+            {
+                GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 250, 250));
 
-            GUILayout.Box("New Quest: Clean the well"); // sätt in bools för vilken text som ska visas beroende på vilket quest man är på?
+                if (!hasDoneQuest)
+                {
+                    GUILayout.Box("New Quest: Clean the well");
+                }
 
-            GUILayout.EndArea();
+                if (hasDoneQuest)
+                {
+                    GUILayout.Box("Quest Completed: Clean the well");
+                }
+
+                GUILayout.EndArea();
+            }
+            else
+            {
+                GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 250, 250));
+
+                if (!hasDoneQuest)
+                {
+                    GUILayout.Box("New Quest: Clean the well");
+                }
+
+                if (hasDoneQuest)
+                {
+                    GUILayout.Box("Quest Completed: Clean the well");
+                }
+
+                GUILayout.EndArea();
+            }
         }
 
     }
