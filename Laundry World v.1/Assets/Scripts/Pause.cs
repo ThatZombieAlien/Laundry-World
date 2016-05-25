@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Pause : MonoBehaviour {
 
-	public GameObject pauseButton, pausePanel;
+	public GameObject pauseButton, pausePanel, helpPanel;
 	// Use this for initialization
 
 	public void Start()
