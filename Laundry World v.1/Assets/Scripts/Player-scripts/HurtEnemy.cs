@@ -21,7 +21,7 @@ public class HurtEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Snake")
         {
             
             //if (isAttacking)
@@ -30,12 +30,21 @@ public class HurtEnemy : MonoBehaviour
             currentDamage = damageToGive + playerStats.currentAttack;
 
             other.gameObject.GetComponent<SnakeHealthManager>().HurtEnemy(currentDamage);
-            other.gameObject.GetComponent<EnemyBlobHealthManager>().HurtEnemy(currentDamage);
-            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
+            //other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
             Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
             var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
             //}
+        }
+
+        if (other.gameObject.tag == "Blob")
+        {
+            currentDamage = damageToGive + playerStats.currentAttack;
+
+            other.gameObject.GetComponent<EnemyBlobHealthManager>().HurtEnemy(currentDamage);
+            Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
+            var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
         }
 
          if (other.gameObject.tag == "FM")
