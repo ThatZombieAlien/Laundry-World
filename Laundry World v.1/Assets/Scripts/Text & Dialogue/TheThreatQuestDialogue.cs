@@ -9,6 +9,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
+    public bool haveSpoken = false;
     bool line0 = false;
     bool line1 = false;
     bool line2 = false;
@@ -182,6 +183,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
             if (GUILayout.Button(answerButtons[6]))
             {
                 activateQuest = true;
+                haveSpoken = true;
                 line7 = false;
                 line8 = false;
             }
@@ -236,6 +238,11 @@ public class TheThreatQuestDialogue : MonoBehaviour
         if (other.gameObject.name == "Player" && !ConfrontingNicoDialogue.activateDialogue)
         {
             if (!activateQuest && !hasDoneQuest)
+            {
+                line0 = true;
+            }
+
+            if (!activateQuest && !haveSpoken)
             {
                 line0 = true;
             }

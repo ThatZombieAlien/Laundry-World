@@ -65,7 +65,7 @@ public string[] lines;
         guiStyle.fontSize = 16; // ändra storlek
         guiStyle.normal.textColor = Color.white; // ändra färg
 
-        if (displayDialogue && line1 && !lastQuestFinished)
+        if (displayDialogue && line1 && !lastQuestFinished && theThreatQuestdialogue.haveSpoken)
         {
             GUILayout.Label(lines[0] + "\n" + lines[1], guiStyle); 
 
