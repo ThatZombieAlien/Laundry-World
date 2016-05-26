@@ -15,6 +15,7 @@ public class QuestDialogue : MonoBehaviour {
     bool line2 = false;
     bool line1 = true;
     bool line3 = false;
+    bool line4 = false;
     bool finishedDialogue = false;
     public int reward;
     public TextBoxManager textManager;
@@ -93,6 +94,14 @@ public class QuestDialogue : MonoBehaviour {
                 line2 = false;
             }
 
+            if (GUILayout.Button(answerButtons[4]))
+            {
+                displayDialogue = false;
+                line4 = true;
+                line2 = false;
+            }
+
+
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
@@ -102,7 +111,7 @@ public class QuestDialogue : MonoBehaviour {
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[3], guiStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -123,12 +132,25 @@ public class QuestDialogue : MonoBehaviour {
 
         if (line3)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[1], guiStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
                 displayDialogue = false;;
                 line3 = false;
+            }
+        }
+
+        if (line4)
+        {
+            GUILayout.Label(lines[4], guiStyle);
+
+            if (GUILayout.Button(answerButtons[1]))
+            {
+                activateQuest = true;
+                displayDialogue = false;
+                line4 = false;
+
             }
         }
        

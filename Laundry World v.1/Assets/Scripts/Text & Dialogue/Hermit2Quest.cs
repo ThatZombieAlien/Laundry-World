@@ -4,7 +4,6 @@ using System.Collections;
 public class Hermit2Quest : MonoBehaviour
 {
 
-
     // OBS: Endast exempel på struktur
     public string[] lines;
     public string[] answerButtons;
@@ -42,11 +41,8 @@ public class Hermit2Quest : MonoBehaviour
 
     private PlayerStats playerStats;
 
-
-
     void Start()
     {
-        //textManager = FindObjectOfType<TextBoxManager>();
         playerStats = FindObjectOfType<PlayerStats>();
     }
 
@@ -165,14 +161,6 @@ public class Hermit2Quest : MonoBehaviour
                 line5 = true;
                 line3 = false;
             }
-
-            //                    if (GUILayout.Button(answerButtons[7]))
-            //                    {
-            //                        line3 = false;
-            //                        displayDialogue = false;
-            ////                        talkedAboutHouse = true;   //sätta på den gör att man inta kan prata igen efter avbruten dialog
-            //
-            //                    }
         }
 
         if (line9)
@@ -260,17 +248,6 @@ public class Hermit2Quest : MonoBehaviour
                 displayDialogue = false;
             }
         }
-
-        //        if (line3)
-        //        {
-        //            GUILayout.Label(lines[3], guiStyle);
-        //
-        //            if (GUILayout.Button(answerButtons[0]))
-        //            {
-        //                displayDialogue = false;;
-        //                line3 = false;
-        //            }
-        //        }
 
         GUILayout.EndArea();
 

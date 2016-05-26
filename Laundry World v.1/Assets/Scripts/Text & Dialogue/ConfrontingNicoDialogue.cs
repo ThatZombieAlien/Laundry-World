@@ -60,6 +60,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
                 {
                     line2 = true;
                     line1 = false;
+                    previousQuest.activateQuest = false;
                 }
             }
 

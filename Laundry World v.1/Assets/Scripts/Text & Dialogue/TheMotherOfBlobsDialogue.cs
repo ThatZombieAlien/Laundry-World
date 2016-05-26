@@ -26,6 +26,7 @@ public string[] lines;
     private PlayerStats playerStats;
 
     private TheThreatQuestDialogue theThreatQuestdialogue;
+    public TheFudgeMonster FM;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public string[] lines;
         {
             player.has1Quest = true;
         }
+
     }
 
     void OnGUI()
@@ -207,9 +209,17 @@ public string[] lines;
         if (activateQuest && canDoQuest) // ritar ut meddelande om pågående quest
         {
             //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
-            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); 
+            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
-            GUILayout.Box("New Quest: The Mother of Blobs");
+            if (!hasDoneQuest)
+            {
+                GUILayout.Box("New Quest: The Mother of Blobs");
+            }
+
+            if (hasDoneQuest)
+            {
+                GUILayout.Box("Quest Completed: The Mother of Blobs");
+            }
 
             GUILayout.EndArea();
         }
