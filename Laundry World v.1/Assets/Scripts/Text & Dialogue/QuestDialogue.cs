@@ -108,7 +108,7 @@ public class QuestDialogue : MonoBehaviour {
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[2], guiStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -129,7 +129,7 @@ public class QuestDialogue : MonoBehaviour {
 
         if (line3)
         {
-            GUILayout.Label(lines[1], guiStyle);
+            GUILayout.Label(lines[3], guiStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
