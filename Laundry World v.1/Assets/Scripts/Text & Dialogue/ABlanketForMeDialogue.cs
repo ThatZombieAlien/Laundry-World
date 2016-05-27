@@ -38,15 +38,15 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
     void Update()
     {
-        if (displayDialogue && !activateQuest && !hasDoneQuest)
-        {
-            player.canMove = false;
-        }
+        //if (displayDialogue && !activateQuest && !hasDoneQuest)
+        //{
+        //    player.canMove = false;
+        //}
 
-        if (displayDialogue && hasDoneQuest)
-        {
-            player.canMove = false;
-        }
+        //if (displayDialogue && hasDoneQuest)
+        //{
+        //    player.canMove = false;
+        //}
 
         if (finishDialogue.previousQuest.hasDoneQuest)
         {
@@ -222,6 +222,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
                 line1 = true;
             }
 
+            player.canMove = false;
             displayDialogue = true;
             Debug.Log("An object Collided");
         }
@@ -233,7 +234,6 @@ public class ABlanketForMeDialogue : MonoBehaviour {
         {
             displayDialogue = false;
             player.canMove = true;
-
         }
     }
 
