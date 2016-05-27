@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿// Grundkod av Sanna Gustafsson
+// Modifierad av (Maria Görman? eller vem som nu hinner fixa)
+
+using UnityEngine;
 using System.Collections;
-//skriven av Maria efter mall av sanna. Ej moddad än, bara copy paste
 
 public class PortalScript : MonoBehaviour {
 

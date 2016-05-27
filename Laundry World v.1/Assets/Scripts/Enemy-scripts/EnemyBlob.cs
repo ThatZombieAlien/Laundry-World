@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Mall för movement skrivet av Sanna Gustafsson
+// Modifiering av
+
+using UnityEngine;
 using System.Collections;
 
 public class EnemyBlob : MonoBehaviour

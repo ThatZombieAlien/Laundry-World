@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class Dialogue : MonoBehaviour {
@@ -17,25 +19,18 @@ public class Dialogue : MonoBehaviour {
     private GUIStyle guiStyle = new GUIStyle();
 
 
-	void Start () 
-    {
-	}
-	
 	void Update () 
     {
         if (displayDialogue)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             NPC.canMove = false;
         }
         else
         {
-            //textManager.DisableTextBox();
             player.canMove = true;
             NPC.canMove = true;
         }
-
 	}
 
     void OnGUI()
@@ -57,8 +52,7 @@ public class Dialogue : MonoBehaviour {
             }
             if (GUILayout.Button(answerButtons[2]))
             {
-                displayDialogue = false;
-                
+                displayDialogue = false;               
             }
         }
 
@@ -97,15 +91,12 @@ public class Dialogue : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
+            if (!activateQuest)
             {
-                if (!activateQuest)
-                {
-                    firstLine = true;
-                }
-                displayDialogue = true;
-                Debug.Log("An object Collided");
+                firstLine = true;
             }
+            displayDialogue = true;
+            Debug.Log("An object Collided");
         }
     }
 

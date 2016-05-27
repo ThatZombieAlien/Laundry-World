@@ -1,15 +1,11 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class Quest : MonoBehaviour
 {
     public QuestDialogue dialogue;
-    //private PlayerStats playerStats;
-
-    void Start()
-    {
-        //dialogue = GameObject.Find("NPC(1)").GetComponent<QuestDialogue>();
-    }
 
 
     void OnTriggerEnter2D(Collider2D col)

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class ABlanketForMeFinishDialogue : MonoBehaviour {

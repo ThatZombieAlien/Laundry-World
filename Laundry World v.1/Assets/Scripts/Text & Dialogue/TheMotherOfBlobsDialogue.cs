@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+// Tillägg av Anna Englund
+
+using UnityEngine;
 using System.Collections;
 
 public class TheMotherOfBlobsDialogue : MonoBehaviour {
@@ -208,7 +211,6 @@ public string[] lines;
 
         if (activateQuest && canDoQuest) // ritar ut meddelande om pågående quest
         {
-            //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
             GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
             if (!hasDoneQuest)

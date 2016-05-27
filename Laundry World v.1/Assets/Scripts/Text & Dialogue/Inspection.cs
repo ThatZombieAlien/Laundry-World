@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Grundkod av Sanna Gustafsson
+// Modifierat av Maria Görman
+
+using UnityEngine;
 using System.Collections;
 
 public class Inspection : MonoBehaviour

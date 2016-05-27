@@ -37,7 +37,7 @@ public class FastTravel : MonoBehaviour {
         {
             GUILayout.Label(travel[0], guiStyle); // Frågar vart man vill åka
 
-            if (FastTravelPointFound.target0Found && !target0)
+            if (FastTravelPointManager.target0Found && !target0)
             {
                 if (GUILayout.Button(destinations[0])) // Knapp 0 syftar på destination 0
                 {
@@ -45,12 +45,12 @@ public class FastTravel : MonoBehaviour {
                     StartCoroutine(sf.FadeToBlack());
                     displayTravel = false;
                     player.gameObject.transform.position = warpTarget0.position; // här väljer man target
-                    Camera.main.transform.position = warpTarget0.position;
+                    UnityEngine.Camera.main.transform.position = warpTarget0.position;
                     StartCoroutine(sf.FadeToClear());
                 }
             }
 
-            if (FastTravelPointFound.target1Found && !target1)
+            if (FastTravelPointManager.target1Found && !target1)
             {
                 if (GUILayout.Button(destinations[1]))
                 {
@@ -58,12 +58,12 @@ public class FastTravel : MonoBehaviour {
                     StartCoroutine(sf.FadeToBlack());
                     displayTravel = false;
                     player.gameObject.transform.position = warpTarget1.position;
-                    Camera.main.transform.position = warpTarget1.position;
+                    UnityEngine.Camera.main.transform.position = warpTarget1.position;
                     StartCoroutine(sf.FadeToClear());
                 }
             }
 
-            if (FastTravelPointFound.target2Found && !target2)
+            if (FastTravelPointManager.target2Found && !target2)
             {
                 if (GUILayout.Button(destinations[2]))
                 {
@@ -71,22 +71,22 @@ public class FastTravel : MonoBehaviour {
                     StartCoroutine(sf.FadeToBlack());
                     displayTravel = false;
                     player.gameObject.transform.position = warpTarget2.position;
-                    Camera.main.transform.position = warpTarget2.position;
+                    UnityEngine.Camera.main.transform.position = warpTarget2.position;
                     StartCoroutine(sf.FadeToClear());
                 }
             }
 
-            if (target0 && !FastTravelPointFound.target1Found && !FastTravelPointFound.target2Found)
+            if (target0 && !FastTravelPointManager.target1Found && !FastTravelPointManager.target2Found)
             {
                 GUILayout.Box("You haven't found any Fast Travel-points yet!");
             }
 
-            if (target1 && !FastTravelPointFound.target0Found && !FastTravelPointFound.target2Found)
+            if (target1 && !FastTravelPointManager.target0Found && !FastTravelPointManager.target2Found)
             {
                 GUILayout.Box("You haven't found any Fast Travel-points yet!");
             }
 
-            if (target2 && !FastTravelPointFound.target1Found && !FastTravelPointFound.target0Found)
+            if (target2 && !FastTravelPointManager.target1Found && !FastTravelPointManager.target0Found)
             {
                 GUILayout.Box("You haven't found any Fast Travel-points yet!");
             }
@@ -100,17 +100,17 @@ public class FastTravel : MonoBehaviour {
     {
         if (target0)
         {
-            FastTravelPointFound.target0Found = true;
+            FastTravelPointManager.target0Found = true;
         }
 
         if (target1)
         {
-            FastTravelPointFound.target1Found = true;
+            FastTravelPointManager.target1Found = true;
         }
 
         if (target2)
         {
-            FastTravelPointFound.target2Found = true;
+            FastTravelPointManager.target2Found = true;
         }
         if (other.gameObject.name == "Player")
         {

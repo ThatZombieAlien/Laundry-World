@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Grundkod av Sanna Gustafsson
+// Modifierat av 
+
+using UnityEngine;
 using System.Collections;
 
 public class HermitQuestDialogue : MonoBehaviour

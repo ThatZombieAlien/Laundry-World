@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class WarpDoor : MonoBehaviour
@@ -18,7 +20,7 @@ public class WarpDoor : MonoBehaviour
         Debug.Log("An object Collided");
 
         other.gameObject.transform.position = warpTarget.position;
-        Camera.main.transform.position = warpTarget.position;
+        UnityEngine.Camera.main.transform.position = warpTarget.position;
 
         yield return StartCoroutine(sf.FadeToClear());
     }

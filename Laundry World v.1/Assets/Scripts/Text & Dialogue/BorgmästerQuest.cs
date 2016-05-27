@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Grundkod av Sanna Gustafsson
+// Modifierat av Nicolina Christiansson
+
+using UnityEngine;
 using System.Collections;
 
 public class BorgmästerQuest : MonoBehaviour

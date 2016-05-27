@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Script skrivet av
+// Tillägg av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class HurtEnemy : MonoBehaviour

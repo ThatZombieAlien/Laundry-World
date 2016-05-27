@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class ABlanketForMeDialogue : MonoBehaviour {
@@ -192,7 +194,6 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
-            //GUI.DrawTexture(new Rect(10, 10, 200, 150), texture1);
             GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
 
             if (!hasDoneQuest)
@@ -214,17 +215,14 @@ public class ABlanketForMeDialogue : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
+            if (!activateQuest && !hasDoneQuest && !finishedDialogue && previousQuest.activateQuest)
+            // kan bara startas om man fått The Mother of Blobs-questet
             {
-                if (!activateQuest && !hasDoneQuest && !finishedDialogue && previousQuest.activateQuest) 
-                    // kan bara startas om man fått The Mother of Blobs-questet
-                {
-                    line1 = true;
-                }
-
-                displayDialogue = true;
-                Debug.Log("An object Collided");
+                line1 = true;
             }
+
+            displayDialogue = true;
+            Debug.Log("An object Collided");
         }
     }
 

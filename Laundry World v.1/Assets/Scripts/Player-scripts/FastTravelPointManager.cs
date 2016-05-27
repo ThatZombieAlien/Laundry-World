@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
-public class FastTravelPointFound : MonoBehaviour {
+public class FastTravelPointManager: MonoBehaviour {
 
     public static bool target0Found;
     public static bool target1Found;

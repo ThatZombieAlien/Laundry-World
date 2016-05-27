@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class QuestDialogue : MonoBehaviour {
 
 
-    // OBS: Endast exempel på struktur
     public string[] lines;
     public string[] answerButtons;
 
@@ -29,7 +30,6 @@ public class QuestDialogue : MonoBehaviour {
 
     void Start()
     {
-        //textManager = FindObjectOfType<TextBoxManager>();
         playerStats = FindObjectOfType<PlayerStats>();
     }
 
@@ -37,19 +37,16 @@ public class QuestDialogue : MonoBehaviour {
     {
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
         if (!displayDialogue)
         {
-            //textManager.DisableTextBox();
             player.canMove = true;
             npc.canMove = true;
         }
         if (displayDialogue && hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
@@ -193,16 +190,13 @@ public class QuestDialogue : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
+            if (!activateQuest && !hasDoneQuest)
             {
-                if (!activateQuest && !hasDoneQuest)
-                {
-                    line1 = true;
-                }
-
-                displayDialogue = true;
-                Debug.Log("An object Collided");
+                line1 = true;
             }
+
+            displayDialogue = true;
+            Debug.Log("An object Collided");
         }
     }
 
