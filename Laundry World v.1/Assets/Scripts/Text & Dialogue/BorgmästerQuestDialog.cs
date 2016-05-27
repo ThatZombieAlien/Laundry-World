@@ -143,7 +143,7 @@ public class BorgmästerQuestDialog : MonoBehaviour {
         {
             if (player.has1Quest)
             {
-                GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 250, 250));
+                GUILayout.BeginArea(new Rect(Screen.width - 250, Screen.height * 0.2f, 250, 250));
 
                 if (!hasDoneQuest)
                 {
@@ -159,7 +159,7 @@ public class BorgmästerQuestDialog : MonoBehaviour {
             }
             else
             {
-                GUILayout.BeginArea(new Rect(Screen.width - 350, Screen.height * 0.2f, 250, 250));
+                GUILayout.BeginArea(new Rect(Screen.width - 250, Screen.height * 0.2f, 250, 250));
 
                 if (!hasDoneQuest)
                 {

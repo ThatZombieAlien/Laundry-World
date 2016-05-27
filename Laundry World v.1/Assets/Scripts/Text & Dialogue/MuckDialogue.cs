@@ -47,12 +47,17 @@ public class MuckDialogue : MonoBehaviour {
 	public PlayerController player;
 	public NPCController NPC;
 
+    private Inventory inventory;
+
 	private GUIStyle guiStyle = new GUIStyle();
 
 
 	void Start () 
 	{
         blur = FindObjectOfType<Blur>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+
+        inventory.backpack.SetActive(false);
     }
 
 	void Update () 
@@ -331,6 +336,7 @@ public class MuckDialogue : MonoBehaviour {
 
 						line18 = false;
                         Destroy(gameObject); // sätt på sista svaret
+                        inventory.backpack.SetActive(true);
 					}
 
 				}
