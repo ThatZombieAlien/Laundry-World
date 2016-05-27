@@ -69,6 +69,7 @@ public class HermitQuestDialogue : MonoBehaviour
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 

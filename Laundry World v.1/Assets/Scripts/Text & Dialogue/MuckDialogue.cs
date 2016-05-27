@@ -58,15 +58,12 @@ public class MuckDialogue : MonoBehaviour {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
 
         inventory.backpack.SetActive(false);
+        player.canMove = false;
     }
 
 	void Update () 
 	{
-		if (displayDialogue)
-		{
-			player.canMove = false;
-			npc.canMove = false;
-		}
+		
 	}
 
 	void OnGUI()
@@ -85,6 +82,7 @@ public class MuckDialogue : MonoBehaviour {
             inventory.backpack.SetActive(true);
             player.canMove = true;
         }
+
 		if (displayDialogue)
 		{
 			if (activateQuest)
