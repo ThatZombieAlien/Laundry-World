@@ -74,6 +74,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
             {
                 displayDialogue = false;
                 line1 = false;
+                player.canMove = true;
             }
         }
 
@@ -109,6 +110,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
 
         if (hasSpoken && displayDialogue)
         {
+            player.canMove = true;
             GUILayout.Label(lines[5], guiStyle);
 
             if(Input.GetKeyDown(KeyCode.Return))
@@ -131,7 +133,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
         if (line5)
         {
             GUILayout.Label(lines[7], guiStyle);
-            
+            player.canMove = true;
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 displayDialogue = false;

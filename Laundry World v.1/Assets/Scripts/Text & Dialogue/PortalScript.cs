@@ -105,6 +105,7 @@ public class PortalScript : MonoBehaviour
             if (GUILayout.Button(answerButtons[19]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
 
         }
@@ -349,6 +350,7 @@ public class PortalScript : MonoBehaviour
             {
                 line18 = false;
                 displayDialogue = false;
+                player.canMove = true;
 
 
             }
@@ -357,6 +359,7 @@ public class PortalScript : MonoBehaviour
             {
                 line18 = false;
                 displayDialogue = false;
+                player.canMove = true;
 
 
 
@@ -378,12 +381,14 @@ public class PortalScript : MonoBehaviour
 
                 playerStats.AddExperience(20);
                 displayDialogue = false;
+                player.canMove = true;
 
             }
 
             if (GUILayout.Button(answerButtons[7]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 

@@ -145,6 +145,8 @@ public class TheThreatQuestDialogue : MonoBehaviour
             if (GUILayout.Button(answerButtons[7]))
             {
                 line6 = true;
+                line4 = false;
+                line3 = false;
             }
         }
 
@@ -177,6 +179,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
             if (GUILayout.Button(answerButtons[9]))
             {
                 line6 = false;
+                player.canMove = true;
             }
         }
 

@@ -52,7 +52,8 @@ public class MariasTestScript : MonoBehaviour
 			GUILayout.Label (Questions[2]);
 		if(GUILayout.Button(answerButtons[2]))
 		{
-			DisplayDialog = false;		
+			DisplayDialog = false;
+            player.canMove = true;
 		}	
 
 		}	

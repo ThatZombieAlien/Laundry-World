@@ -79,6 +79,7 @@ public string[] lines;
             {
                 displayDialogue = false;
                 line1 = false;
+                player.canMove = true;
             }
 
             if (GUILayout.Button(answerButtons[1]))
@@ -137,6 +138,7 @@ public string[] lines;
             {
                 displayDialogue = false;
                 line3 = false;
+                player.canMove = true;
             }
         }
 
@@ -154,6 +156,7 @@ public string[] lines;
             {
                 displayDialogue = false;
                 line4 = false;
+                player.canMove = true;
             }
         }
 
@@ -182,6 +185,7 @@ public string[] lines;
             {
                 line6 = false;
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 
@@ -194,12 +198,14 @@ public string[] lines;
                 line7 = false;
                 displayDialogue = false;
                 activateQuest = true;
+                player.canMove = true;
             }
 
             if (GUILayout.Button(answerButtons[7]))
             {
                 line7 = false;
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 

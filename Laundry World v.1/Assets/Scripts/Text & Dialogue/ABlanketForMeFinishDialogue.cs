@@ -110,11 +110,13 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
                 line5 = false;
                 haveSpoken = true;
                 previousQuest.activateQuest = false;
+                player.canMove = true;
             }
         }
 
         if (haveSpoken && displayDialogue)
         {
+            player.canMove = true;
             GUILayout.Label(lines[4], guiStyle);
 
             if (GUILayout.Button(answerButtons[5]))

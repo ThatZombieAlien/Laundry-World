@@ -89,6 +89,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
             GUILayout.Label(lines[2], guiStyle);
             finishedDialogue = true;
             TheFudgeMonster.canHurt = true;
+            player.canMove = true;
         }
        
         if (line3)
@@ -157,6 +158,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
                  displayDialogue = false;
                  finishedDialogue = true;
                  TheFudgeMonster.canHurt = true;
+                 player.canMove = true;
 
              }
 
@@ -165,6 +167,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
                  activateQuest = true;
                  previousQuest.canDoQuest = false;
                  line7 = false;
+                 player.canMove = true;
              }
         }
 
@@ -184,6 +187,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
                 line8 = false;
                 finishedDialogue = true;
                 TheFudgeMonster.canHurt = true;
+                player.canMove = true;
             }
         }
 

@@ -27,8 +27,7 @@ public class OneLineDialogue : MonoBehaviour {
         else
         {
             NPC.canMove = true;
-        }
-	
+        }	
 	}
 
     void OnGUI()

@@ -89,6 +89,7 @@ public class Hermit2Quest : MonoBehaviour
             if (GUILayout.Button(answerButtons[7]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
 
         }
@@ -107,6 +108,7 @@ public class Hermit2Quest : MonoBehaviour
                 if (GUILayout.Button(answerButtons[7]))
                 {
                     displayDialogue = false;
+                    player.canMove = true;
 
                 }
             }
@@ -217,6 +219,7 @@ public class Hermit2Quest : MonoBehaviour
                 line8 = false;
 
                 displayDialogue = false;
+                player.canMove = true;
             }
 
         }
@@ -236,12 +239,14 @@ public class Hermit2Quest : MonoBehaviour
 
                 playerStats.AddExperience(20);
                 displayDialogue = false;
+                player.canMove = true;
 
             }
 
             if (GUILayout.Button(answerButtons[7]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 

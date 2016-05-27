@@ -101,11 +101,13 @@ public class BorgmästerQuestDialog : MonoBehaviour
                 activateQuest = true;
                 displayDialogue = false;
                 line3 = false;
+                player.canMove = true;
             }
 
             if (GUILayout.Button(answerButtons[1]))
             {
                 displayDialogue = false;
+                player.canMove = true;
                 line3 = false;
             }
         }
@@ -121,7 +123,8 @@ public class BorgmästerQuestDialog : MonoBehaviour
                 activateQuest = false;
                 PlayerPurse.playerGold += 150;
                 inventory.AddItem(5);
-                playerStats.AddExperience(20); 
+                playerStats.AddExperience(20);
+                player.canMove = true;
             }
         }
 

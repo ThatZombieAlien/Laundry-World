@@ -70,6 +70,7 @@ public class MariasDialogue : MonoBehaviour {
 				if (GUILayout.Button(answerButtons[8]))
 				{
 					displayDialogue = false;
+                    player.canMove = true;
 				}
 			}
 			if (!activateQuest) 
@@ -138,6 +139,7 @@ public class MariasDialogue : MonoBehaviour {
 //						textManager.DisableTextBox ();
 						displayDialogue = false;
 						exitDialogue = true;
+                        player.canMove = true;
 					}
 				}
 
@@ -205,6 +207,7 @@ public class MariasDialogue : MonoBehaviour {
 						displayDialogue = false;
 						exitDialogue = true;
 						activateQuest = true;
+                        player.canMove = true;
 					}
 				}
 

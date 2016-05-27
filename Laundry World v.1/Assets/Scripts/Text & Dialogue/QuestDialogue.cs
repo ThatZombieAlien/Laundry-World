@@ -71,6 +71,7 @@ public class QuestDialogue : MonoBehaviour {
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 
@@ -99,6 +100,7 @@ public class QuestDialogue : MonoBehaviour {
             {
                 displayDialogue = false;
                 line2 = false;
+                player.canMove = true;
             }
         }
 
@@ -120,6 +122,7 @@ public class QuestDialogue : MonoBehaviour {
             if (GUILayout.Button(answerButtons[3]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 
@@ -131,6 +134,7 @@ public class QuestDialogue : MonoBehaviour {
             {
                 displayDialogue = false;;
                 line3 = false;
+                player.canMove = true;
             }
         }
 
@@ -143,6 +147,7 @@ public class QuestDialogue : MonoBehaviour {
                 activateQuest = true;
                 displayDialogue = false;
                 line4 = false;
+                player.canMove = true;
 
             }
         }
