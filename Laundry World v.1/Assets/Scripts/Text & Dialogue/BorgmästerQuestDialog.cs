@@ -69,6 +69,7 @@ public class BorgmästerQuestDialog : MonoBehaviour
             if (GUILayout.Button(answerButtons[1]))
             {
                 displayDialogue = false;
+                player.canMove = true;
             }
         }
 
