@@ -2,6 +2,7 @@
 // Modifierad av Maria Görman
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PortalScript : MonoBehaviour
     public bool destoryOnFinish;
     bool displayDialogue = false;
     public bool activateQuest = false;
-    public bool hasDoneQuest = false;
+    public bool hasDoneQuest = false;   
 
     bool line0 = true;
     bool line1 = false;
@@ -36,30 +37,17 @@ public class PortalScript : MonoBehaviour
     bool line18 = false;
     bool line19 = false;
 
-
-
-
-
-
-    //bool finishedDialogue = false;
-    //bool talkedAboutHouse = false;
-    //bool startedTalking = false;
-
     bool hasObjects = false;
 
-
-    public int reward;
-    public TextBoxManager textManager;
     public PlayerController player;
-    public NPCController NPC;
     private GUIStyle GUIStyle = new GUIStyle();
 
     private PlayerStats playerStats;
+    public LevelManager levelManager;
 
 
     void Start()
     {
-        //textManager = FindObjectOfType<TextBoxManager>();
         playerStats = FindObjectOfType<PlayerStats>();
     }
 
@@ -67,18 +55,13 @@ public class PortalScript : MonoBehaviour
     {
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
-            //textManager.EnableTextBox();
-            player.canMove = false;
-            NPC.canMove = false;
+            player.canMove = true;
         }
 
         if (displayDialogue && hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
-            NPC.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -104,9 +87,7 @@ public class PortalScript : MonoBehaviour
             if (GUILayout.Button(answerButtons[19]))
             {
                 displayDialogue = false;
-                player.canMove = true;
             }
-
         }
 
         if (line2)
@@ -118,8 +99,6 @@ public class PortalScript : MonoBehaviour
                 line2 = false;
                 line3 = true;
             }
-
-
         }
 
         if (line3)
@@ -136,8 +115,6 @@ public class PortalScript : MonoBehaviour
             {
                 line3 = false;
                 line5 = true;
-
-
             }
         }
 
@@ -150,7 +127,6 @@ public class PortalScript : MonoBehaviour
                 line4 = false;
                 activateQuest = true;
                 displayDialogue = false;
-
             }
         }
 
@@ -163,27 +139,23 @@ public class PortalScript : MonoBehaviour
             if (GUILayout.Button(answerButtons[5]))
             {
                 line5 = false;
-                line7 = true;
                 activateQuest = true;
 
             }
-
         }
 
-        //om man har föremålen
-        if (hasObjects && displayDialogue && line7)
+        if (activateQuest && hasDoneQuest && displayDialogue)
         {
             GUILayout.Label(lines[7], GUIStyle);
 
             if (GUILayout.Button(answerButtons[6]))
             {
-                line8 = true;
                 line7 = false;
+                line8 = true;
+                displayDialogue = false;
 
             }
-
         }
-
 
         if (line8)
         {
@@ -194,7 +166,6 @@ public class PortalScript : MonoBehaviour
                 line8 = false;
                 line9 = true;
             }
-
         }
 
 
@@ -205,39 +176,21 @@ public class PortalScript : MonoBehaviour
 
             if (GUILayout.Button(answerButtons[8]))
             {
-                line8 = false;
-                line9 = false;
-                line10 = true;
-
-            }
-
-        }
-
-
-        if (line10)
-        {
-            GUILayout.Label(lines[10], GUIStyle);
-
-            if (GUILayout.Button(answerButtons[9]))
-            {
                 line10 = false;
+                line9 = false;
                 line11 = true;
-
             }
-
         }
 
         if (line11)
         {
             GUILayout.Label(lines[11], GUIStyle);
 
-            if (GUILayout.Button(answerButtons[10]))
+            if (GUILayout.Button(answerButtons[9]))
             {
                 line11 = false;
                 line12 = true;
-
             }
-
         }
 
         if (line12)
@@ -248,9 +201,7 @@ public class PortalScript : MonoBehaviour
             {
                 line12 = false;
                 line13 = true;
-
             }
-
         }
 
         if (line13)
@@ -259,18 +210,15 @@ public class PortalScript : MonoBehaviour
 
             if (GUILayout.Button(answerButtons[11]))
             {
-                line12 = false;
-                line13 = true;
-
+                line13 = false;
+                line14 = true;
             }
 
             if (GUILayout.Button(answerButtons[12]))
             {
-                line12 = false;
-                line13 = true;
-
+                line13 = false;
+                line14 = true;
             }
-
         }
 
         if (line14)
@@ -281,9 +229,7 @@ public class PortalScript : MonoBehaviour
             {
                 line14 = false;
                 line15 = true;
-
             }
-
         }
 
         if (line15)
@@ -294,9 +240,7 @@ public class PortalScript : MonoBehaviour
             {
                 line15 = false;
                 line16 = true;
-
             }
-
         }
 
 
@@ -308,24 +252,9 @@ public class PortalScript : MonoBehaviour
             {
                 line16 = false;
                 line17 = true;
-
             }
-
         }
 
-
-        if (line16)
-        {
-            GUILayout.Label(lines[16], GUIStyle);
-
-            if (GUILayout.Button(answerButtons[15]))
-            {
-                line16 = false;
-                line17 = true;
-
-            }
-
-        }
 
         if (line17)
         {
@@ -335,9 +264,7 @@ public class PortalScript : MonoBehaviour
             {
                 line17 = false;
                 line18 = true;
-
             }
-
         }
 
         if (line18)
@@ -349,58 +276,18 @@ public class PortalScript : MonoBehaviour
             {
                 line18 = false;
                 displayDialogue = false;
-                player.canMove = true;
-
-
+                SceneManager.LoadScene("Intro");
+                // Väljer att stanna
             }
 
             if (GUILayout.Button(answerButtons[18]))
             {
                 line18 = false;
                 displayDialogue = false;
-                player.canMove = true;
-
-
-
-            }
-
-        }
-
-
-        if (activateQuest && hasDoneQuest && displayDialogue)
-        {
-            GUILayout.Label(lines[12], GUIStyle);
-
-            if (GUILayout.Button(answerButtons[8]))
-            {
-                line12 = false;
-                line8 = true;
-                activateQuest = false;
-                PlayerPurse.playerGold += reward;
-
-                playerStats.AddExperience(20);
-                displayDialogue = false;
-                player.canMove = true;
-
-            }
-
-            if (GUILayout.Button(answerButtons[7]))
-            {
-                displayDialogue = false;
-                player.canMove = true;
+                SceneManager.LoadScene("Intro");
+                // Väljer att åka tillbaka
             }
         }
-
-        //        if (line3)
-        //        {
-        //            GUILayout.Label(lines[3], guiStyle);
-        //
-        //            if (GUILayout.Button(answerButtons[0]))
-        //            {
-        //                displayDialogue = false;;
-        //                line3 = false;
-        //            }
-        //        }
 
         GUILayout.EndArea();
 
@@ -445,25 +332,12 @@ public class PortalScript : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
-            {
                 if (!activateQuest && !hasDoneQuest)
                 {
                     line0 = true;
                 }
-                //
-                //                if (!activateQuest && !hasDoneQuest)  //&& talkedAboutHouse && startedTalking
-                //                {
-                //                    Debug.Log("blurb");
-                //
-                //                    line3 = true;
-                //                
-                //                }
 
                 displayDialogue = true;
-                //Debug.Log("An object Collided");
-            }
-
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -472,14 +346,8 @@ public class PortalScript : MonoBehaviour
         {
             displayDialogue = false;
             player.canMove = true;
-            NPC.canMove = true;
         }
     }
 
-    //void QuestCompleted()
-    //{
-    //    // lägger till reward (om questet har det) till spelarens "pengar"
-    //    PlayerPurse.playerGold += reward;
-    //}
-
 }
+
