@@ -51,11 +51,10 @@ public class PortalScript : MonoBehaviour
     public int reward;
     public TextBoxManager textManager;
     public PlayerController player;
-    public NPCController npc;
-    private GUIStyle guiStyle = new GUIStyle();
+    public NPCController NPC;
+    private GUIStyle GUIStyle = new GUIStyle();
 
     private PlayerStats playerStats;
-
 
 
     void Start()
@@ -70,14 +69,14 @@ public class PortalScript : MonoBehaviour
         {
             //textManager.EnableTextBox();
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
         if (displayDialogue && hasDoneQuest)
         {
             //textManager.EnableTextBox();
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
     }
@@ -87,13 +86,13 @@ public class PortalScript : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && !activateQuest && line0)        //            && !activateQuest && line1)
         {
-            GUILayout.Label(lines[0], guiStyle);
-            GUILayout.Label(lines[1], guiStyle);
+            GUILayout.Label(lines[0], GUIStyle);
+            GUILayout.Label(lines[1], GUIStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -112,7 +111,7 @@ public class PortalScript : MonoBehaviour
 
         if (line2)
         {
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[2], GUIStyle);
 
             if (GUILayout.Button(answerButtons[1]))
             {
@@ -125,7 +124,7 @@ public class PortalScript : MonoBehaviour
 
         if (line3)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[3], GUIStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -144,7 +143,7 @@ public class PortalScript : MonoBehaviour
 
         if (line4)
         {
-            GUILayout.Label(lines[4], guiStyle);
+            GUILayout.Label(lines[4], GUIStyle);
 
             if (GUILayout.Button(answerButtons[4]))
             {
@@ -158,7 +157,7 @@ public class PortalScript : MonoBehaviour
 
         if (line5)
         {
-            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[5], GUIStyle);
 
 
             if (GUILayout.Button(answerButtons[5]))
@@ -174,7 +173,7 @@ public class PortalScript : MonoBehaviour
         //om man har föremålen
         if (hasObjects && displayDialogue && line7)
         {
-            GUILayout.Label(lines[7], guiStyle);
+            GUILayout.Label(lines[7], GUIStyle);
 
             if (GUILayout.Button(answerButtons[6]))
             {
@@ -188,7 +187,7 @@ public class PortalScript : MonoBehaviour
 
         if (line8)
         {
-            GUILayout.Label(lines[8], guiStyle);
+            GUILayout.Label(lines[8], GUIStyle);
 
             if (GUILayout.Button(answerButtons[7]))
             {
@@ -201,8 +200,8 @@ public class PortalScript : MonoBehaviour
 
         if (line9)
         {
-            GUILayout.Label(lines[9], guiStyle);
-            GUILayout.Label(lines[10], guiStyle);
+            GUILayout.Label(lines[9], GUIStyle);
+            GUILayout.Label(lines[10], GUIStyle);
 
             if (GUILayout.Button(answerButtons[8]))
             {
@@ -217,7 +216,7 @@ public class PortalScript : MonoBehaviour
 
         if (line10)
         {
-            GUILayout.Label(lines[10], guiStyle);
+            GUILayout.Label(lines[10], GUIStyle);
 
             if (GUILayout.Button(answerButtons[9]))
             {
@@ -230,7 +229,7 @@ public class PortalScript : MonoBehaviour
 
         if (line11)
         {
-            GUILayout.Label(lines[11], guiStyle);
+            GUILayout.Label(lines[11], GUIStyle);
 
             if (GUILayout.Button(answerButtons[10]))
             {
@@ -243,7 +242,7 @@ public class PortalScript : MonoBehaviour
 
         if (line12)
         {
-            GUILayout.Label(lines[12], guiStyle);
+            GUILayout.Label(lines[12], GUIStyle);
 
             if (GUILayout.Button(answerButtons[10]))
             {
@@ -256,7 +255,7 @@ public class PortalScript : MonoBehaviour
 
         if (line13)
         {
-            GUILayout.Label(lines[13], guiStyle);
+            GUILayout.Label(lines[13], GUIStyle);
 
             if (GUILayout.Button(answerButtons[11]))
             {
@@ -276,7 +275,7 @@ public class PortalScript : MonoBehaviour
 
         if (line14)
         {
-            GUILayout.Label(lines[14], guiStyle);
+            GUILayout.Label(lines[14], GUIStyle);
 
             if (GUILayout.Button(answerButtons[13]))
             {
@@ -289,7 +288,7 @@ public class PortalScript : MonoBehaviour
 
         if (line15)
         {
-            GUILayout.Label(lines[15], guiStyle);
+            GUILayout.Label(lines[15], GUIStyle);
 
             if (GUILayout.Button(answerButtons[14]))
             {
@@ -303,7 +302,7 @@ public class PortalScript : MonoBehaviour
 
         if (line16)
         {
-            GUILayout.Label(lines[16], guiStyle);
+            GUILayout.Label(lines[16], GUIStyle);
 
             if (GUILayout.Button(answerButtons[15]))
             {
@@ -317,7 +316,7 @@ public class PortalScript : MonoBehaviour
 
         if (line16)
         {
-            GUILayout.Label(lines[16], guiStyle);
+            GUILayout.Label(lines[16], GUIStyle);
 
             if (GUILayout.Button(answerButtons[15]))
             {
@@ -330,7 +329,7 @@ public class PortalScript : MonoBehaviour
 
         if (line17)
         {
-            GUILayout.Label(lines[17], guiStyle);
+            GUILayout.Label(lines[17], GUIStyle);
 
             if (GUILayout.Button(answerButtons[16]))
             {
@@ -343,8 +342,8 @@ public class PortalScript : MonoBehaviour
 
         if (line18)
         {
-            GUILayout.Label(lines[18], guiStyle);
-            GUILayout.Label(lines[19], guiStyle);
+            GUILayout.Label(lines[18], GUIStyle);
+            GUILayout.Label(lines[19], GUIStyle);
 
             if (GUILayout.Button(answerButtons[17]))
             {
@@ -370,7 +369,7 @@ public class PortalScript : MonoBehaviour
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[12], guiStyle);
+            GUILayout.Label(lines[12], GUIStyle);
 
             if (GUILayout.Button(answerButtons[8]))
             {
@@ -473,7 +472,7 @@ public class PortalScript : MonoBehaviour
         {
             displayDialogue = false;
             player.canMove = true;
-            npc.canMove = true;
+            NPC.canMove = true;
         }
     }
 

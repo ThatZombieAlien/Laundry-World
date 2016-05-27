@@ -23,8 +23,8 @@ public string[] lines;
     bool line7 = false;
     public int reward;
     public PlayerController player;
-    public NPCController npc;
-    private GUIStyle guiStyle = new GUIStyle();
+    public NPCController NPC;
+    private GUIStyle GUIStyle = new GUIStyle();
 
     private PlayerStats playerStats;
 
@@ -48,13 +48,13 @@ public string[] lines;
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
         if (activateQuest)
@@ -68,12 +68,12 @@ public string[] lines;
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && line1 && !lastQuestFinished && theThreatQuestdialogue.haveSpoken)
         {
-            GUILayout.Label(lines[0] + "\n" + lines[1], guiStyle); 
+            GUILayout.Label(lines[0] + "\n" + lines[1], GUIStyle); 
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -94,7 +94,7 @@ public string[] lines;
 
         if (line1 && lastQuestFinished)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[3], GUIStyle);
             if (GUILayout.Button(answerButtons[2]))
             {
                 line3 = true;
@@ -110,7 +110,7 @@ public string[] lines;
 
         if (line2 && displayDialogue)
         {
-            GUILayout.Label(lines[2] + "\n" + lines[3], guiStyle);
+            GUILayout.Label(lines[2] + "\n" + lines[3], GUIStyle);
             if (GUILayout.Button(answerButtons[2]))
             {
                 line3 = true;
@@ -126,7 +126,7 @@ public string[] lines;
 
         if (line3 && displayDialogue)
         {
-            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[5], GUIStyle);
             
             if(GUILayout.Button(answerButtons[4]))
             {
@@ -144,7 +144,7 @@ public string[] lines;
 
         if (line4)
         {
-            GUILayout.Label(lines[4] + "\n" + lines[5], guiStyle);
+            GUILayout.Label(lines[4] + "\n" + lines[5], GUIStyle);
 
             if (GUILayout.Button(answerButtons[4]))
             {
@@ -162,7 +162,7 @@ public string[] lines;
 
         if (line5)
         {
-            GUILayout.Label(lines[6], guiStyle);
+            GUILayout.Label(lines[6], GUIStyle);
            
             if (GUILayout.Button(answerButtons[5]))
             {
@@ -173,7 +173,7 @@ public string[] lines;
 
         if (line6)
         {
-            GUILayout.Label(lines[7] + "\n" + lines[8], guiStyle);
+            GUILayout.Label(lines[7] + "\n" + lines[8], GUIStyle);
 
             if (GUILayout.Button(answerButtons[6]))
             {
@@ -191,7 +191,7 @@ public string[] lines;
 
         if (line7)
         {
-            GUILayout.Label(lines[9] + "\n" + lines[10], guiStyle);
+            GUILayout.Label(lines[9] + "\n" + lines[10], GUIStyle);
 
             if (GUILayout.Button(answerButtons[8]))
             {
@@ -251,7 +251,7 @@ public string[] lines;
         if (other.gameObject.name == "Player")
         {
             player.canMove = true;
-            npc.canMove = true;
+            NPC.canMove = true;
             displayDialogue = false;
             line2 = false;
             line3 = false;

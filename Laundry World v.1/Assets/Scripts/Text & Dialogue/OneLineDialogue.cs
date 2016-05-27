@@ -11,7 +11,7 @@ public class OneLineDialogue : MonoBehaviour {
 
     public NPCController NPC;
 
-    private GUIStyle guiStyle = new GUIStyle();
+    private GUIStyle GUIStyle = new GUIStyle();
 
 	void Start () 
     {
@@ -34,11 +34,11 @@ public class OneLineDialogue : MonoBehaviour {
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 500));
 
-        guiStyle.fontSize = 16;
-        guiStyle.normal.textColor = Color.white;
+        GUIStyle.fontSize = 16;
+        GUIStyle.normal.textColor = Color.white;
         if (displayDialogue)
         {
-            GUILayout.Label(lines[0], guiStyle);
+            GUILayout.Label(lines[0], GUIStyle);
         }
 
 

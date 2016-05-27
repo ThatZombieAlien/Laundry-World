@@ -48,7 +48,7 @@ public class Inspection : MonoBehaviour
     //public PlayerController player;
     //public NPCController NPC;
 
-    private GUIStyle guiStyle = new GUIStyle();
+    private GUIStyle GUIStyle = new GUIStyle();
 
 
     //void Start()
@@ -77,8 +77,8 @@ public class Inspection : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 500));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
         if (exitDialogue)
         {
             //textManager.DisableTextBox();
@@ -93,7 +93,7 @@ public class Inspection : MonoBehaviour
 
             if (line0)
             {
-                GUILayout.Label(lines[0], guiStyle);
+                GUILayout.Label(lines[0], GUIStyle);
 
                 if (GUILayout.Button(answerButtons[0]))
                 {
@@ -106,7 +106,7 @@ public class Inspection : MonoBehaviour
             if (line1)
             {
                 //			displayDialogue = true;
-                GUILayout.Label(lines[1], guiStyle);
+                GUILayout.Label(lines[1], GUIStyle);
 
                 if (GUILayout.Button(answerButtons[1]))
                 {
@@ -122,7 +122,7 @@ public class Inspection : MonoBehaviour
                 //GUILayout.Label(lines[18], guiStyle);
                 //GUILayout.Label(lines[19], guiStyle);
 
-                GUILayout.Label(lines[2], guiStyle);
+                GUILayout.Label(lines[2], GUIStyle);
 
                 if (GUILayout.Button(answerButtons[2]))
                 {

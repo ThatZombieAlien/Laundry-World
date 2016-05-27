@@ -20,8 +20,8 @@ public class BorgmästerQuestDialog : MonoBehaviour
     public int reward;
     public TextBoxManager textManager;
     public PlayerController player;
-    public NPCController npc;
-    private GUIStyle guiStyle = new GUIStyle();
+    public NPCController NPC;
+    private GUIStyle GUIStyle = new GUIStyle();
 
     private PlayerStats playerStats;
     private Inventory inventory;
@@ -37,13 +37,13 @@ public class BorgmästerQuestDialog : MonoBehaviour
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
     }
 
@@ -51,13 +51,13 @@ public class BorgmästerQuestDialog : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && !activateQuest && line1)  ///Första dialogen
         {
 
-            GUILayout.Label(lines[0], guiStyle);
+            GUILayout.Label(lines[0], GUIStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -76,7 +76,7 @@ public class BorgmästerQuestDialog : MonoBehaviour
         if (line2 && displayDialogue)   ///Andra dialogen
         {
             displayDialogue = true;
-            GUILayout.Label(lines[1], guiStyle);
+            GUILayout.Label(lines[1], GUIStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -95,7 +95,7 @@ public class BorgmästerQuestDialog : MonoBehaviour
         if (line3 && displayDialogue)   //Tredje dialogen
         {
             displayDialogue = true;
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[2], GUIStyle);
 
             if (GUILayout.Button(answerButtons[3]))
             {
@@ -115,7 +115,7 @@ public class BorgmästerQuestDialog : MonoBehaviour
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[3], GUIStyle);
 
             if (GUILayout.Button(answerButtons[3]))
             {
@@ -190,7 +190,7 @@ public class BorgmästerQuestDialog : MonoBehaviour
         {
             displayDialogue = false;
             player.canMove = true;
-            npc.canMove = true;
+            NPC.canMove = true;
         }
     }
 

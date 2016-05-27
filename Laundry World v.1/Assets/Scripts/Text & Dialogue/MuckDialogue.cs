@@ -45,11 +45,11 @@ public class MuckDialogue : MonoBehaviour {
 
 	public TextBoxManager textManager;
 	public PlayerController player;
-	public NPCController npc;
+	public NPCController NPC;
 
     private Inventory inventory;
 
-	private GUIStyle guiStyle = new GUIStyle();
+	private GUIStyle GUIStyle = new GUIStyle();
 
 
 	void Start () 
@@ -70,8 +70,8 @@ public class MuckDialogue : MonoBehaviour {
 	{
 		GUILayout.BeginArea (new Rect (Screen.width / 2 - 150, Screen.height - 100, 350, 500));
 
-		guiStyle.fontSize = 16; // ändra storlek
-		guiStyle.normal.textColor = Color.white; // ändra färg
+		GUIStyle.fontSize = 16; // ändra storlek
+		GUIStyle.normal.textColor = Color.white; // ändra färg
 		if (exitDialogue) {
 			textManager.DisableTextBox ();
 		}
@@ -87,7 +87,7 @@ public class MuckDialogue : MonoBehaviour {
 		{
 			if (activateQuest)
 			{
-				GUILayout.Label(lines[9], guiStyle);
+				GUILayout.Label(lines[9], GUIStyle);
 
 				if (GUILayout.Button(answerButtons[8]))
 				{
@@ -98,7 +98,7 @@ public class MuckDialogue : MonoBehaviour {
 			{
 				if (line0) 
 				{
-					GUILayout.Label (lines [0], guiStyle);
+					GUILayout.Label (lines [0], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [0]))
 					{
@@ -111,7 +111,7 @@ public class MuckDialogue : MonoBehaviour {
 				if (line1) 
 				{
 					//			displayDialogue = true;
-					GUILayout.Label (lines [1], guiStyle);
+					GUILayout.Label (lines [1], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [1]))
 					{
@@ -122,7 +122,7 @@ public class MuckDialogue : MonoBehaviour {
 					}
 				}
 				if (line2) {
-					GUILayout.Label (lines [2], guiStyle);
+					GUILayout.Label (lines [2], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [2])) {
 						line3 = true;
@@ -132,8 +132,8 @@ public class MuckDialogue : MonoBehaviour {
 				}
 
 				if (line3) {
-					GUILayout.Label (lines [3], guiStyle);
-					GUILayout.Label (lines [4], guiStyle);
+					GUILayout.Label (lines [3], GUIStyle);
+					GUILayout.Label (lines [4], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [0])) 
 					{
@@ -146,7 +146,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line5) 
 				{
-					GUILayout.Label (lines [5], guiStyle);
+					GUILayout.Label (lines [5], GUIStyle);
 
                     StartCoroutine(EndBlur());
 
@@ -162,7 +162,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line6) 
 				{
-					GUILayout.Label (lines [6], guiStyle);
+					GUILayout.Label (lines [6], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [4])) 
 					{
@@ -174,7 +174,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line7)
 				{
-					GUILayout.Label (lines [7], guiStyle);
+					GUILayout.Label (lines [7], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [5]))
 					{
@@ -186,7 +186,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line8)
 				{
-					GUILayout.Label (lines [8], guiStyle);
+					GUILayout.Label (lines [8], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [6]))
 					{
@@ -198,7 +198,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line9)
 				{
-					GUILayout.Label (lines [9], guiStyle);
+					GUILayout.Label (lines [9], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [7]))
 					{
@@ -210,7 +210,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line10)
 				{
-					GUILayout.Label (lines [10], guiStyle);
+					GUILayout.Label (lines [10], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [8]))
 					{
@@ -224,8 +224,8 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line11)
 				{
-					GUILayout.Label (lines [11], guiStyle);
-					GUILayout.Label (lines [12], guiStyle);
+					GUILayout.Label (lines [11], GUIStyle);
+					GUILayout.Label (lines [12], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [0]))
 					{
@@ -237,7 +237,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line12)
 				{
-					GUILayout.Label (lines [21], guiStyle);
+					GUILayout.Label (lines [21], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [9]))
 					{
@@ -250,7 +250,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line13)
 				{
-					GUILayout.Label (lines [13], guiStyle);
+					GUILayout.Label (lines [13], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [10]))
 					{
@@ -263,7 +263,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line14)
 				{
-					GUILayout.Label (lines [14], guiStyle);
+					GUILayout.Label (lines [14], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [11]))
 					{
@@ -276,7 +276,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line15)
 				{
-					GUILayout.Label (lines [15], guiStyle);
+					GUILayout.Label (lines [15], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [12]))
 					{
@@ -289,7 +289,7 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line16)
 				{
-					GUILayout.Label (lines [16], guiStyle);
+					GUILayout.Label (lines [16], GUIStyle);
 
 
 					if (GUILayout.Button (answerButtons [14]))
@@ -303,8 +303,8 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line17)
 				{
-					GUILayout.Label (lines [17], guiStyle);
-					GUILayout.Label (lines [22], guiStyle);
+					GUILayout.Label (lines [17], GUIStyle);
+					GUILayout.Label (lines [22], GUIStyle);
 
 
 					if (GUILayout.Button (answerButtons [15]))
@@ -318,8 +318,8 @@ public class MuckDialogue : MonoBehaviour {
 
 				if (line18)
 				{
-					GUILayout.Label (lines [18], guiStyle);
-					GUILayout.Label (lines [19], guiStyle);
+					GUILayout.Label (lines [18], GUIStyle);
+					GUILayout.Label (lines [19], GUIStyle);
 
 
 					if (GUILayout.Button (answerButtons [13]))
@@ -396,7 +396,7 @@ public class MuckDialogue : MonoBehaviour {
 		{
 			displayDialogue = false;
             player.canMove = true;
-            npc.canMove = true;
+            NPC.canMove = true;
 		}
 	}
 

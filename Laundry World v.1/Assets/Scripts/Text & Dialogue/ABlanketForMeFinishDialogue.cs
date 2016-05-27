@@ -18,7 +18,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
     public PlayerController player;
     public ABlanketForMeDialogue previousQuest;
 
-    private GUIStyle guiStyle = new GUIStyle();
+    private GUIStyle GUIStyle = new GUIStyle();
 
     private Inventory inventory;
 
@@ -45,12 +45,12 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 500));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && line1)
         {
-            GUILayout.Label(lines[0], guiStyle);
+            GUILayout.Label(lines[0], GUIStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -61,7 +61,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
 
         if (line2)
         {
-            GUILayout.Label(lines[1], guiStyle);
+            GUILayout.Label(lines[1], GUIStyle);
 
             if (GUILayout.Button(answerButtons[1]))
             {
@@ -72,7 +72,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
 
         if (line3)
         {
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[2], GUIStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -83,7 +83,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
 
         if (line4)
         {
-            GUILayout.Label(lines[3] + "\n" + lines[4], guiStyle);
+            GUILayout.Label(lines[3] + "\n" + lines[4], GUIStyle);
 
             if (GUILayout.Button(answerButtons[3]))
             {
@@ -102,7 +102,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
 
         if (line5)
         {
-            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[5], GUIStyle);
 
             if (GUILayout.Button(answerButtons[4]))
             {
@@ -117,7 +117,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
         if (haveSpoken && displayDialogue)
         {
             player.canMove = true;
-            GUILayout.Label(lines[4], guiStyle);
+            GUILayout.Label(lines[4], GUIStyle);
 
             if (GUILayout.Button(answerButtons[5]))
             {

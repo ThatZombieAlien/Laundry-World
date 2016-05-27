@@ -17,16 +17,10 @@ public class ConfrontingNicoDialogue : MonoBehaviour
     bool line4 = false;
     bool line5 = false;
     bool hasSpoken = false;
+
     public PlayerController player;
     public TheMotherOfBlobsDialogue previousQuest;
-
-
-    private GUIStyle guiStyle = new GUIStyle();
-
-
-    void Start()
-    {
-    }
+    private GUIStyle GUIStyle = new GUIStyle();
 
     void Update()
     {
@@ -45,12 +39,12 @@ public class ConfrontingNicoDialogue : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 500));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && !hasSpoken && line1)
         {
-            GUILayout.Label(lines[0] + "\n" + lines[1], guiStyle);
+            GUILayout.Label(lines[0] + "\n" + lines[1], GUIStyle);
 
             if (previousQuest.hasDoneQuest)
             {
@@ -81,7 +75,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
         if (line2)
         {
             displayDialogue = true;
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[2], GUIStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -93,7 +87,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
         if (line3)
         {
             displayDialogue = true;
-            GUILayout.Label(lines[3] + "\n" + lines[4], guiStyle);
+            GUILayout.Label(lines[3] + "\n" + lines[4], GUIStyle);
 
             if (GUILayout.Button(answerButtons[3]))
             {
@@ -111,7 +105,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
         if (hasSpoken && displayDialogue)
         {
             player.canMove = true;
-            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[5], GUIStyle);
 
             if(Input.GetKeyDown(KeyCode.Return))
             {
@@ -121,7 +115,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
 
         if (line4)
         {
-            GUILayout.Label(lines[6], guiStyle);
+            GUILayout.Label(lines[6], GUIStyle);
 
             if (GUILayout.Button(answerButtons[6]))
             {
@@ -132,7 +126,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
 
         if (line5)
         {
-            GUILayout.Label(lines[7], guiStyle);
+            GUILayout.Label(lines[7], GUIStyle);
             player.canMove = true;
             if (Input.GetKeyDown(KeyCode.Return))
             {

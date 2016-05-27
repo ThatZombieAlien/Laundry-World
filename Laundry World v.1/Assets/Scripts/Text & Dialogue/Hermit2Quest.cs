@@ -39,8 +39,8 @@ public class Hermit2Quest : MonoBehaviour
     public int reward;
     public TextBoxManager textManager;
     public PlayerController player;
-    public NPCController npc;
-    private GUIStyle guiStyle = new GUIStyle();
+    public NPCController NPC;
+    private GUIStyle GUIStyle = new GUIStyle();
 
     private PlayerStats playerStats;
 
@@ -54,13 +54,13 @@ public class Hermit2Quest : MonoBehaviour
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
-            npc.canMove = false;
+            NPC.canMove = false;
         }
 
     }
@@ -70,12 +70,12 @@ public class Hermit2Quest : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && !activateQuest && line0)        //            && !activateQuest && line1)
         {
-            GUILayout.Label(lines[0], guiStyle);
+            GUILayout.Label(lines[0], GUIStyle);
 
             //            startedTalking = true;
 
@@ -98,7 +98,7 @@ public class Hermit2Quest : MonoBehaviour
         {
             if (line0)
             {
-                GUILayout.Label(lines[0], guiStyle);
+                GUILayout.Label(lines[0], GUIStyle);
 
                 if (GUILayout.Button(answerButtons[0]))
                 {
@@ -116,7 +116,7 @@ public class Hermit2Quest : MonoBehaviour
 
         if (line1)
         {
-            GUILayout.Label(lines[1], guiStyle);
+            GUILayout.Label(lines[1], GUIStyle);
 
             if (GUILayout.Button(answerButtons[1]))
             {
@@ -135,7 +135,7 @@ public class Hermit2Quest : MonoBehaviour
 
         if (line2)
         {
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[2], GUIStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -152,7 +152,7 @@ public class Hermit2Quest : MonoBehaviour
         }
         if (line3)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[3], GUIStyle);
 
             if (GUILayout.Button(answerButtons[4]))
             {
@@ -163,8 +163,8 @@ public class Hermit2Quest : MonoBehaviour
 
         if (line9)
         {
-            GUILayout.Label(lines[9], guiStyle);
-            GUILayout.Label(lines[10], guiStyle);
+            GUILayout.Label(lines[9], GUIStyle);
+            GUILayout.Label(lines[10], GUIStyle);
 
 
             if (GUILayout.Button(answerButtons[2]))
@@ -184,8 +184,8 @@ public class Hermit2Quest : MonoBehaviour
 
         if (line5)
         {
-            GUILayout.Label(lines[5], guiStyle);
-            GUILayout.Label(lines[6], guiStyle);
+            GUILayout.Label(lines[5], GUIStyle);
+            GUILayout.Label(lines[6], GUIStyle);
 
 
             if (GUILayout.Button(answerButtons[5]))
@@ -199,7 +199,7 @@ public class Hermit2Quest : MonoBehaviour
 
         if (line7)
         {
-            GUILayout.Label(lines[7], guiStyle);
+            GUILayout.Label(lines[7], GUIStyle);
 
             if (GUILayout.Button(answerButtons[6]))
             {
@@ -212,7 +212,7 @@ public class Hermit2Quest : MonoBehaviour
 
         if (line8)
         {
-            GUILayout.Label(lines[8], guiStyle);
+            GUILayout.Label(lines[8], GUIStyle);
 
             if (GUILayout.Button(answerButtons[7]))
             {
@@ -228,7 +228,7 @@ public class Hermit2Quest : MonoBehaviour
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
-            GUILayout.Label(lines[12], guiStyle);
+            GUILayout.Label(lines[12], GUIStyle);
 
             if (GUILayout.Button(answerButtons[8]))
             {
@@ -320,7 +320,7 @@ public class Hermit2Quest : MonoBehaviour
         {
             displayDialogue = false;
             player.canMove = true;
-            npc.canMove = true;
+            NPC.canMove = true;
         }
     }
 

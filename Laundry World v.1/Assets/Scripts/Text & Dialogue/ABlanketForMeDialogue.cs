@@ -22,7 +22,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
     bool finishedDialogue = false;
     public int reward;
     public PlayerController player;
-    private GUIStyle guiStyle = new GUIStyle();
+    private GUIStyle GUIStyle = new GUIStyle();
 
     private PlayerStats playerStats;
 
@@ -38,16 +38,6 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
     void Update()
     {
-        //if (displayDialogue && !activateQuest && !hasDoneQuest)
-        //{
-        //    player.canMove = false;
-        //}
-
-        //if (displayDialogue && hasDoneQuest)
-        //{
-        //    player.canMove = false;
-        //}
-
         if (finishDialogue.previousQuest.hasDoneQuest)
         {
             finishDialogue.enabled = true;
@@ -64,12 +54,12 @@ public class ABlanketForMeDialogue : MonoBehaviour {
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        guiStyle.fontSize = 16; // ändra storlek
-        guiStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16; // ändra storlek
+        GUIStyle.normal.textColor = Color.white; // ändra färg
 
         if (displayDialogue && line1)
         {
-            GUILayout.Label(lines[0] + "\n" + lines[1], guiStyle);
+            GUILayout.Label(lines[0] + "\n" + lines[1], GUIStyle);
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -86,7 +76,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (line2 && displayDialogue)
         {
-            GUILayout.Label(lines[2], guiStyle);
+            GUILayout.Label(lines[2], GUIStyle);
             finishedDialogue = true;
             TheFudgeMonster.canHurt = true;
             player.canMove = true;
@@ -94,7 +84,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
        
         if (line3)
         {
-            GUILayout.Label(lines[3], guiStyle);
+            GUILayout.Label(lines[3], GUIStyle);
 
             if (GUILayout.Button(answerButtons[2]))
             {
@@ -111,7 +101,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (line4)
         {
-            GUILayout.Label(lines[4], guiStyle);
+            GUILayout.Label(lines[4], GUIStyle);
 
              if (GUILayout.Button(answerButtons[3]))
              {
@@ -122,7 +112,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (line5)
         {
-            GUILayout.Label(lines[5], guiStyle);
+            GUILayout.Label(lines[5], GUIStyle);
 
              if (GUILayout.Button(answerButtons[4]))
              {
@@ -133,7 +123,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (line6)
         {
-            GUILayout.Label(lines[6], guiStyle);
+            GUILayout.Label(lines[6], GUIStyle);
 
             if (GUILayout.Button(answerButtons[5]))
             {
@@ -150,7 +140,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (line7)
         {
-            GUILayout.Label(lines[7] + "\n" + lines[8], guiStyle);
+            GUILayout.Label(lines[7] + "\n" + lines[8], GUIStyle);
 
              if (GUILayout.Button(answerButtons[8]))
              {
@@ -173,7 +163,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (line8)
         {
-            GUILayout.Label(lines[9] + "\n" + lines[10], guiStyle);
+            GUILayout.Label(lines[9] + "\n" + lines[10], GUIStyle);
 
             if (GUILayout.Button(answerButtons[7]))
             {
@@ -195,7 +185,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
         if (activateQuest) // ritar ut meddelande om pågående quest
         {
-            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250)); // "putta ner quests beroende på hur många man har?
+            GUILayout.BeginArea(new Rect(Screen.width - 300, Screen.height * 0.2f, 250, 250));
 
             if (!hasDoneQuest)
             {
