@@ -52,9 +52,10 @@
     {
 	    "type": "Hand",
         "id": 5,
-        "title": "Gold Sword",
+        "title": "Wedding ring",
         "value": 400,
-        "slug": "Sprättvapen",
+		"stackable": true,
+        "slug": "ring",
 		"consumable": true
     },
 

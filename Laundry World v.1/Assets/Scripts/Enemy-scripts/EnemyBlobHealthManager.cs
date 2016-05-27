@@ -10,14 +10,14 @@ public class EnemyBlobHealthManager : MonoBehaviour
 
     public int expToGive;
 
-    private TheThreatQuest theThreatQuest;
-    //private TheMotherOfBlobsDialogue questDialogue;
+    private TheThreatQuestDialogue dialogue;
+
+    public static int blobsKilled = 0;
 
     void Start()
     {
-        theThreatQuest = FindObjectOfType<TheThreatQuest>();
         playerStats = FindObjectOfType<PlayerStats>();
-        //questDialogue = FindObjectOfType<TheMotherOfBlobsDialogue>();
+        dialogue = FindObjectOfType<TheThreatQuestDialogue>();
 
         CurrentHealth = MaxHealth;
     }
@@ -26,21 +26,16 @@ public class EnemyBlobHealthManager : MonoBehaviour
     {
         if (CurrentHealth <= 0)
         {
-            TheThreatQuest.blobsKilled += 1;
+            blobsKilled += 1;
             Destroy(gameObject);
 
             playerStats.AddExperience(expToGive);
         }
 
-        if (TheThreatQuest.blobsKilled == 3)
+        if (blobsKilled == 3)
         {
-            theThreatQuest.dialogue.hasDoneQuest = true;
+            dialogue.hasDoneQuest = true;
         }
-
-        //if (hasDoneQuest)
-        //{
-        //    questDialogue.enabled = false;
-        //}
     }
 
     public void HurtEnemy(int damageToGive)

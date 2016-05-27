@@ -4,13 +4,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class BorgmästerQuestDialog : MonoBehaviour {
-
+public class BorgmästerQuestDialog : MonoBehaviour 
+{
 
     public string[] lines;
     public string[] answerButtons;
 
-    //public bool destoryOnFinish;
     public bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
@@ -18,7 +17,6 @@ public class BorgmästerQuestDialog : MonoBehaviour {
     bool line1 = true;
     bool line3 = false;
     bool line4 = false;
-    //bool finishedDialogue = false;
     public int reward;
     public TextBoxManager textManager;
     public PlayerController player;
@@ -26,13 +24,12 @@ public class BorgmästerQuestDialog : MonoBehaviour {
     private GUIStyle guiStyle = new GUIStyle();
 
     private PlayerStats playerStats;
-    //private PlayerPurse playerReward;
-
-
+    private Inventory inventory;
 
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
 
     void Update()
@@ -52,7 +49,6 @@ public class BorgmästerQuestDialog : MonoBehaviour {
             player.canMove = false;
             npc.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -128,14 +124,10 @@ public class BorgmästerQuestDialog : MonoBehaviour {
                 line1 = false;
                 activateQuest = false;
                 PlayerPurse.playerGold += 150;
-
-                playerStats.AddExperience(20);
-               
+                inventory.AddItem(5);
+                playerStats.AddExperience(20); 
             }
-
         }
-
-
 
         GUILayout.EndArea();
 
@@ -174,14 +166,12 @@ public class BorgmästerQuestDialog : MonoBehaviour {
                 GUILayout.EndArea();
             }
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
             {
                 if (!activateQuest && !hasDoneQuest)
                 {

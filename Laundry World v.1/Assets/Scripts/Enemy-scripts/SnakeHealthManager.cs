@@ -10,12 +10,14 @@ public class SnakeHealthManager : MonoBehaviour
 
     public int expToGive;
 
-    private HermitQuest hermitQuest;
+    private HermitQuestDialogue dialogue;
+
+    public static int snakesKilled = 0;
 
     void Start()
     {
-        hermitQuest = FindObjectOfType<HermitQuest>();
         playerStats = FindObjectOfType<PlayerStats>();
+        dialogue = FindObjectOfType<HermitQuestDialogue>();
 
         CurrentHealth = MaxHealth;
     }
@@ -24,16 +26,16 @@ public class SnakeHealthManager : MonoBehaviour
     {
         if (CurrentHealth <= 0)
         {
-            HermitQuest.snakesKilled += 1;
+            snakesKilled += 1;
             Destroy(gameObject);
 
             playerStats.AddExperience(expToGive);
         }
 
-        if (HermitQuest.snakesKilled == 3)
+        if (snakesKilled == 3)
         {
             print("quest snakes completed");
-            hermitQuest.dialogue.hasDoneQuest = true;
+            dialogue.hasDoneQuest = true;
         }
     }
 
