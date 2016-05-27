@@ -45,7 +45,7 @@ public class MuckDialogue : MonoBehaviour {
 
 	public TextBoxManager textManager;
 	public PlayerController player;
-	public NPCController NPC;
+	public NPCController npc;
 
     private Inventory inventory;
 
@@ -64,17 +64,9 @@ public class MuckDialogue : MonoBehaviour {
 	{
 		if (displayDialogue)
 		{
-			//textManager.EnableTextBox();
 			player.canMove = false;
-			NPC.canMove = false;
+			npc.canMove = false;
 		}
-		else
-		{
-			//textManager.DisableTextBox();
-			player.canMove = true;
-			NPC.canMove = true;
-		}
-
 	}
 
 	void OnGUI()
@@ -90,6 +82,8 @@ public class MuckDialogue : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             StartCoroutine(EndBlur());
+            inventory.backpack.SetActive(true);
+            player.canMove = true;
         }
 		if (displayDialogue)
 		{
@@ -337,6 +331,7 @@ public class MuckDialogue : MonoBehaviour {
 						line18 = false;
                         Destroy(gameObject); // sätt på sista svaret
                         inventory.backpack.SetActive(true);
+                        player.canMove = true;
 					}
 
 				}
@@ -402,6 +397,8 @@ public class MuckDialogue : MonoBehaviour {
 		if (other.gameObject.name == "Player")
 		{
 			displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
 		}
 	}
 

@@ -39,11 +39,7 @@ public class BorgmästerQuestDialog : MonoBehaviour
             player.canMove = false;
             npc.canMove = false;
         }
-        if (!displayDialogue)
-        {
-            player.canMove = true;
-            npc.canMove = true;
-        }
+
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
@@ -189,6 +185,8 @@ public class BorgmästerQuestDialog : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
         }
     }
 

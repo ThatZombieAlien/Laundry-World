@@ -72,12 +72,7 @@ public class PortalScript : MonoBehaviour
             player.canMove = false;
             npc.canMove = false;
         }
-        if (!displayDialogue)
-        {
-            //textManager.DisableTextBox();
-            player.canMove = true;
-            npc.canMove = true;
-        }
+
         if (displayDialogue && hasDoneQuest)
         {
             //textManager.EnableTextBox();
@@ -472,6 +467,8 @@ public class PortalScript : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
         }
     }
 

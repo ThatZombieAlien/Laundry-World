@@ -39,11 +39,6 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
         {
             player.canMove = false;
         }
-        else
-        {
-            player.canMove = true;
-        }
-
     }
 
     void OnGUI()
@@ -150,6 +145,7 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
             line2 = false;
             line3 = false;
             line4 = false;

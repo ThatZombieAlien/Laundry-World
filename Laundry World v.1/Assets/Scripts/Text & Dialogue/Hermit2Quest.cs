@@ -53,19 +53,12 @@ public class Hermit2Quest : MonoBehaviour
     {
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
-        if (!displayDialogue)
-        {
-            //textManager.DisableTextBox();
-            player.canMove = true;
-            npc.canMove = true;
-        }
+
         if (displayDialogue && hasDoneQuest)
         {
-            //textManager.EnableTextBox();
             player.canMove = false;
             npc.canMove = false;
         }
@@ -321,6 +314,8 @@ public class Hermit2Quest : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
         }
     }
 

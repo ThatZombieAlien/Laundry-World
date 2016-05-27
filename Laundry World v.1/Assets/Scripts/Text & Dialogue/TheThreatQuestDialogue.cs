@@ -45,10 +45,7 @@ public class TheThreatQuestDialogue : MonoBehaviour
         {
             player.canMove = false;
         }
-        if (!displayDialogue)
-        {
-            player.canMove = true;
-        }
+
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
@@ -265,6 +262,8 @@ public class TheThreatQuestDialogue : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
         }
     }
 

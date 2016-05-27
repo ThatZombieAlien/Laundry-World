@@ -14,7 +14,7 @@ public class Dialogue : MonoBehaviour {
     bool firstLine = true;
     public TextBoxManager textManager;
     public PlayerController player;
-    public NPCController NPC;
+    public NPCController npc;
 
     private GUIStyle guiStyle = new GUIStyle();
 
@@ -24,12 +24,7 @@ public class Dialogue : MonoBehaviour {
         if (displayDialogue)
         {
             player.canMove = false;
-            NPC.canMove = false;
-        }
-        else
-        {
-            player.canMove = true;
-            NPC.canMove = true;
+            npc.canMove = false;
         }
 	}
 
@@ -105,6 +100,8 @@ public class Dialogue : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
         }
     }
 }

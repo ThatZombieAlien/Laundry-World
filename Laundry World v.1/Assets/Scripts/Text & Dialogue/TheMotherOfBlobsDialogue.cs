@@ -50,11 +50,7 @@ public string[] lines;
             player.canMove = false;
             npc.canMove = false;
         }
-        if (!displayDialogue)
-        {
-            player.canMove = true;
-            npc.canMove = true;
-        }
+
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
@@ -248,6 +244,8 @@ public string[] lines;
     {
         if (other.gameObject.name == "Player")
         {
+            player.canMove = true;
+            npc.canMove = true;
             displayDialogue = false;
             line2 = false;
             line3 = false;

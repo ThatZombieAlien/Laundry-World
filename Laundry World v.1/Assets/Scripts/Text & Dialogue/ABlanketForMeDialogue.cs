@@ -42,10 +42,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
         {
             player.canMove = false;
         }
-        if (!displayDialogue)
-        {
-            player.canMove = true;
-        }
+
         if (displayDialogue && hasDoneQuest)
         {
             player.canMove = false;
@@ -231,6 +228,7 @@ public class ABlanketForMeDialogue : MonoBehaviour {
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
 
         }
     }

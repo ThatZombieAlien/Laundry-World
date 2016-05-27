@@ -34,10 +34,6 @@ public class ConfrontingNicoDialogue : MonoBehaviour
         {
             player.canMove = false;
         }
-        else
-        {
-            player.canMove = true;
-        }
 
         if (previousQuest.hasDoneQuest || TheFudgeMonster.friends)
         {
@@ -163,6 +159,7 @@ public class ConfrontingNicoDialogue : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             displayDialogue = false;
+            player.canMove = true;
         }
 
         if (line5)

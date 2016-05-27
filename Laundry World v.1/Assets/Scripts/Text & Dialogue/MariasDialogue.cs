@@ -30,7 +30,7 @@ public class MariasDialogue : MonoBehaviour {
 
 	public TextBoxManager textManager;
 	public PlayerController player;
-	public NPCController NPC;
+	public NPCController npc;
 
 	private GUIStyle guiStyle = new GUIStyle();
 
@@ -43,17 +43,9 @@ public class MariasDialogue : MonoBehaviour {
 	{
 		if (displayDialogue)
 		{
-			//textManager.EnableTextBox();
 			player.canMove = false;
-			NPC.canMove = false;
+			npc.canMove = false;
 		}
-		else
-		{
-			//textManager.DisableTextBox();
-			player.canMove = true;
-			NPC.canMove = true;
-		}
-
 	}
 
 	void OnGUI()
@@ -263,6 +255,8 @@ public class MariasDialogue : MonoBehaviour {
 		if (other.gameObject.name == "Player")
 		{
 			displayDialogue = false;
+            player.canMove = true;
+            npc.canMove = true;
 		}
 	}
 }
