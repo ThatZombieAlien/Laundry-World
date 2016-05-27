@@ -276,7 +276,7 @@ public class PortalScript : MonoBehaviour
             {
                 line18 = false;
                 displayDialogue = false;
-                SceneManager.LoadScene("Intro");
+                SceneManager.LoadScene("End1");
                 // Väljer att stanna
             }
 
@@ -284,7 +284,7 @@ public class PortalScript : MonoBehaviour
             {
                 line18 = false;
                 displayDialogue = false;
-                SceneManager.LoadScene("Intro");
+                SceneManager.LoadScene("End2");
                 // Väljer att åka tillbaka
             }
         }
