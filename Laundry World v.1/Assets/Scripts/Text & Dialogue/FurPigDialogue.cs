@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Grundkod av Sanna Gustafsson
+// Modifierat av Nicolina Christiansson
+
+using UnityEngine;
 using System.Collections;
 
 public class FurPigDialogue : MonoBehaviour
@@ -7,7 +10,6 @@ public class FurPigDialogue : MonoBehaviour
     public string[] lines;
     public string[] answerButtons;
 
-    public bool destoryOnFinish;
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
@@ -49,7 +51,7 @@ public class FurPigDialogue : MonoBehaviour
     {
         if (displayDialogue && !activateQuest && !hasDoneQuest)
         {
-            player.canMove = false;
+            player.canMove = true;
             npc.canMove = false;
         }
         if (!displayDialogue)
