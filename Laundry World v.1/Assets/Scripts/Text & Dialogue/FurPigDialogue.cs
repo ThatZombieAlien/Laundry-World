@@ -13,7 +13,7 @@ public class FurPigDialogue : MonoBehaviour
     bool displayDialogue = false;
     public bool activateQuest = false;
     public bool hasDoneQuest = false;
-    bool line1 = false;
+    bool line1 = true;
     bool line2 = false;
     bool line3 = true;
     bool line4 = false;
@@ -39,6 +39,7 @@ public class FurPigDialogue : MonoBehaviour
     private GUIStyle guiStyle = new GUIStyle();
 
     private PlayerStats playerStats;
+
 
     void Start()
     {
@@ -70,7 +71,6 @@ public class FurPigDialogue : MonoBehaviour
 
         guiStyle.fontSize = 16; // ändra storlek
         guiStyle.normal.textColor = Color.white; // ändra färg
-
 
         if (line3 && displayDialogue) //Replik 1(3) element 0
         {

@@ -17,7 +17,7 @@ public class MrSealDialogue : MonoBehaviour
     bool line2 = false;
     bool line3 = false;
     bool line4 = false;
-    bool line5 = false;
+    public bool line5 = false;
     bool finishedDialogue = false;
     public int reward;
     public TextBoxManager textManager;
@@ -140,6 +140,7 @@ public class MrSealDialogue : MonoBehaviour
                 Destroy(gameObject); // sätt på sista svaret
                 inventory.backpack.SetActive(true);
                 inventory.AddItem(11);
+                finishedDialogue = true;
             }
         }
 
