@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 2dfc68de827cf99408d3a5e0f6b2bd3c
+timeCreated: 1464448645
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: delfin_0
+    21300002: delfin_1
+    21300004: delfin_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: delfin_0
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 147
+        width: 304
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 69.5}
+        - {x: -69, y: 39.5}
+        - {x: -98, y: 56.5}
+        - {x: -152, y: 8.5}
+        - {x: -152, y: -20.5}
+        - {x: -147, y: -28.5}
+        - {x: -39, y: -69.5}
+        - {x: 72, y: -69.5}
+        - {x: 140, y: -56.5}
+        - {x: 152, y: -39.5}
+        - {x: 152, y: 9.5}
+        - {x: 138, y: 69.5}
+    - name: delfin_1
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 150
+        width: 302
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 66}
+        - {x: -26, y: 33}
+        - {x: -77, y: 66}
+        - {x: -96, y: 66}
+        - {x: -151, y: 29}
+        - {x: -151, y: -6}
+        - {x: -10, y: -66}
+        - {x: 150, y: -66}
+        - {x: 151, y: -64}
+        - {x: 151, y: 25}
+        - {x: 129, y: 66}
+    - name: delfin_2
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 157
+        width: 245
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -114.5, y: 66}
+        - {x: -121.5, y: 31}
+        - {x: -122.5, y: 30}
+        - {x: -122.5, y: -6}
+        - {x: -27.5, y: -66}
+        - {x: 78.5, y: -66}
+        - {x: 119.5, y: -60}
+        - {x: 122.5, y: -49}
+        - {x: 122.5, y: 66}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

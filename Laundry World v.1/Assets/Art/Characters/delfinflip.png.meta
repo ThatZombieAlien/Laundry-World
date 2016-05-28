@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: be0dfb278bc34d249a6762df723bcb5c
+timeCreated: 1464448853
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: delfinflip_0
+    21300002: delfinflip_1
+    21300004: delfinflip_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: delfinflip_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 157
+        width: 245
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122.5, y: -5}
+        - {x: 122.5, y: 26}
+        - {x: 80.5, y: 66}
+        - {x: -101.5, y: 66}
+        - {x: -122.5, y: 32}
+        - {x: -122.5, y: -60}
+        - {x: -119.5, y: -66}
+        - {x: 3.5, y: -66}
+        - {x: 17.5, y: -57}
+        - {x: 23.5, y: -53}
+        - {x: 37.5, y: -43}
+    - name: delfinflip_1
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 150
+        width: 302
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 146, y: 32}
+        - {x: 89, y: 66}
+        - {x: 51, y: 66}
+        - {x: 1, y: 61}
+        - {x: -21, y: 66}
+        - {x: -151, y: 66}
+        - {x: -151, y: -65}
+        - {x: -148, y: -66}
+        - {x: 38, y: -66}
+        - {x: 150, y: -1}
+        - {x: 151, y: 3}
+        - {x: 151, y: 25}
+    - name: delfinflip_2
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 147
+        width: 304
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 55.5}
+        - {x: -43, y: 69.5}
+        - {x: -130, y: 69.5}
+        - {x: -152, y: 20.5}
+        - {x: -152, y: -41.5}
+        - {x: -61, y: -69.5}
+        - {x: 19, y: -69.5}
+        - {x: 152, y: -27.5}
+        - {x: 152, y: 23.5}
+        - {x: 75, y: 56.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
