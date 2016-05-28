@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Anna
+
+using UnityEngine;
 using System.Collections;
 
 public class PickUpItemController : MonoBehaviour
@@ -15,11 +17,6 @@ public class PickUpItemController : MonoBehaviour
         inventoryFullText.SetActive(false);
     }
 
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PickUpItem"))
@@ -28,6 +25,7 @@ public class PickUpItemController : MonoBehaviour
             bool addedItem = inventory.AddItem(itemID);
             pickUpSound.Play();
 
+            //Om ett item hamnar i inventoryt förstörs objektet
             if (addedItem)
             {
                 Destroy(other.transform.gameObject);

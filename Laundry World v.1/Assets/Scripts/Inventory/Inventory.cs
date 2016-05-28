@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Anna Englund
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;

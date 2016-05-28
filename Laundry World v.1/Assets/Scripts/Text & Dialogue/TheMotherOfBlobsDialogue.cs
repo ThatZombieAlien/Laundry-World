@@ -1,12 +1,11 @@
 ﻿// Script skrivet av Sanna Gustafsson
-// Tillägg av Anna Englund
 
 using UnityEngine;
 using System.Collections;
 
-public class TheMotherOfBlobsDialogue : MonoBehaviour {
-
-public string[] lines;
+public class TheMotherOfBlobsDialogue : MonoBehaviour
+{
+    public string[] lines;
     public string[] answerButtons;
 
     bool displayDialogue = false;

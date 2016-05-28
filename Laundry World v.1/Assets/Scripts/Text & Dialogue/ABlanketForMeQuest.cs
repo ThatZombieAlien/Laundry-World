@@ -1,15 +1,12 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Anna Englund
+
+using UnityEngine;
 using System.Collections;
 
 public class ABlanketForMeQuest : MonoBehaviour
 {
-    //private Inventory inventory;
     public ABlanketForMeDialogue dialogue;
 
-    void Start()
-    {
-        //inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-    }
     void Update()
     {
         if (dialogue.activateQuest)

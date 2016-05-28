@@ -1,5 +1,5 @@
 ﻿// Grundkod av Sanna Gustafsson
-// Modifierat av 
+// Modifierat av Anna Englund
 
 using UnityEngine;
 using System.Collections;
@@ -154,7 +154,6 @@ public class TheThreatQuestDialogue : MonoBehaviour
         {
             GUILayout.Label(lines[5], GUIStyle);
             GUILayout.Label(lines[4], GUIStyle);
-            //line1 = false;
 
             if (GUILayout.Button(answerButtons[6]))
             {

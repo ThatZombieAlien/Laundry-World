@@ -1,5 +1,5 @@
 ﻿// Grundkod av Sanna Gustafsson
-// Modifierat av 
+// Modifierat av Anna Englund
 
 using UnityEngine;
 using System.Collections;
@@ -51,8 +51,8 @@ public class HermitQuestDialogue : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
-        GUIStyle.fontSize = 16; // ändra storlek
-        GUIStyle.normal.textColor = Color.white; // ändra färg
+        GUIStyle.fontSize = 16;
+        GUIStyle.normal.textColor = Color.white;
 
         if (displayDialogue && !activateQuest && line1)
         {
@@ -137,7 +137,7 @@ public class HermitQuestDialogue : MonoBehaviour
 
         GUILayout.EndArea();
 
-        if (activateQuest) // ritar ut meddelande om pågående quest
+        if (activateQuest)
         {
             if (player.has1Quest)
             {

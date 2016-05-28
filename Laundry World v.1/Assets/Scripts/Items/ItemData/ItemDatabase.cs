@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Anna Englund
+
+using UnityEngine;
 using System.Collections;
 using LitJson;
 using System.Collections.Generic;

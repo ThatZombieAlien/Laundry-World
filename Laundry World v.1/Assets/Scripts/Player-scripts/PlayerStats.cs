@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Anna Englund
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerStats : MonoBehaviour
@@ -31,8 +33,6 @@ public class PlayerStats : MonoBehaviour
     {
         if(currentExperience >= toLevelUp[currentLevel])
         {
-            //currentLevel++;
-
             LevelUp();
         }
     }

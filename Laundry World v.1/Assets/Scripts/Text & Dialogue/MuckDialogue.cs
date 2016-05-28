@@ -1,5 +1,6 @@
 ﻿// Grundkod av Sanna Gustafsson
 // Modifierat av Maria Görman
+//och Anna Englund (metoden EndBlur)
 
 using UnityEngine;
 using System.Collections;

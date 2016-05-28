@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 
-//namespace UnityStandardAssets.ImageEffects
-//{
+
 [ExecuteInEditMode]
 [AddComponentMenu("Image Effects/Blur/Blur")]
 public class Blur : MonoBehaviour
@@ -121,4 +120,3 @@ public class Blur : MonoBehaviour
         enabled = false;
     }
 }
-//}

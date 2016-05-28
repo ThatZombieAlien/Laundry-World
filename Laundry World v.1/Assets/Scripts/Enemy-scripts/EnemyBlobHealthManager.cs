@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Script-mall skrivet av David Zerate Abreu
+// Modifierat av Anna Englund
+
+using UnityEngine;
 using System.Collections;
 
 public class EnemyBlobHealthManager : MonoBehaviour 
