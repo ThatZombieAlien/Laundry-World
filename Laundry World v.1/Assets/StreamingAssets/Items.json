@@ -100,13 +100,23 @@
 		"consumable": true
     },
 
-	{
-	    "type": "Hand",
+    {
+        "type": "Hand",
         "id": 10,
         "title": "Bronze Sword",
         "value": 200,
         "stackable": true,
         "slug": "syrulle2",
+        "consumable": true
+    },
+
+    {
+	    "type": "Hand",
+        "id": 11,
+        "title": "Mr Seal",
+        "value": 500,
+        "stackable": true,
+        "slug": "DelfinObjekt2",
 		"consumable": true
     }
 
