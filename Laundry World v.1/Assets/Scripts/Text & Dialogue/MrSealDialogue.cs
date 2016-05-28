@@ -28,6 +28,8 @@ public class MrSealDialogue : MonoBehaviour
     private PlayerStats playerStats;
     private Inventory inventory;
 
+    public bool hasTalked = false;
+
 
     void Start()
     {
@@ -141,6 +143,7 @@ public class MrSealDialogue : MonoBehaviour
                 inventory.backpack.SetActive(true);
                 inventory.AddItem(11);
                 finishedDialogue = true;
+                hasTalked = true;
             }
         }
 

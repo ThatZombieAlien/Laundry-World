@@ -40,10 +40,13 @@ public class FurPigDialogue : MonoBehaviour
 
     private PlayerStats playerStats;
 
+    private MrSealDialogue mrSealDialogue;
+
 
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        mrSealDialogue = FindObjectOfType<MrSealDialogue>();
     }
 
     void Update()
@@ -72,7 +75,7 @@ public class FurPigDialogue : MonoBehaviour
         guiStyle.fontSize = 16; // ändra storlek
         guiStyle.normal.textColor = Color.white; // ändra färg
 
-        if (line3 && displayDialogue) //Replik 1(3) element 0
+        if (line3 && displayDialogue && mrSealDialogue.hasTalked) //Replik 1(3) element 0
         {
             displayDialogue = true;
             GUILayout.Label(lines[0], guiStyle);
@@ -84,6 +87,17 @@ public class FurPigDialogue : MonoBehaviour
                 line3 = false;
             }
         }
+
+        if (line3 && displayDialogue && !mrSealDialogue.hasTalked)
+        {
+            GUILayout.Label(lines[0], guiStyle);
+
+            if (GUILayout.Button(answerButtons[0]))
+            {
+                displayDialogue = false;
+            }
+        }
+
 
         if (line4 && displayDialogue) //Replik 2(4) element 2
         {
