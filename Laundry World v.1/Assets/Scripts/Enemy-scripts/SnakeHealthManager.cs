@@ -5,8 +5,8 @@ using System.Collections;
 
 public class SnakeHealthManager : MonoBehaviour
 {
-    public int MaxHealth;
-    public int CurrentHealth;
+    public int maxHealth;
+    public int currentHealth;
 
     private PlayerStats playerStats;
 
@@ -21,12 +21,12 @@ public class SnakeHealthManager : MonoBehaviour
         playerStats = FindObjectOfType<PlayerStats>();
         dialogue = FindObjectOfType<HermitQuestDialogue>();
 
-        CurrentHealth = MaxHealth;
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        if (CurrentHealth <= 0)
+        if (currentHealth <= 0)
         {
             snakesKilled += 1;
             Destroy(gameObject);
@@ -43,11 +43,11 @@ public class SnakeHealthManager : MonoBehaviour
 
     public void HurtEnemy(int damageToGive)
     {
-        CurrentHealth -= damageToGive;
+        currentHealth -= damageToGive;
     }
 
     public void SetMaxHealth()
     {
-        CurrentHealth = MaxHealth;
+        currentHealth = maxHealth;
     }
 }

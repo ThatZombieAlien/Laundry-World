@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Slider healthBar;
-    public Text hpText;
+    public Text HPText;
     public PlayerHealthManager playerHealth;
 
     PlayerStats playerStats;
     public Text levelText;
-    public Text expText;
+    public Text experienceText;
 
     private static bool UIexists;
 
@@ -36,8 +36,8 @@ public class UIManager : MonoBehaviour
     {
         healthBar.maxValue = playerHealth.playerMaxHealth;
         healthBar.value = playerHealth.playerCurrentHealth;
-        hpText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
+        HPText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
         levelText.text = "Level: " + playerStats.currentLevel;
-        expText.text = "XP: " + playerStats.currentExperience;
+        experienceText.text = "XP: " + playerStats.currentExperience;
     }
 }

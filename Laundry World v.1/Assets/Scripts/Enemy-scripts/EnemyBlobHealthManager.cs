@@ -6,8 +6,8 @@ using System.Collections;
 
 public class EnemyBlobHealthManager : MonoBehaviour 
 {
-    public int MaxHealth;
-    public int CurrentHealth;
+    public int maxHealth;
+    public int currentHealth;
 
     private PlayerStats playerStats;
 
@@ -22,12 +22,12 @@ public class EnemyBlobHealthManager : MonoBehaviour
         playerStats = FindObjectOfType<PlayerStats>();
         dialogue = FindObjectOfType<TheThreatQuestDialogue>();
 
-        CurrentHealth = MaxHealth;
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        if (CurrentHealth <= 0)
+        if (currentHealth <= 0)
         {
             blobsKilled += 1;
             Destroy(gameObject);
@@ -43,11 +43,11 @@ public class EnemyBlobHealthManager : MonoBehaviour
 
     public void HurtEnemy(int damageToGive)
     {
-        CurrentHealth -= damageToGive;
+        currentHealth -= damageToGive;
     }
 
     public void SetMaxHealth()
     {
-        CurrentHealth = MaxHealth;
+        currentHealth = maxHealth;
     }
 }
