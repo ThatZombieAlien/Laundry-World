@@ -4,10 +4,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class FurPigQuest : MonoBehaviour {
+public class FurPigQuest : MonoBehaviour
+{
 
     public FurPigDialogue dialogue;
-
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -20,6 +20,5 @@ public class FurPigQuest : MonoBehaviour {
                 dialogue.hasDoneQuest = true;
             }
         }
-
     }
 }

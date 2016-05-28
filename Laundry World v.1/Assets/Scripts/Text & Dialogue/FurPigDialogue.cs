@@ -40,8 +40,6 @@ public class FurPigDialogue : MonoBehaviour
 
     private PlayerStats playerStats;
 
-
-
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
@@ -64,7 +62,6 @@ public class FurPigDialogue : MonoBehaviour
             player.canMove = false;
             npc.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -74,34 +71,8 @@ public class FurPigDialogue : MonoBehaviour
         guiStyle.fontSize = 16; // ändra storlek
         guiStyle.normal.textColor = Color.white; // ändra färg
 
-        //if (displayDialogue && !activateQuest && line1)  DETTA SKA VARA OM MAN INTE PRATAT MED MR SEAL 
-        //{
 
-        //    GUILayout.Label(lines[0], guiStyle);
-
-        //    if (GUILayout.Button(answerButtons[0]))
-        //    {
-        //        line2 = true;
-        //        displayDialogue = true;
-        //        line1 = false;
-        //    }
-        //}
-
-        //if (line2 && displayDialogue)   DETTA SKA VARA OM MAN INTE ÄNNU HÄMTAT TVÄTTMEDLET
-        //{
-        //    displayDialogue = true;
-        //    GUILayout.Label(lines[1], guiStyle);
-
-        //    if (GUILayout.Button(answerButtons[1]))
-        //    {
-        //        activateQuest = true;
-        //        displayDialogue = false;
-        //        line1 = true;
-        //        line2 = false;
-        //    }  
-        //}
-
-        if (line3 && displayDialogue) //Replik 3 element 0
+        if (line3 && displayDialogue) //Replik 1(3) element 0
         {
             displayDialogue = true;
             GUILayout.Label(lines[0], guiStyle);
@@ -114,8 +85,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-
-        if (line4 && displayDialogue) //Replik 4 element 2
+        if (line4 && displayDialogue) //Replik 2(4) element 2
         {
             displayDialogue = true;
             GUILayout.Label(lines[2], guiStyle);
@@ -135,7 +105,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line5 && displayDialogue) //Replik 5 element 3
+        if (line5 && displayDialogue) //Replik 3(5) element 3
         {
             displayDialogue = true;
             GUILayout.Label(lines[3], guiStyle);
@@ -148,7 +118,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line6 && displayDialogue)  //Replik 6 och 7, element 4 och 5
+        if (line6 && displayDialogue)  //Replik 4(6) och 5(7), element 4 och 5
         {
             displayDialogue = true;
             GUILayout.Label(lines[4], guiStyle);
@@ -163,7 +133,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line7 && displayDialogue) //Replik 8 och 9, element 6 och 7
+        if (line7 && displayDialogue) //Replik 6(8) och 7(9), element 6 och 7
         {
             displayDialogue = true;
             GUILayout.Label(lines[6], guiStyle);
@@ -178,7 +148,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line8 && activateQuest && hasDoneQuest && displayDialogue)  //Replik 10 element 1
+        if (line8 && activateQuest && hasDoneQuest && displayDialogue)  //Replik 8(10) element 1
         {
             GUILayout.Label(lines[1], guiStyle);
 
@@ -192,8 +162,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-
-        if (line9 && displayDialogue) //Replik 11 element 8
+        if (line9 && displayDialogue) //Replik 9(11) element 8
         {
             displayDialogue = true;
             GUILayout.Label(lines[8], guiStyle);
@@ -206,8 +175,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-
-        if (line10 && displayDialogue) //Replik 12 och 13, element 9 och 10
+        if (line10 && displayDialogue) //Replik 10(12) och 11(13), element 9 och 10
         {
             displayDialogue = true;
             GUILayout.Label(lines[9], guiStyle);
@@ -221,7 +189,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line11 && displayDialogue) //Replik 14 element 11
+        if (line11 && displayDialogue) //Replik 12(14) element 11
         {
             displayDialogue = true;
             GUILayout.Label(lines[11], guiStyle);
@@ -235,7 +203,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line12 && displayDialogue) //Replik 15 element 12
+        if (line12 && displayDialogue) //Replik 13(15) element 12
         {
             displayDialogue = true;
             GUILayout.Label(lines[13], guiStyle);
@@ -248,7 +216,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line13 && displayDialogue) //Replik 16 element 14
+        if (line13 && displayDialogue) //Replik 14(16) element 14
         {
             displayDialogue = true;
             GUILayout.Label(lines[14], guiStyle);
@@ -261,7 +229,7 @@ public class FurPigDialogue : MonoBehaviour
             }
         }
 
-        if (line14 && displayDialogue) //Replik 17 element 15
+        if (line14 && displayDialogue) //Replik 15(17) element 15
         {
             displayDialogue = true;
             GUILayout.Label(lines[15], guiStyle);
@@ -272,7 +240,6 @@ public class FurPigDialogue : MonoBehaviour
                 line13 = false;
             }
         }
-
 
         GUILayout.EndArea();
 

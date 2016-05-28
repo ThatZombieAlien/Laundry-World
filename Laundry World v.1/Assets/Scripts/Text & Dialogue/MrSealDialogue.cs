@@ -29,7 +29,6 @@ public class MrSealDialogue : MonoBehaviour
     private Inventory inventory;
 
 
-
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
@@ -55,7 +54,6 @@ public class MrSealDialogue : MonoBehaviour
             player.canMove = false;
             npc.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -117,7 +115,6 @@ public class MrSealDialogue : MonoBehaviour
             }
         }
 
-
         if (line4 && displayDialogue) //Replik 4 
         {
             displayDialogue = true;
@@ -146,20 +143,6 @@ public class MrSealDialogue : MonoBehaviour
             }
         }
 
-        //if (line8 && activateQuest && hasDoneQuest && displayDialogue)  //Replik 10 element 1
-        //{
-        //    GUILayout.Label(lines[1], guiStyle);
-
-        //    if (GUILayout.Button(answerButtons[7]))
-        //    {
-        //        displayDialogue = true;
-        //        line9 = true;
-        //        line8 = false;
-        //        activateQuest = false;
-        //        playerStats.AddExperience(30);
-        //    }
-        //}
-
         GUILayout.EndArea();
 
         if (activateQuest) // ritar ut meddelande om pågående quest
@@ -170,11 +153,11 @@ public class MrSealDialogue : MonoBehaviour
 
                 if (!hasDoneQuest)
                 {
-                    GUILayout.Box("New Quest: Washi washi - Find detergent");
+                    GUILayout.Box("New Quest: Find Furpig");
                 }
                 if (hasDoneQuest)
                 {
-                    GUILayout.Box("Quest Completed: You found detergent!");
+                    GUILayout.Box("Quest Completed: Furpig found!");
                 }
                 GUILayout.EndArea();
             }
@@ -184,11 +167,11 @@ public class MrSealDialogue : MonoBehaviour
 
                 if (!hasDoneQuest)
                 {
-                    GUILayout.Box("New Quest: Washi washi - Find detergent");
+                    GUILayout.Box("New Quest: Find Furpig");
                 }
                 if (hasDoneQuest)
                 {
-                    GUILayout.Box("Quest Completed: You found detergent!");
+                    GUILayout.Box("Quest Completed: Furpig found!");
                 }
                 GUILayout.EndArea();
             }
