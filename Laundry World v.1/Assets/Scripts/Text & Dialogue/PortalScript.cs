@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour
 {
-
-    // OBS: Endast exempel på struktur
     public string[] lines;
     public string[] answerButtons;
 
@@ -35,7 +33,6 @@ public class PortalScript : MonoBehaviour
     bool line16 = false;
     bool line17 = false;
     bool line18 = false;
-    bool line19 = false;
 
     bool hasObjects = false;
 
@@ -44,7 +41,6 @@ public class PortalScript : MonoBehaviour
 
     private PlayerStats playerStats;
     public LevelManager levelManager;
-
 
     void Start()
     {
@@ -66,13 +62,12 @@ public class PortalScript : MonoBehaviour
 
     void OnGUI()
     {
-
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height - 100, 350, 600));
 
         GUIStyle.fontSize = 16; // ändra storlek
         GUIStyle.normal.textColor = Color.white; // ändra färg
 
-        if (displayDialogue && !activateQuest && line0)        //            && !activateQuest && line1)
+        if (displayDialogue && !activateQuest && line0)
         {
             GUILayout.Label(lines[0], GUIStyle);
             GUILayout.Label(lines[1], GUIStyle);
@@ -81,7 +76,6 @@ public class PortalScript : MonoBehaviour
             {
                 line2 = true;
                 line0 = false;
-
             }
 
             if (GUILayout.Button(answerButtons[19]))
@@ -130,7 +124,6 @@ public class PortalScript : MonoBehaviour
             }
         }
 
-
         if (line5)
         {
             GUILayout.Label(lines[5], GUIStyle);
@@ -140,7 +133,6 @@ public class PortalScript : MonoBehaviour
             {
                 line5 = false;
                 activateQuest = true;
-
             }
         }
 
@@ -153,7 +145,6 @@ public class PortalScript : MonoBehaviour
                 line7 = false;
                 line8 = true;
                 displayDialogue = false;
-
             }
         }
 
@@ -243,7 +234,6 @@ public class PortalScript : MonoBehaviour
             }
         }
 
-
         if (line16)
         {
             GUILayout.Label(lines[16], GUIStyle);
@@ -254,7 +244,6 @@ public class PortalScript : MonoBehaviour
                 line17 = true;
             }
         }
-
 
         if (line17)
         {
@@ -327,7 +316,6 @@ public class PortalScript : MonoBehaviour
         }
     }
 
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
@@ -348,6 +336,5 @@ public class PortalScript : MonoBehaviour
             player.canMove = true;
         }
     }
-
 }
 

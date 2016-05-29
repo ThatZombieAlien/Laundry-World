@@ -7,7 +7,6 @@ public class Quest : MonoBehaviour
 {
     public QuestDialogue dialogue;
 
-
     void OnTriggerEnter2D(Collider2D col)
     {
         // Spelaren plockar upp ett föremål, som sedan förstörs, detta sätter questet till gjort - och det kan nu rapporteras in
@@ -19,6 +18,5 @@ public class Quest : MonoBehaviour
                 dialogue.hasDoneQuest = true;
             }
         }
-
     }
 }

@@ -44,7 +44,6 @@ public class HermitQuestDialogue : MonoBehaviour
             player.canMove = false;
             NPC.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -56,7 +55,6 @@ public class HermitQuestDialogue : MonoBehaviour
 
         if (displayDialogue && !activateQuest && line1)
         {
-
             GUILayout.Label(lines[0], GUIStyle);
 
             if (GUILayout.Button(answerButtons[0]))

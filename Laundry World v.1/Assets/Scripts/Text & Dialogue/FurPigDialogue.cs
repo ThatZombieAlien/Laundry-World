@@ -27,10 +27,7 @@ public class FurPigDialogue : MonoBehaviour
     bool line12 = false;
     bool line13 = false;
     bool line14 = false;
-    bool line15 = false;
-    bool line16 = false;
-    bool line17 = false;
-    bool line18 = false;
+
     bool finishedDialogue = false;
     public int reward;
     public TextBoxManager textManager;
@@ -39,9 +36,7 @@ public class FurPigDialogue : MonoBehaviour
     private GUIStyle guiStyle = new GUIStyle();
 
     private PlayerStats playerStats;
-
     private MrSealDialogue mrSealDialogue;
-
 
     void Start()
     {

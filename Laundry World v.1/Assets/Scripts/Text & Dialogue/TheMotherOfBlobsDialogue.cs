@@ -60,7 +60,6 @@ public class TheMotherOfBlobsDialogue : MonoBehaviour
         {
             player.has1Quest = true;
         }
-
     }
 
     void OnGUI()
@@ -226,7 +225,6 @@ public class TheMotherOfBlobsDialogue : MonoBehaviour
 
             GUILayout.EndArea();
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

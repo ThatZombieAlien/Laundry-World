@@ -6,8 +6,6 @@ using System.Collections;
 
 public class Hermit2Quest : MonoBehaviour
 {
-
-    // OBS: Endast exempel på struktur
     public string[] lines;
     public string[] answerButtons;
 
@@ -27,14 +25,10 @@ public class Hermit2Quest : MonoBehaviour
     bool line8 = false;
     bool line9 = false;
     bool line10 = false;
-    bool line12 = false;
-    bool line13 = false;
-
 
     bool finishedDialogue = false;
     bool talkedAboutHouse = false;
     bool startedTalking = false;
-
 
     public int reward;
     public TextBoxManager textManager;
@@ -62,7 +56,6 @@ public class Hermit2Quest : MonoBehaviour
             player.canMove = false;
             NPC.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -73,11 +66,9 @@ public class Hermit2Quest : MonoBehaviour
         GUIStyle.fontSize = 16; // ändra storlek
         GUIStyle.normal.textColor = Color.white; // ändra färg
 
-        if (displayDialogue && !activateQuest && line0)        //            && !activateQuest && line1)
+        if (displayDialogue && !activateQuest && line0) 
         {
             GUILayout.Label(lines[0], GUIStyle);
-
-            //            startedTalking = true;
 
             if (GUILayout.Button(answerButtons[0]))
             {
@@ -109,7 +100,6 @@ public class Hermit2Quest : MonoBehaviour
                 {
                     displayDialogue = false;
                     player.canMove = true;
-
                 }
             }
         }
@@ -128,8 +118,6 @@ public class Hermit2Quest : MonoBehaviour
             {
                 line1 = false;
                 line9 = true;
-
-
             }
         }
 
@@ -147,7 +135,6 @@ public class Hermit2Quest : MonoBehaviour
             {
                 line2 = false;
                 line5 = true;
-
             }
         }
         if (line3)
@@ -166,7 +153,6 @@ public class Hermit2Quest : MonoBehaviour
             GUILayout.Label(lines[9], GUIStyle);
             GUILayout.Label(lines[10], GUIStyle);
 
-
             if (GUILayout.Button(answerButtons[2]))
             {
                 line9 = false;
@@ -181,19 +167,16 @@ public class Hermit2Quest : MonoBehaviour
             }
         }
 
-
         if (line5)
         {
             GUILayout.Label(lines[5], GUIStyle);
             GUILayout.Label(lines[6], GUIStyle);
-
 
             if (GUILayout.Button(answerButtons[5]))
             {
                 line5 = false;
                 line7 = true;
             }
-
         }
 
 
@@ -207,7 +190,6 @@ public class Hermit2Quest : MonoBehaviour
                 line7 = false;
                 line8 = true;
             }
-
         }
 
         if (line8)
@@ -221,10 +203,7 @@ public class Hermit2Quest : MonoBehaviour
                 displayDialogue = false;
                 player.canMove = true;
             }
-
         }
-
-
 
         if (activateQuest && hasDoneQuest && displayDialogue)
         {
@@ -232,7 +211,6 @@ public class Hermit2Quest : MonoBehaviour
 
             if (GUILayout.Button(answerButtons[8]))
             {
-                line12 = false;
                 line8 = true;
                 activateQuest = false;
                 PlayerPurse.playerGold += reward;
@@ -282,36 +260,21 @@ public class Hermit2Quest : MonoBehaviour
                 {
                     GUILayout.Box("Quest Completed: Find building material");
                 }
-
                 GUILayout.EndArea();
             }
         }
     }
 
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
+            if (!activateQuest && !hasDoneQuest)
             {
-                if (!activateQuest && !hasDoneQuest)
-                {
-                    line0 = true;
-                }
-                //
-                //                if (!activateQuest && !hasDoneQuest)  //&& talkedAboutHouse && startedTalking
-                //                {
-                //                    Debug.Log("blurb");
-                //
-                //                    line3 = true;
-                //                
-                //                }
-
-                displayDialogue = true;
-                //Debug.Log("An object Collided");
+                line0 = true;
             }
 
+            displayDialogue = true;
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -329,7 +292,6 @@ public class Hermit2Quest : MonoBehaviour
         // lägger till reward (om questet har det) till spelarens "pengar"
         PlayerPurse.playerGold += reward;
     }
-
 }
 
 

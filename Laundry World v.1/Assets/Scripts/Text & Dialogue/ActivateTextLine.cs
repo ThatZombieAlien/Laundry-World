@@ -40,16 +40,6 @@ public class ActivateTextLine : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        //if (timeBased && activated)  // ta bort dialog efter viss tid, ej helt fungerande
-        //{
-        //    countDown -= Time.deltaTime;
-        //    if (countDown < 0)
-        //    {
-        //        textManager.DisableTextBox();
-        //        countDown = maxTime;
-        //    }
-        //}
     }
 
     void OnTriggerEnter2D(Collider2D other)

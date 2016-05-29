@@ -139,7 +139,6 @@ public class TheThreatQuestDialogue : MonoBehaviour
                 line8 = true;
                 line4 = false;
                 line3 = false;
-
             }
 
             if (GUILayout.Button(answerButtons[7]))

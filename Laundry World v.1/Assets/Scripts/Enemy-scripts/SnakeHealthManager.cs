@@ -7,13 +7,9 @@ public class SnakeHealthManager : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
-
     private PlayerStats playerStats;
-
     public int expToGive;
-
     private HermitQuestDialogue dialogue;
-
     public static int snakesKilled = 0;
 
     void Start()

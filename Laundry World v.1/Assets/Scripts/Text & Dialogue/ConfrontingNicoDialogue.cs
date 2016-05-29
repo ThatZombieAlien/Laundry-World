@@ -5,7 +5,6 @@ using System.Collections;
 
 public class ConfrontingNicoDialogue : MonoBehaviour
 {
-
     public string[] lines;
     public string[] answerButtons;
 

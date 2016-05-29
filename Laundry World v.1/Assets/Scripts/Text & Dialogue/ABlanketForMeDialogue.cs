@@ -47,7 +47,6 @@ public class ABlanketForMeDialogue : MonoBehaviour {
         {
             player.has1Quest = true;
         }
-
     }
 
     void OnGUI()
@@ -199,7 +198,6 @@ public class ABlanketForMeDialogue : MonoBehaviour {
 
             GUILayout.EndArea();
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

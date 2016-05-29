@@ -33,16 +33,6 @@ public class MuckDialogue : MonoBehaviour {
 	bool line16 = false;
 	bool line17 = false;
 	bool line18 = false;
-	bool line19 = false;
-	bool line20 = false;
-
-
-
-	//
-	//	bool displayDialogue = false;
-	//	bool activateQuest = false;
-	//	bool nextLine = false;
-	//	bool firstLine = true;
 
 	public TextBoxManager textManager;
 	public PlayerController player;
@@ -52,7 +42,6 @@ public class MuckDialogue : MonoBehaviour {
 
 	private GUIStyle GUIStyle = new GUIStyle();
 
-
 	void Start () 
 	{
         blur = FindObjectOfType<Blur>();
@@ -61,11 +50,6 @@ public class MuckDialogue : MonoBehaviour {
         inventory.backpack.SetActive(false);
         player.canMove = false;
     }
-
-	void Update () 
-	{
-		
-	}
 
 	void OnGUI()
 	{
@@ -106,20 +90,16 @@ public class MuckDialogue : MonoBehaviour {
 						line1 = true;
 						line0 = false;
 					}
-
 				}
 
 				if (line1) 
 				{
-					//			displayDialogue = true;
 					GUILayout.Label (lines [1], GUIStyle);
 
 					if (GUILayout.Button (answerButtons [1]))
 					{
 						line2 = true;
-						line1 = false;
-						//						activateQuest = true;
-	
+						line1 = false;	
 					}
 				}
 				if (line2) {
@@ -128,22 +108,21 @@ public class MuckDialogue : MonoBehaviour {
 					if (GUILayout.Button (answerButtons [2])) {
 						line3 = true;
 						line2 = false;
-					}
-				
+					}			
 				}
 
-				if (line3) {
-					GUILayout.Label (lines [3], GUIStyle);
-					GUILayout.Label (lines [4], GUIStyle);
+                if (line3)
+                {
+                    GUILayout.Label(lines[3], GUIStyle);
+                    GUILayout.Label(lines[4], GUIStyle);
 
-					if (GUILayout.Button (answerButtons [0])) 
-					{
-						line5 = true;
-						line3 = false;
-						line4 = false;
-					}
-
-				}
+                    if (GUILayout.Button(answerButtons[0]))
+                    {
+                        line5 = true;
+                        line3 = false;
+                        line4 = false;
+                    }
+                }
 
 				if (line5) 
 				{
@@ -155,11 +134,8 @@ public class MuckDialogue : MonoBehaviour {
 					{
 						line6 = true;
 						line5 = false;
-
 					}
-				}
-
-			
+				}			
 
 				if (line6) 
 				{
@@ -170,7 +146,6 @@ public class MuckDialogue : MonoBehaviour {
 						line7 = true;
 						line6 = false;
 					}
-
 				}
 
 				if (line7)
@@ -182,7 +157,6 @@ public class MuckDialogue : MonoBehaviour {
 						line8 = true;
 						line7 = false;
 					}
-
 				}
 
 				if (line8)
@@ -194,7 +168,6 @@ public class MuckDialogue : MonoBehaviour {
 						line9 = true;
 						line8 = false;
 					}
-
 				}
 
 				if (line9)
@@ -206,7 +179,6 @@ public class MuckDialogue : MonoBehaviour {
 						line10 = true;
 						line9 = false;
 					}
-
 				}
 
 				if (line10)
@@ -216,12 +188,9 @@ public class MuckDialogue : MonoBehaviour {
 					if (GUILayout.Button (answerButtons [8]))
 					{
 						line11 = true;
-
 						line10 = false;
 					}
-
 				}
-
 
 				if (line11)
 				{
@@ -233,7 +202,6 @@ public class MuckDialogue : MonoBehaviour {
 						line12 = true;
 						line11 = false;
 					}
-
 				}
 
 				if (line12)
@@ -243,10 +211,8 @@ public class MuckDialogue : MonoBehaviour {
 					if (GUILayout.Button (answerButtons [9]))
 					{
 						line13 = true;
-
 						line12 = false;
 					}
-
 				}
 
 				if (line13)
@@ -256,10 +222,8 @@ public class MuckDialogue : MonoBehaviour {
 					if (GUILayout.Button (answerButtons [10]))
 					{
 						line14 = true;
-
 						line13 = false;
 					}
-
 				}
 
 				if (line14)
@@ -269,10 +233,8 @@ public class MuckDialogue : MonoBehaviour {
 					if (GUILayout.Button (answerButtons [11]))
 					{
 						line15 = true;
-
 						line14 = false;
 					}
-
 				}
 
 				if (line15)
@@ -282,24 +244,19 @@ public class MuckDialogue : MonoBehaviour {
 					if (GUILayout.Button (answerButtons [12]))
 					{
 						line16 = true;
-
 						line15 = false;
 					}
-
 				}
 
 				if (line16)
 				{
 					GUILayout.Label (lines [16], GUIStyle);
 
-
 					if (GUILayout.Button (answerButtons [14]))
 					{
 						line17 = true;
-
 						line16 = false;
 					}
-
 				}
 
 				if (line17)
@@ -307,14 +264,11 @@ public class MuckDialogue : MonoBehaviour {
 					GUILayout.Label (lines [17], GUIStyle);
 					GUILayout.Label (lines [22], GUIStyle);
 
-
 					if (GUILayout.Button (answerButtons [15]))
 					{
 						line18 = true;
-
 						line17 = false;
 					}
-
 				}
 
 				if (line18)
@@ -322,73 +276,32 @@ public class MuckDialogue : MonoBehaviour {
 					GUILayout.Label (lines [18], GUIStyle);
 					GUILayout.Label (lines [19], GUIStyle);
 
-
 					if (GUILayout.Button (answerButtons [13]))
 					{
-						line19 = true;
-
 						line18 = false;
                         Destroy(gameObject); // sätt på sista svaret
                         inventory.backpack.SetActive(true);
                         player.canMove = true;
 					}
-
 				}
-
-//				if (line8) 
-//				{
-//					GUILayout.Label (lines [8], guiStyle);
-//
-//					if (GUILayout.Button (answerButtons [6])) 
-//					{
-//						line8 = false;
-//						//						textManager.DisableTextBox ();
-//						displayDialogue = false;
-//						exitDialogue = true;
-//						activateQuest = true;
-//					}
-//				}
-
-				//
-				//		if (!activateQuest && nextLine)
-				//		{
-				//			displayDialogue = true;
-				//			GUILayout.Label(lines[2], guiStyle);
-				//
-				//			if (GUILayout.Button(answerButtons[4]))
-				//			{
-				//				activateQuest = true;
-				//				displayDialogue = true;
-				//			}
-				//			if (GUILayout.Button(answerButtons[3]))
-				//			{
-				//				displayDialogue = false;
-				//				nextLine= false;
-				//				textManager.DisableTextBox();
-				//			}
-				//		}
-
-
 			}
 		}
+
 		GUILayout.EndArea();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.name == "Player")
-		{
-			//if (Input.GetKeyDown(KeyCode.E))
-			{
-				if (!activateQuest)
-				{
-					line0 = true;
-				}
-				displayDialogue = true;
-				exitDialogue = false;
-				Debug.Log("An object Collided");
-			}
-		}
+        if (other.gameObject.name == "Player")
+        {
+            if (!activateQuest)
+            {
+                line0 = true;
+            }
+            displayDialogue = true;
+            exitDialogue = false;
+            Debug.Log("An object Collided");
+        }
 	}
 
 	void OnTriggerExit2D(Collider2D other)

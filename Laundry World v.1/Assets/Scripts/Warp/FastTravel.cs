@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// Script skrivet av Sanna Gustafsson
+
+using UnityEngine;
 using System.Collections;
 
 public class FastTravel : MonoBehaviour {
@@ -11,17 +13,14 @@ public class FastTravel : MonoBehaviour {
     public Transform warpTarget0;
     public Transform warpTarget1;
     public Transform warpTarget2;
-    //public Transform warpTarget3;
 
     public string[] travel;
     public string[] destinations;
-
     
     // skriv in alla fast travel destinations
     // 0 = Lake
     // 1 = Village
     // 2 = Hermit Hut
-    // 3 = 
 
     bool displayTravel = false;
     private GUIStyle guiStyle = new GUIStyle();
@@ -93,7 +92,6 @@ public class FastTravel : MonoBehaviour {
         }
 
         GUILayout.EndArea();
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

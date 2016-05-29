@@ -8,11 +8,6 @@ public class BorgmästerQuest : MonoBehaviour
 {
     public BorgmästerQuestDialog dialog;
 
-    void Start()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D collider)
     {
         // Spelaren plockar upp ett föremål, som sedan förstörs, detta sätter questet till gjort - och det kan nu rapporteras in

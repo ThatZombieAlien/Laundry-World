@@ -6,7 +6,6 @@ using System.Collections;
 
 public class BorgmästerQuestDialog : MonoBehaviour 
 {
-
     public string[] lines;
     public string[] answerButtons;
 

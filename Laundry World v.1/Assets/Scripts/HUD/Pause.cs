@@ -5,7 +5,6 @@ using System.Collections;
 public class Pause : MonoBehaviour {
 
 	public GameObject pauseButton, pausePanel, helpPanel;
-	// Use this for initialization
 
 	public void Start()
 	{
@@ -25,9 +24,6 @@ public class Pause : MonoBehaviour {
 		pauseButton.SetActive (true);
 		Time.timeScale = 1;
 	}
-
-
-
 }
 
 

@@ -123,7 +123,6 @@ public class ABlanketForMeFinishDialogue : MonoBehaviour {
             {
                 displayDialogue = false;
             }
-
         }
 
         GUILayout.EndArea();

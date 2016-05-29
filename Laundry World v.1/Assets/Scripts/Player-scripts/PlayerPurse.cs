@@ -7,16 +7,6 @@ public class PlayerPurse : MonoBehaviour
 {
     public static int playerGold = 0;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     void OnGUI()
     {
         // ritar ut hur mycket pengar spelaren har

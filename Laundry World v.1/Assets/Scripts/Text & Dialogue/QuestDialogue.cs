@@ -5,7 +5,6 @@ using System.Collections;
 
 public class QuestDialogue : MonoBehaviour {
 
-
     public string[] lines;
     public string[] answerButtons;
 
@@ -26,8 +25,6 @@ public class QuestDialogue : MonoBehaviour {
 
     private PlayerStats playerStats;
 
-
-
     void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
@@ -46,7 +43,6 @@ public class QuestDialogue : MonoBehaviour {
             player.canMove = false;
             NPC.canMove = false;
         }
-
     }
 
     void OnGUI()
@@ -58,7 +54,6 @@ public class QuestDialogue : MonoBehaviour {
 
         if (displayDialogue && !activateQuest && line1)
         {
-
             GUILayout.Label(lines[0], GUIStyle);
 
             if (GUILayout.Button(answerButtons[0]))
@@ -148,7 +143,6 @@ public class QuestDialogue : MonoBehaviour {
                 displayDialogue = false;
                 line4 = false;
                 player.canMove = true;
-
             }
         }
        

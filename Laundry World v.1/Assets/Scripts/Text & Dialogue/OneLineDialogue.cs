@@ -6,18 +6,11 @@ using System.Collections;
 public class OneLineDialogue : MonoBehaviour {
 
     public string[] lines;
-
     bool displayDialogue = false;
 
     public NPCController NPC;
-
     private GUIStyle GUIStyle = new GUIStyle();
 
-	void Start () 
-    {
-	
-	}
-	
 	void Update () 
     {
         if (displayDialogue)
@@ -41,8 +34,6 @@ public class OneLineDialogue : MonoBehaviour {
             GUILayout.Label(lines[0], GUIStyle);
         }
 
-
-
         GUILayout.EndArea();
     }
 
@@ -50,11 +41,8 @@ public class OneLineDialogue : MonoBehaviour {
     {
         if (other.gameObject.name == "Player")
         {
-            //if (Input.GetKeyDown(KeyCode.E))
-            {
-                displayDialogue = true;
-                Debug.Log("An object Collided");
-            }
+            displayDialogue = true;
+            Debug.Log("An object Collided");
         }
     }
 

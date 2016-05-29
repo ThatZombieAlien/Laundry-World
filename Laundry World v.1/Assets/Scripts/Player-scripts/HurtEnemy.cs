@@ -26,18 +26,12 @@ public class HurtEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Snake")
         {
-            
-            //if (isAttacking)
-            //{
-
             currentDamage = damageToGive + playerStats.currentAttack;
 
             other.gameObject.GetComponent<SnakeHealthManager>().HurtEnemy(currentDamage);
-            //other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
             Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
             var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
-            //}
         }
 
         if (other.gameObject.tag == "Blob")

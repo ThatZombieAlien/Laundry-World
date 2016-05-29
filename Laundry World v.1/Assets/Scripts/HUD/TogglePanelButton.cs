@@ -10,6 +10,4 @@ public class TogglePanelButton : MonoBehaviour
 	{
 		panel.SetActive (!panel.activeSelf); //aktiverar/avaktiverar en panel
 	}
-
-
 }

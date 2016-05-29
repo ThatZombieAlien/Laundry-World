@@ -8,14 +8,4 @@ public class FastTravelPointManager: MonoBehaviour {
     public static bool target0Found;
     public static bool target1Found;
     public static bool target2Found;
-
-	void Start () 
-    {
-	
-	}
-	
-	void Update () 
-    {
-	
-	}
 }

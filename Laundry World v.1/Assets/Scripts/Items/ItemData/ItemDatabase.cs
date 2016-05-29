@@ -62,7 +62,6 @@ public class Item
         this.Sprite = Resources.Load<Sprite>(slug);
     }
 
-
     //Empty slot
     public Item()
     {

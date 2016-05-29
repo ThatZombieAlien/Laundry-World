@@ -18,7 +18,6 @@ public class Dialogue : MonoBehaviour {
 
     private GUIStyle GUIStyle = new GUIStyle();
 
-
 	void Update () 
     {
         if (displayDialogue)

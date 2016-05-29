@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Save : MonoBehaviour
 {
-
     public void SavePosition()
     {
         PlayerPrefs.SetFloat("PlayerX", transform.position.x);
