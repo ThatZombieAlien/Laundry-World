@@ -1,5 +1,5 @@
 ﻿// Grundkod av Sanna Gustafsson
-// Modifierat av 
+// Modifierat av Maria Görman
 
 using UnityEngine;
 using System.Collections;

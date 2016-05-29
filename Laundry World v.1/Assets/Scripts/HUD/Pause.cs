@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//script skrivet av Maria Görman
+using UnityEngine;
 using System.Collections;
 
 public class Pause : MonoBehaviour {
@@ -10,7 +11,7 @@ public class Pause : MonoBehaviour {
 	{
 		OnUnpause ();
 	}
-	public void Onpause()
+	public void Onpause() //pausar spelet
 	{
 		pausePanel.SetActive (true);
 		pauseButton.SetActive (false);
@@ -18,8 +19,8 @@ public class Pause : MonoBehaviour {
 
 	}
 
-	public void OnUnpause()
-	{
+	public void OnUnpause() //resumar spelet
+    {
 		pausePanel.SetActive (false);
 		pauseButton.SetActive (true);
 		Time.timeScale = 1;

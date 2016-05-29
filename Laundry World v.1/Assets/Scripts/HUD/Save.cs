@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Script skrivet av Maria Görman
+using UnityEngine;
 using System.Collections;
 
 public class Save : MonoBehaviour

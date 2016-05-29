@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿//Skript skrivet av Maria Görman
+using UnityEngine;
 using System.Collections;
-//gjord av Maria
+
 
 public class TogglePanelButton : MonoBehaviour 
 {
